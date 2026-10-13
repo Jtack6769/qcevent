@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quote Challenge v2 — Two Player</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#0b1020;color:#f5f7ff;min-height:100vh}main{max-width:760px;margin:auto;padding:18px}.card{background:#151d35;border:1px solid #34405f;border-radius:24px;padding:22px;box-shadow:0 16px 50px #0005;margin:14px 0}h1{font-size:2rem;margin:5px 0}.sub{opacity:.75}.quote{font-size:1.45rem;line-height:1.45;margin:20px 0;padding:22px;border-radius:18px;background:#0e1529}button{border:0;border-radius:14px;padding:12px 16px;font-weight:750;font-size:1rem;cursor:pointer;margin:5px}.primary{background:#fff;color:#111}.secondary{background:#2a3555;color:#fff}.danger{background:#633444;color:#fff}button:disabled{opacity:.45;cursor:not-allowed}input,select,textarea{width:100%;padding:13px;border-radius:12px;border:1px solid #465374;background:#0b1020;color:white;font-size:1rem;margin:6px 0 12px}.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1}.score{display:flex;justify-content:space-between;font-weight:700}.hidden{display:none}.tag{display:inline-block;background:#2a3555;padding:5px 9px;border-radius:999px;font-size:.8rem;margin-right:5px}.small{font-size:.9rem;opacity:.78}.result{font-size:1.15rem;line-height:1.5}.status{padding:10px 12px;border-radius:12px;background:#0e1529;margin-top:10px}.code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.78rem;min-height:110px;word-break:break-all}.choice{display:block;width:100%;text-align:left}.you{outline:2px solid #fff5}.warn{background:#493a22}.ok{background:#203f31}.center{text-align:center}
+</style></head>
+<body><main>
+<div class="card"><h1>🎬 Quote Challenge — v2</h1><div class="sub">FINAL CHANCE TO MAKE IT TO THE CAPTAIN'S CHAIR</div></div>
+
+<section id="connect" class="card"><h2>📡 Two-Player Connection</h2><p class="small">For two phones, this demo uses a direct WebRTC connection. It works over Wi‑Fi/internet; ordinary browser Bluetooth phone-to-phone connections aren't available for this kind of game. No game server is required, but the two players exchange a short connection text once.</p>
+<div class="row"><button class="primary" onclick="makeHostOffer()">HOST GAME</button><button class="secondary" onclick="showJoin()">JOIN GAME</button><button class="secondary" onclick="useSolo()">PLAY SOLO / SAME PHONE</button></div>
+<div id="hostBox" class="hidden"><h3>Host</h3><p class="small">1. Create your offer. 2. Send/copy it to the other player. 3. Paste their answer below.</p><button class="primary" onclick="makeHostOffer()">CREATE OFFER</button><textarea id="offerOut" class="code" readonly placeholder="Your offer appears here"></textarea><button class="secondary" onclick="copyText('offerOut')">COPY OFFER</button><textarea id="answerIn" class="code" placeholder="Paste the player's answer here"></textarea><button class="primary" onclick="acceptAnswer()">ACCEPT ANSWER</button></div>
+<div id="joinBox" class="hidden"><h3>Join</h3><p class="small">Paste the host's offer, create your answer, then send the answer back to the host.</p><textarea id="offerIn" class="code" placeholder="Paste host offer here"></textarea><button class="primary" onclick="makeJoinAnswer()">CREATE ANSWER</button><textarea id="answerOut" class="code" readonly placeholder="Your answer appears here"></textarea><button class="secondary" onclick="copyText('answerOut')">COPY ANSWER</button></div>
+<div id="connStatus" class="status">Not connected.</div></section>
+
+<section id="setup" class="card"><h2>Game Setup</h2><label>Player 1<input id="p1" value="Player 1"></label><label>Player 2<input id="p2" value="Player 2"></label><div class="row"><label>Rounds<select id="rounds"><option selected>5</option><option>10</option></select></label><label>Difficulty<select id="difficulty"><option>Any</option><option>Easy</option><option selected>Medium</option><option>Hard</option></select></label></div><label>Category<select id="category"><option>Any</option><option>Movies</option><option>TV</option><option>Sci-Fi</option><option>Comedy</option><option>Cartoons</option><option>Action</option></select></label><button class="primary" onclick="startGame()">ENGAGE — START GAME</button><p id="hostOnly" class="small"></p></section>
+
+<section id="game" class="hidden"><div class="card"><div class="score"><span id="turn"></span><span>Round <b id="roundNo"></b></span></div><div id="quote" class="quote"></div><div class="tag" id="cat"></div><div class="tag" id="diff"></div>
+<div id="normalTurn"><h3>What movie or show?</h3><input id="sourceGuess" placeholder="Your answer"><h3>Who said the line?</h3><input id="speakerGuess" placeholder="Character or speaker"><h3>Line before OR after?</h3><input id="lineGuess" placeholder="Optional"><button class="primary" onclick="reveal()">REVEAL ANSWER</button><button class="secondary" id="stealBtn" onclick="startSteal()">I HAVE IT — STEAL</button><button class="secondary" onclick="hint()">HINT</button></div>
+<div id="stealPanel" class="hidden"><h3>🛡️ Defender's answer</h3><p class="small">Answer before the active player reveals. Correct = +1; wrong = −1.</p><input id="stealSource" placeholder="Movie / show"><input id="stealSpeaker" placeholder="Who said it?"><button class="primary" onclick="submitSteal()">SUBMIT STEAL</button><button class="secondary" onclick="cancelSteal()">CANCEL</button></div>
+<div id="firstShot" class="hidden"><h3>⚡ First Quote — Both Players</h3><p class="small">Both players get the same quote. First correct claimant earns <b>25 points</b> and goes first.</p><input id="firstSource" placeholder="Movie / show"><input id="firstSpeaker" placeholder="Who said it?"><button class="primary" onclick="claimFirst()">I HAVE IT — CLAIM 25</button><div id="firstShotBox"></div></div><div id="hintBox" class="small"></div></div><div class="card score"><span id="s1"></span><span id="s2"></span></div><div class="card small" id="netInfo"></div></section>
+
+<section id="reveal" class="hidden card"><h2 id="resultTitle">Reveal</h2><div class="result" id="answer"></div><button class="primary" onclick="nextRound()">NEXT ROUND</button></section>
+<section id="rules" class="card"><h2>📜 Rules of Engagement</h2><ul class="small"><li><b>First quote:</b> same opening quote for both players. First correct answer earns 25 points and goes first.</li><li><b>Each round:</b> 1 point for show/movie + 1 point for speaker.</li><li><b>Surrounding line:</b> +1 for the line before or after.</li><li><b>Defense:</b> waiting player can hit <b>I HAVE IT</b> before the active player answers. Correct steal +1; wrong steal −1.</li><li><b>Captain's Chair Bonus:</b> after 5 or 10 rounds, the losing player can initiate it only when they still have a mathematical chance.</li><li><b>Bonus:</b> 3 choices. 3 questions after 5 rounds or 6 after 10. Each correct answer = 10 points.</li></ul></section>
+<section id="library" class="card"><h2>📚 Quote Library</h2><p class="small">Quotes are saved in this browser. Import your existing backup to bring in your growing library.</p><label>Quote<input id="newQuote"></label><label>Movie / TV Show<input id="newSource"></label><label>Who said it?<input id="newSpeaker"></label><label>Line before<input id="newBefore"></label><label>Line after<input id="newAfter"></label><div class="row"><label>Category<input id="newCat" value="Movies"></label><label>Difficulty<select id="newDiff"><option>Easy</option><option selected>Medium</option><option>Hard</option></select></label></div><button class="secondary" onclick="addQuote()">➕ ADD QUOTE</button><button class="secondary" onclick="exportQuotes()">📤 EXPORT QUOTES</button><button class="secondary" onclick="document.getElementById('importFile').click()">📥 IMPORT QUOTES</button><input id="importFile" type="file" accept=".json,application/json" style="display:none" onchange="importQuotes(event)"><button class="secondary" onclick="clearCustom()">Clear my custom quotes</button><div id="libraryCount" class="small"></div></section>
+</main>
+<script>
+const builtIn=[
+  {
+    "q": "I have a feeling we're not in Kansas anymore.",
+    "s": "The Wizard of Oz",
+    "sp": "Dorothy Gale",
+    "b": "Toto, I've a feeling we're not in Kansas anymore.",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "May the Force be with you.",
+    "s": "Star Wars",
+    "sp": "General Dodonna",
+    "b": "Remember, the Force will be with you, always.",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Easy"
+  },
+  {
+    "q": "I'm gonna make him an offer he can't refuse.",
+    "s": "The Godfather",
+    "sp": "Vito Corleone",
+    "b": "Leave the gun. Take the cannoli.",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "Here's looking at you, kid.",
+    "s": "Casablanca",
+    "sp": "Rick Blaine",
+    "b": "Louis, I think this is the beginning of a beautiful friendship.",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  },
+  {
+    "q": "Live long and prosper.",
+    "s": "Star Trek",
+    "sp": "Spock",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Easy"
+  },
+  {
+    "q": "You can't handle the truth!",
+    "s": "A Few Good Men",
+    "sp": "Col. Nathan Jessup",
+    "b": "I want the truth!",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "There's no place like home.",
+    "s": "The Wizard of Oz",
+    "sp": "Dorothy Gale",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "Roads? Where we're going, we don't need roads.",
+    "s": "Back to the Future",
+    "sp": "Doc Brown",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "I'll be back.",
+    "s": "The Terminator",
+    "sp": "The Terminator",
+    "b": "",
+    "a": "",
+    "c": "Action",
+    "d": "Easy"
+  },
+  {
+    "q": "The truth is out there.",
+    "s": "The X-Files",
+    "sp": "Fox Mulder",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Easy"
+  },
+  {
+    "q": "D'oh!",
+    "s": "The Simpsons",
+    "sp": "Homer Simpson",
+    "b": "",
+    "a": "",
+    "c": "Comedy",
+    "d": "Easy"
+  },
+  {
+    "q": "Beam me up, Scotty.",
+    "s": "Star Trek",
+    "sp": "Captain Kirk",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Easy"
+  },
+  {
+    "q": "Shut up, Meg.",
+    "s": "Family Guy",
+    "sp": "Peter Griffin",
+    "b": "Meg: Dad, can I use the car?",
+    "a": "Lois: Peter, you better be nice to her. She won't be your little girl forever.",
+    "c": "Comedy",
+    "d": "Easy"
+  },
+  {
+    "q": "If I'm not back in five minutes, just wait longer.",
+    "s": "Ace Ventura: Pet Detective",
+    "sp": "Ace Ventura",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  },
+  {
+    "q": "Oh my God, he doesn't flog the dolphin before a big date.",
+    "s": "There's Something About Mary",
+    "sp": "Dom Woganowski",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "Boy, when you die at the palace, you really die at the palace.",
+    "s": "History of the World, Part I",
+    "sp": "Comicus",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "Stifle yourself, meathead!",
+    "s": "All in the Family",
+    "sp": "Archie Bunker",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Medium"
+  },
+  {
+    "q": "Be vewy, vewy quiet. I'm hunting wabbits.",
+    "s": "Looney Tunes",
+    "sp": "Elmer Fudd",
+    "b": "",
+    "a": "",
+    "c": "Cartoons",
+    "d": "Easy"
+  },
+  {
+    "q": "This is my urine sample. It's my sister's, and she is pregnant.",
+    "s": "Up in Smoke",
+    "sp": "Anthony 'Man' Stoner",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "I am superior, sir, in many ways. But I would gladly give it up to be human.",
+    "s": "Star Trek: The Next Generation",
+    "sp": "Data",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Medium"
+  },
+  {
+    "q": "If a man was born October 3rd, 1928, and he's still alive, how old is he?",
+    "s": "Phenomenon",
+    "sp": "Dr. Bob Niedorf",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "I'm sorry, Dave. I'm afraid I can't do that.",
+    "s": "2001: A Space Odyssey",
+    "sp": "HAL 9000",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Medium"
+  },
+  {
+    "q": "Lots of people go to college for seven years.",
+    "s": "Tommy Boy",
+    "sp": "Tommy Callahan",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "Hurry up, Doctor! This baby gots to go winky-tinky!",
+    "s": "Paper Moon",
+    "sp": "Trixie Delight",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "And his name ain't Frank, it's Franklin!",
+    "s": "Paper Moon",
+    "sp": "Moses Pray",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "Frankly, my dear, I don't give a damn.",
+    "s": "Gone with the Wind",
+    "sp": "Rhett Butler",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  },
+  {
+    "q": "Father? I hate that name.",
+    "s": "Wagons East",
+    "sp": "Little Feather",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "What could be there for you?",
+    "s": "Wagons East",
+    "sp": "Belle",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "Yes, I can see that.",
+    "s": "Almost Heroes",
+    "sp": "Edwards",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "I'm a doctor, not a bricklayer!",
+    "s": "Star Trek: The Original Series",
+    "sp": "Dr. Leonard McCoy",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Medium"
+  },
+  {
+    "q": "Nothing to eat anyway? Matilda, do you hear me?",
+    "s": "Space Truckers",
+    "sp": "Keller",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Hard"
+  },
+  {
+    "q": "Set course, warp six.",
+    "s": "Star Trek: The Next Generation",
+    "sp": "Captain Jean-Luc Picard",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Medium"
+  },
+  {
+    "q": "Run, bitch! Run!",
+    "s": "Scary Movie",
+    "sp": "Shorty Meeks",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "Missed it by that much.",
+    "s": "Get Smart",
+    "sp": "Maxwell Smart",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Medium"
+  },
+  {
+    "q": "This is the big one! I'm coming to join you, Elizabeth!",
+    "s": "Sanford and Son",
+    "sp": "Fred Sanford",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Easy"
+  },
+  {
+    "q": "You're gonna need a bigger boat.",
+    "s": "Jaws",
+    "sp": "Martin Brody",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "What we're dealing with here is a complete lack of respect for the law.",
+    "s": "Smokey and the Bandit",
+    "sp": "Sheriff Buford T. Justice",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  },
+  {
+    "q": "I love it when a plan comes together.",
+    "s": "The A-Team",
+    "sp": "John 'Hannibal' Smith",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Easy"
+  },
+  {
+    "q": "Danger, Will Robinson!",
+    "s": "Lost in Space",
+    "sp": "The Robot",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Easy"
+  },
+  {
+    "q": "Kiss my grits!",
+    "s": "Alice",
+    "sp": "Flo Castleberry",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Medium"
+  },
+  {
+    "q": "Na-nu, na-nu.",
+    "s": "Mork & Mindy",
+    "sp": "Mork",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Medium"
+  },
+  {
+    "q": "What in the wide, wide world of sports is going on here?",
+    "s": "Blazing Saddles",
+    "sp": "Taggart",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  }
+];
+const bonusQuotes=[{q:"You can't be a little pregnant.",choices:["Rosemary's Baby","The Exorcist","The Omen"],answer:0},{q:"I see dead people.",choices:["The Sixth Sense","Jacob's Ladder","The Others"],answer:0},{q:"Forget it, Jake. It's Chinatown.",choices:["Chinatown","The Big Sleep","L.A. Confidential"],answer:0},{q:"They're here.",choices:["Poltergeist","The Changeling","The Haunting"],answer:0},{q:"I'm mad as hell, and I'm not going to take this anymore!",choices:["Network","Dog Day Afternoon","Serpico"],answer:0},{q:"Klaatu barada nikto.",choices:["The Day the Earth Stood Still","The Thing","The Forbidden Planet"],answer:0}];
+let custom=JSON.parse(localStorage.getItem("quoteCustom")||"[]"),pool=[],round=0,current=null,player=0,scores=[0,0],hintUsed=false,roundScored=false,firstQuote=true,stealMode=false,bonusMode=false,bonusCount=0,bonusTotal=0,mode="solo",myPlayer=0,pc=null,dc=null;
+const $=id=>document.getElementById(id); const name=i=>$(i?"p2":"p1").value||("Player "+(i+1));
+function allQuotes(){return builtIn.concat(custom)} function status(t,cls=""){ $("connStatus").className="status "+cls; $("connStatus").textContent=t }
+function setMode(m){mode=m; myPlayer=m==="join"?1:0; $("hostOnly").textContent=m==="join"?"You are Player 2. The host controls game setup and rounds.":m==="host"?"You are Player 1 / host.":"Solo game."; $("setup").classList.remove("hidden"); $("setup").querySelector("button").disabled=m==="join"}
+function useSolo(){setMode("solo");status("Solo mode ready.","ok");}
+function showJoin(){$("joinBox").classList.remove("hidden");$("hostBox").classList.add("hidden");setMode("join")}
+function makePC(isHost){pc=new RTCPeerConnection();pc.onconnectionstatechange=()=>{if(["connected"].includes(pc.connectionState)){status("🟢 Connected — two-player game ready.","ok");$("netInfo").textContent="Connected to the other player."}else if(["failed","disconnected","closed"].includes(pc.connectionState))status("Connection lost. You can finish in solo mode if needed.","warn")}; if(isHost){dc=pc.createDataChannel("quote-challenge");wireDC()}else pc.ondatachannel=e=>{dc=e.channel;wireDC()}}
+function wireDC(){dc.onopen=()=>{status("🟢 Connected — two-player game ready.","ok");send({t:"hello",p1:$("p1").value,p2:$("p2").value})};dc.onmessage=e=>{try{handleMsg(JSON.parse(e.data))}catch(err){console.log(err)}}}
+function send(o){if(dc&&dc.readyState==="open")dc.send(JSON.stringify(o))}
+async function makeHostOffer(){setMode("host");$("hostBox").classList.remove("hidden");$("joinBox").classList.add("hidden");makePC(true);const offer=await pc.createOffer();await pc.setLocalDescription(offer);await waitICE();$("offerOut").value=btoa(JSON.stringify(pc.localDescription));status("Offer created. Send it to Player 2.")}
+async function makeJoinAnswer(){const raw=$("offerIn").value.trim();if(!raw)return alert("Paste the host offer first.");try{makePC(false);await pc.setRemoteDescription(JSON.parse(atob(raw)));const ans=await pc.createAnswer();await pc.setLocalDescription(ans);await waitICE();$("answerOut").value=btoa(JSON.stringify(pc.localDescription));status("Answer created. Send it back to the host.")}catch(e){alert("That offer could not be read. Make sure the whole text was copied.")}}
+function waitICE(){return new Promise(resolve=>{if(pc.iceGatheringState==="complete")return resolve();const f=()=>{if(pc.iceGatheringState==="complete"){pc.removeEventListener("icegatheringstatechange",f);resolve()}};pc.addEventListener("icegatheringstatechange",f);setTimeout(resolve,5000)})}
+async function acceptAnswer(){const raw=$("answerIn").value.trim();if(!raw||!pc)return alert("Create the host offer first, then paste the answer here.");try{await pc.setRemoteDescription(JSON.parse(atob(raw)));status("Answer accepted. Connecting…")}catch(e){alert("That answer could not be read. Make sure the whole text was copied.")}}
+async function copyText(id){try{await navigator.clipboard.writeText($(id).value);alert("Copied.")}catch(e){$(id).select();document.execCommand("copy");alert("Copied — if your browser asks, allow clipboard access.")}}
+function startGame(){if(mode==="join")return;round=0;player=0;scores=[0,0];roundScored=false;firstQuote=true;bonusMode=false;bonusCount=0;bonusTotal=0;const cat=$("category").value,diff=$("difficulty").value;pool=allQuotes().filter(x=>(cat==="Any"||x.c===cat)&&(diff==="Any"||x.d===diff));if(!pool.length)return alert("No quotes match those filters. Choose Any or add quotes.");$("setup").classList.add("hidden");$("game").classList.remove("hidden");nextRound();syncState()}
+function nextRound(){if(round>=Number($("rounds").value)){finish();return}if(roundScored&&round>0&&!firstQuote)player=player?0:1;round++;hintUsed=false;roundScored=false;stealMode=false;current=pool[Math.floor(Math.random()*pool.length)];$("turn").textContent=name(player)+" — QUOTER";$("roundNo").textContent=round;$("quote").textContent=current.q;$("cat").textContent=current.c;$("diff").textContent=current.d;["sourceGuess","speakerGuess","lineGuess","stealSource","stealSpeaker"].forEach(id=>$(id).value="");$("firstShot").classList.toggle("hidden",!firstQuote);$("normalTurn").classList.toggle("hidden",firstQuote);$("stealPanel").classList.add("hidden");$("hintBox").textContent="";$("stealBtn").disabled=false;updateScores();syncState()}
+function claimFirst(){if(!firstQuote)return;const sg=$("firstSource").value.trim().toLowerCase(),spg=$("firstSpeaker").value.trim().toLowerCase(),ok=checkSource(sg)&&checkSpeaker(spg);if(mode==="join"){if(ok)send({t:"firstClaim",sg,spg});else alert("Both movie/show and speaker must be correct.");return}if(ok)awardFirst(myPlayer);else $("firstShotBox").textContent="Not quite — both answers must be correct."}
+function awardFirst(who){if(!firstQuote)return;scores[who]+=25;player=who;firstQuote=false;round=0;roundScored=true;showResult("🔥 25 POINTS — FIRST TO GO!",name(who)+" gets 25 points and goes first.");syncState()}
+function checkSource(g){return !!g&&(current.s.toLowerCase().includes(g)||g.includes(current.s.toLowerCase()))} function checkSpeaker(g){const a=(current.sp||"").toLowerCase();return !!g&&!!a&&(a.includes(g)||g.includes(a))} function checkLine(g){return !!g&&((current.b&&current.b.toLowerCase().includes(g))||(current.a&&current.a.toLowerCase().includes(g)))}
+function reveal(){if(roundScored||firstQuote)return;const data={sg:$("sourceGuess").value.trim(),spg:$("speakerGuess").value.trim(),lg:$("lineGuess").value.trim()};if(mode==="join"){send({t:"answer",...data});return}scoreAnswer(player,data)}
+function scoreAnswer(who,data){const pts=(checkSource(data.sg.toLowerCase())?1:0)+(checkSpeaker(data.spg.toLowerCase())?1:0)+(checkLine(data.lg.toLowerCase())?1:0);scores[who]+=pts;roundScored=true;showResult("Round scored: +"+pts,name(who)+" answered.");syncState()}
+function startSteal(){if(roundScored||firstQuote)return;stealMode=true;$("normalTurn").classList.add("hidden");$("stealPanel").classList.remove("hidden")}
+function cancelSteal(){stealMode=false;$("stealPanel").classList.add("hidden");$("normalTurn").classList.remove("hidden")}
+function submitSteal(){if(roundScored||!stealMode)return;const data={sg:$("stealSource").value.trim(),spg:$("stealSpeaker").value.trim()},defender=player?0:1;if(mode==="join"){send({t:"steal",...data});return}const ok=checkSource(data.sg.toLowerCase())&&checkSpeaker(data.spg.toLowerCase());scores[defender]+=ok?1:-1;roundScored=true;showResult(ok?"🛡️ STEAL! +1 POINT":"❌ WRONG STEAL — -1 POINT",name(defender)+(ok?" answered correctly on defense.":" loses 1 point for the incorrect defensive answer."));syncState()}
+function showResult(title,extra){$("resultTitle").textContent=title;$("answer").innerHTML=(extra?"<b>"+esc(extra)+"</b><br><br>":"")+"<b>Source:</b> "+esc(current.s)+"<br><b>Speaker:</b> "+esc(current.sp||"Not supplied")+"<br><b>Before:</b> "+esc(current.b||"Not supplied")+"<br><b>After:</b> "+esc(current.a||"Not supplied");$("game").classList.add("hidden");$("reveal").classList.remove("hidden");updateScores()}
+function hint(){if(hintUsed||firstQuote)return;hintUsed=true;$("hintBox").textContent="Hint: "+current.s.charAt(0)+"… ("+current.c+", "+current.d+")"}
+function updateScores(){$("s1").textContent=name(0)+": "+scores[0];$("s2").textContent=name(1)+": "+scores[1]}
+function finish(){const total=Number($("rounds").value),loser=scores[0]===scores[1]?null:(scores[0]<scores[1]?0:1);if(!bonusMode&&loser!==null&&(total===5||total===10)){const lead=scores[1-loser]-scores[loser],maxBonus=total===10?60:30;if(lead<maxBonus){startBonus(loser,total);return}}endGame()}
+function endGame(){const winner=scores[0]===scores[1]?"🤝 It's a tie!":scores[0]>scores[1]?name(0)+" wins!":name(1)+" wins!";$("resultTitle").textContent="🚀 GAME OVER";$("answer").innerHTML="<b>"+esc(winner)+"</b><br><br>"+esc(name(0))+": "+scores[0]+"<br>"+esc(name(1))+": "+scores[1];$("game").classList.add("hidden");$("reveal").classList.remove("hidden");syncState()}
+function startBonus(loser,total){bonusMode=true;bonusCount=0;bonusTotal=total===10?6:3;player=loser;$("resultTitle").textContent="🏆 FINAL CHANCE TO MAKE IT TO THE CAPTAIN'S CHAIR";$("answer").innerHTML="<b>Bonus round available.</b><br>"+esc(name(loser))+" is the only player who can initiate it.<br><br><button class='primary' onclick='beginBonus()'>INITIATE BONUS ROUND</button><button class='secondary' onclick='declineBonus()'>NO BONUS — END GAME</button>";$("game").classList.add("hidden");$("reveal").classList.remove("hidden");syncState()}
+function declineBonus(){bonusMode=true;endGame()}
+function beginBonus(){if(mode==="join"){send({t:"beginBonus"});return}$("reveal").classList.add("hidden");$("game").classList.remove("hidden");showBonusQuestion();syncState()}
+function showBonusQuestion(){const bq=bonusQuotes[bonusCount%bonusQuotes.length];$("roundNo").textContent="BONUS "+(bonusCount+1)+"/"+bonusTotal;$("turn").textContent=name(player)+" — BONUS";$("quote").textContent=bq.q;$("cat").textContent="EXTREMELY HARD";$("diff").textContent="BONUS";let html="<h3>Choose the most likely answer:</h3>";bq.choices.forEach((c,i)=>html+="<button class='secondary choice' onclick='answerBonus("+i+")'>"+esc(c)+"</button>");$("normalTurn").innerHTML=html;$("firstShot").classList.add("hidden");$("stealPanel").classList.add("hidden");$("normalTurn").classList.remove("hidden");updateScores()}
+function answerBonus(choice){if(mode==="join"){send({t:"bonus",choice});return}const bq=bonusQuotes[bonusCount%bonusQuotes.length];if(choice===bq.answer)scores[player]+=10;bonusCount++;if(bonusCount>=bonusTotal){bonusMode=false;endGame()}else{showBonusQuestion();syncState()}}
+function syncState(){if(mode!=="host")return;send({t:"state",s:{p1:$("p1").value,p2:$("p2").value,round,player,scores,firstQuote,roundScored,bonusMode,bonusCount,bonusTotal,current,view:$("game").classList.contains("hidden")?"reveal":"game"},result:$("resultTitle").textContent,answer:$("answer").innerHTML})}
+function applyState(m){$("p1").value=m.s.p1;$("p2").value=m.s.p2;scores=m.s.scores;round=m.s.round;player=m.s.player;firstQuote=m.s.firstQuote;roundScored=m.s.roundScored;bonusMode=m.s.bonusMode;bonusCount=m.s.bonusCount;bonusTotal=m.s.bonusTotal;current=m.s.current;$("turn").textContent=name(player)+(bonusMode?" — BONUS":" — QUOTER");$("roundNo").textContent=bonusMode?"BONUS "+bonusCount+"/"+bonusTotal:round;$("quote").textContent=current?current.q:"";$("cat").textContent=current?current.c:"";$("diff").textContent=current?current.d:"";updateScores();if(m.view==="game"){$("reveal").classList.add("hidden");$("game").classList.remove("hidden");if(bonusMode)showBonusQuestion();else{$("firstShot").classList.toggle("hidden",!firstQuote);$("normalTurn").classList.toggle("hidden",firstQuote)}}else{$("game").classList.add("hidden");$("reveal").classList.remove("hidden");$("resultTitle").textContent=m.result;$("answer").innerHTML=m.answer}}
+function handleMsg(m){if(m.t==="hello"){if(mode==="host")send({t:"state",s:{p1:$("p1").value,p2:$("p2").value,round,player,scores,firstQuote,roundScored,bonusMode,bonusCount,bonusTotal,current,view:$("game").classList.contains("hidden")?"setup":"game"},result:"",answer:""});return}if(m.t==="state"){applyState(m);return}if(mode!=="host")return;if(m.t==="firstClaim"){const ok=checkSource(m.sg.toLowerCase())&&checkSpeaker(m.spg.toLowerCase());if(ok)awardFirst(1);return}if(m.t==="answer"){scoreAnswer(1,m);return}if(m.t==="steal"){const defender=0,ok=checkSource(m.sg.toLowerCase())&&checkSpeaker(m.spg.toLowerCase());scores[defender]+=ok?1:-1;roundScored=true;showResult(ok?"🛡️ STEAL! +1 POINT":"❌ WRONG STEAL — -1 POINT",name(defender)+(ok?" answered correctly on defense.":" loses 1 point for the incorrect defensive answer."));syncState();return}if(m.t==="beginBonus"){beginBonus();return}if(m.t==="bonus"){answerBonus(m.choice)}}
+function addQuote(){const q=$("newQuote").value.trim(),s=$("newSource").value.trim();if(!q||!s)return alert("Quote and movie/show are required.");custom.push({q,s,sp:$("newSpeaker").value.trim(),b:$("newBefore").value.trim(),a:$("newAfter").value.trim(),c:$("newCat").value.trim()||"Movies",d:$("newDiff").value});localStorage.setItem("quoteCustom",JSON.stringify(custom));["newQuote","newSource","newSpeaker","newBefore","newAfter"].forEach(id=>$(id).value="");updateLibrary()}
+function exportQuotes(){const blob=new Blob([JSON.stringify(custom,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="Quote_Challenge_Quotes_Backup.json";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)}
+function importQuotes(event){const file=event.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const data=JSON.parse(reader.result);if(!Array.isArray(data))throw Error("Backup must contain a quote list.");const cleaned=data.filter(x=>x&&typeof x.q==="string"&&typeof x.s==="string").map(x=>({q:x.q.trim(),s:x.s.trim(),sp:String(x.sp||""),b:String(x.b||""),a:String(x.a||""),c:String(x.c||"Movies"),d:["Easy","Medium","Hard"].includes(x.d)?x.d:"Medium"})).filter(x=>x.q&&x.s);if(!cleaned.length)throw Error("No valid quotes found.");custom=confirm("OK = replace custom library. Cancel = add to existing library.")?cleaned:custom.concat(cleaned);localStorage.setItem("quoteCustom",JSON.stringify(custom));updateLibrary();alert(cleaned.length+" quotes imported successfully.")}catch(e){alert("Could not import: "+e.message)}event.target.value=""};reader.readAsText(file)}
+function clearCustom(){if(confirm("Delete all custom quotes?")){custom=[];localStorage.setItem("quoteCustom","[]");updateLibrary()}}function updateLibrary(){$("libraryCount").textContent=allQuotes().length+" total quotes ("+custom.length+" custom)."}function esc(x){return String(x).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
+useSolo();updateLibrary();
+</script></body></html>
