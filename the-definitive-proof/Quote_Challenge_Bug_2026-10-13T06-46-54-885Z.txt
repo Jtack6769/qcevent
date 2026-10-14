@@ -1,0 +1,10 @@
+Quote Challenge 6.0 bug report
+To: QcChallenger67@gmail.com
+Created: 2026-10-13T06:47:35.166Z
+Browser: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36
+Page: https://jtack6769.github.io/Quote_challenge/one-player.html
+Description: I wanted to import some quotes out the day that Jason files and it just takes you to it takes you to line it just says no file chosen
+Current game state: {"phase":"setup"}
+
+Last ten game events (oldest first):
+2026-10-13T06:46:35.202Z | /Quote_challenge/one-player.html | Page opened |  | {"page":"/Quote_challenge/one-player.html"}
