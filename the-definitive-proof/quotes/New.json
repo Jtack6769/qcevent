@@ -1,1 +1,379 @@
-
+  {
+    "q": "I have a feeling we're not in Kansas anymore.",
+    "s": "The Wizard of Oz",
+    "sp": "Dorothy Gale",
+    "b": "Toto, I've a feeling we're not in Kansas anymore.",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "May the Force be with you.",
+    "s": "Star Wars",
+    "sp": "General Dodonna",
+    "b": "Remember, the Force will be with you, always.",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Easy"
+  },
+  {
+    "q": "I'm gonna make him an offer he can't refuse.",
+    "s": "The Godfather",
+    "sp": "Vito Corleone",
+    "b": "Leave the gun. Take the cannoli.",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "Here's looking at you, kid.",
+    "s": "Casablanca",
+    "sp": "Rick Blaine",
+    "b": "Louis, I think this is the beginning of a beautiful friendship.",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  },
+  {
+    "q": "Live long and prosper.",
+    "s": "Star Trek",
+    "sp": "Spock",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Easy"
+  },
+  {
+    "q": "You can't handle the truth!",
+    "s": "A Few Good Men",
+    "sp": "Col. Nathan Jessup",
+    "b": "I want the truth!",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "There's no place like home.",
+    "s": "The Wizard of Oz",
+    "sp": "Dorothy Gale",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "Roads? Where we're going, we don't need roads.",
+    "s": "Back to the Future",
+    "sp": "Doc Brown",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "I'll be back.",
+    "s": "The Terminator",
+    "sp": "The Terminator",
+    "b": "",
+    "a": "",
+    "c": "Action",
+    "d": "Easy"
+  },
+  {
+    "q": "The truth is out there.",
+    "s": "The X-Files",
+    "sp": "Fox Mulder",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Easy"
+  },
+  {
+    "q": "D'oh!",
+    "s": "The Simpsons",
+    "sp": "Homer Simpson",
+    "b": "",
+    "a": "",
+    "c": "Comedy",
+    "d": "Easy"
+  },
+  {
+    "q": "Beam me up, Scotty.",
+    "s": "Star Trek",
+    "sp": "Captain Kirk",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Easy"
+  },
+  {
+    "q": "Shut up, Meg.",
+    "s": "Family Guy",
+    "sp": "Peter Griffin",
+    "b": "Meg: Dad, can I use the car?",
+    "a": "Lois: Peter, you better be nice to her. She won't be your little girl forever.",
+    "c": "Comedy",
+    "d": "Easy"
+  },
+  {
+    "q": "If I'm not back in five minutes, just wait longer.",
+    "s": "Ace Ventura: Pet Detective",
+    "sp": "Ace Ventura",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  },
+  {
+    "q": "Oh my God, he doesn't flog the dolphin before a big date.",
+    "s": "There's Something About Mary",
+    "sp": "Dom Woganowski",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "Boy, when you die at the palace, you really die at the palace.",
+    "s": "History of the World, Part I",
+    "sp": "Comicus",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "Stifle yourself, meathead!",
+    "s": "All in the Family",
+    "sp": "Archie Bunker",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Medium"
+  },
+  {
+    "q": "Be vewy, vewy quiet. I'm hunting wabbits.",
+    "s": "Looney Tunes",
+    "sp": "Elmer Fudd",
+    "b": "",
+    "a": "",
+    "c": "Cartoons",
+    "d": "Easy"
+  },
+  {
+    "q": "This is my urine sample. It's my sister's, and she is pregnant.",
+    "s": "Up in Smoke",
+    "sp": "Anthony 'Man' Stoner",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "I am superior, sir, in many ways. But I would gladly give it up to be human.",
+    "s": "Star Trek: The Next Generation",
+    "sp": "Data",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Medium"
+  },
+  {
+    "q": "If a man was born October 3rd, 1928, and he's still alive, how old is he?",
+    "s": "Phenomenon",
+    "sp": "Dr. Bob Niedorf",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "I'm sorry, Dave. I'm afraid I can't do that.",
+    "s": "2001: A Space Odyssey",
+    "sp": "HAL 9000",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Medium"
+  },
+  {
+    "q": "Lots of people go to college for seven years.",
+    "s": "Tommy Boy",
+    "sp": "Tommy Callahan",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "Hurry up, Doctor! This baby gots to go winky-tinky!",
+    "s": "Paper Moon",
+    "sp": "Trixie Delight",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "And his name ain't Frank, it's Franklin!",
+    "s": "Paper Moon",
+    "sp": "Moses Pray",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "Frankly, my dear, I don't give a damn.",
+    "s": "Gone with the Wind",
+    "sp": "Rhett Butler",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  },
+  {
+    "q": "Father? I hate that name.",
+    "s": "Wagons East",
+    "sp": "Little Feather",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "What could be there for you?",
+    "s": "Wagons East",
+    "sp": "Belle",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "Yes, I can see that.",
+    "s": "Almost Heroes",
+    "sp": "Edwards",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "I'm a doctor, not a bricklayer!",
+    "s": "Star Trek: The Original Series",
+    "sp": "Dr. Leonard McCoy",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Medium"
+  },
+  {
+    "q": "Nothing to eat anyway? Matilda, do you hear me?",
+    "s": "Space Truckers",
+    "sp": "Keller",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Hard"
+  },
+  {
+    "q": "Set course, warp six.",
+    "s": "Star Trek: The Next Generation",
+    "sp": "Captain Jean-Luc Picard",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Medium"
+  },
+  {
+    "q": "Run, bitch! Run!",
+    "s": "Scary Movie",
+    "sp": "Shorty Meeks",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "Missed it by that much.",
+    "s": "Get Smart",
+    "sp": "Maxwell Smart",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Medium"
+  },
+  {
+    "q": "This is the big one! I'm coming to join you, Elizabeth!",
+    "s": "Sanford and Son",
+    "sp": "Fred Sanford",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Easy"
+  },
+  {
+    "q": "You're gonna need a bigger boat.",
+    "s": "Jaws",
+    "sp": "Martin Brody",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "What we're dealing with here is a complete lack of respect for the law.",
+    "s": "Smokey and the Bandit",
+    "sp": "Sheriff Buford T. Justice",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  },
+  {
+    "q": "I love it when a plan comes together.",
+    "s": "The A-Team",
+    "sp": "John 'Hannibal' Smith",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Easy"
+  },
+  {
+    "q": "Danger, Will Robinson!",
+    "s": "Lost in Space",
+    "sp": "The Robot",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Easy"
+  },
+  {
+    "q": "Kiss my grits!",
+    "s": "Alice",
+    "sp": "Flo Castleberry",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Medium"
+  },
+  {
+    "q": "Na-nu, na-nu.",
+    "s": "Mork & Mindy",
+    "sp": "Mork",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Medium"
+  },
+  {
+    "q": "What in the wide, wide world of sports is going on here?",
+    "s": "Blazing Saddles",
+    "sp": "Taggart",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  }
+];
