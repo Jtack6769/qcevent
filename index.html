@@ -5,6 +5,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slapping monkeys all over this great 😃 land!</title>
     <style>
+       
+<style>
+  .qc-wave {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 5px solid #00ffff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    animation: qc-explode 7s ease-out forwards;
+    box-shadow: 0 0 25px #ff00ff,
+                0 0 60px #00ffff;
+  }
+
+  @keyframes qc-explode {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 1;
+      border-color: #ffff00;
+    }
+    30% {
+      border-color: #ff00ff;
+    }
+    60% {
+      border-color: #00ff00;
+    }
+    100% {
+      width: 250vmax;
+      height: 250vmax;
+      opacity: 0;
+      border-color: #ff0000;
+    }
+  }
+
+  .qc-shake {
+    animation: qc-rattle .35s linear;
+  }
+
+  @keyframes qc-rattle {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-7px, 4px); }
+    40% { transform: translate(7px, -5px); }
+    60% { transform: translate(-5px, -4px); }
+    80% { transform: translate(6px, 5px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .qc-wave, .qc-shake {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+document.addEventListener('click', function(e) {
+  const wave = document.createElement('div');
+  wave.className = 'qc-wave';
+
+  wave.style.left = e.clientX + 'px';
+  wave.style.top = e.clientY + 'px';
+
+  document.body.appendChild(wave);
+
+  document.body.classList.remove('qc-shake');
+  void document.body.offsetWidth;
+  document.body.classList.add('qc-shake');
+
+  setTimeout(() => wave.remove(), 7000);
+  setTimeout(() => {
+    document.body.classList.remove('qc-shake');
+  }, 350);
+});
+</script>
+    
+<style>
+  .qc-wave {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 5px solid #00ffff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    animation: qc-explode 7s ease-out forwards;
+    box-shadow: 0 0 25px #ff00ff,
+                0 0 60px #00ffff;
+  }
+
+  @keyframes qc-explode {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 1;
+      border-color: #ffff00;
+    }
+    30% {
+      border-color: #ff00ff;
+    }
+    60% {
+      border-color: #00ff00;
+    }
+    100% {
+      width: 250vmax;
+      height: 250vmax;
+      opacity: 0;
+      border-color: #ff0000;
+    }
+  }
+
+  .qc-shake {
+    animation: qc-rattle .35s linear;
+  }
+
+  @keyframes qc-rattle {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-7px, 4px); }
+    40% { transform: translate(7px, -5px); }
+    60% { transform: translate(-5px, -4px); }
+    80% { transform: translate(6px, 5px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .qc-wave, .qc-shake {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+document.addEventListener('click', function(e) {
+  const wave = document.createElement('div');
+  wave.className = 'qc-wave';
+
+  wave.style.left = e.clientX + 'px';
+  wave.style.top = e.clientY + 'px';
+
+  document.body.appendChild(wave);
+
+  document.body.classList.remove('qc-shake');
+  void document.body.offsetWidth;
+  document.body.classList.add('qc-shake');
+
+  setTimeout(() => wave.remove(), 7000);
+  setTimeout(() => {
+    document.body.classList.remove('qc-shake');
+  }, 350);
+});
+</script>
+    
         body {
             font-family: Arial, sans-serif;
             background-color: #121212;
