@@ -48,7 +48,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next Button Example</title>
+    <title> Push on me </title>
     <style>
         body { font-family: sans-serif; text-align: center; margin-top: 50px; }
         .btn {
@@ -57,22 +57,23 @@
             padding: 10px 20px;
             margin: 5px;
             background-color: #04AA6D; /* Green */
-            color: white;
-            border: none;
+            color: black;
+            border: yellow;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
         }
         .btn:hover { background-color: #038a58; }
-        .disabled { background-color: #cccccc; cursor: not-allowed; }
+        .enabled { background-color: #cccccc; cursor: allowed; }
     </style>
 </head>
 <body>
 
     <h2>Current Step: <span id="step-number">1</span></h2>
 
-    <div class="pagination">
-        <button id="prevBtn" class="btn disabled" onclick="changeStep(-1)" disabled>Previous</button>
+    <div class="poster">
+        <button id="newbutton" class="btn enabledd" onclick=" img="poster(-1)"><src="poster.png">
+enable>Previous</button>
         <button id="nextBtn" class="btn" onclick="changeStep(1)">Next</button>
     </div>
 
