@@ -1,17 +1,43 @@
-  </style>
-</head>
-<body>
-  <div class="construction-container">
-    <span class="emoji">🎬</span>
-    <h1>Under Construction</h1>
-    <p>OUR GAME IS COMING ALONG <span class="highlight">coming soon</span>!</p>
-    <p>We're building something amazing. Check back soon for the grand opening.</p>
-    <a href="Index.html" class="back-button">← Back to Entrance</a>
+<style>
+.qc-banner {
+  width: 100%;
+  overflow: hidden;
+  background: #080808;
+  border: 2px solid #e4b83f;
+  border-radius: 6px;
+  padding: 12px 0;
+  color: #ffda54;
+  font: bold 18px Arial, sans-serif;
+}
+
+.qc-banner-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: qc-scroll 22s linear infinite;
+}
+
+@keyframes qc-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qc-banner-text {
+    animation: none;
+    padding-left: 0;
+    white-space: normal;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="qc-banner">
+  <div class="qc-banner-text">
+    🎬 TEST PAGE IS UNDER CONSTRUCTION• UNDER FUCKING CONSTRUCTION •
+    PLEASE GET YOUR ASS BACK HERE SOMETIME FOR EXCITING NEW ADVENTURES! 🎬
   </div>
-</body>
-</html>
-
-
+</div>
 
 <figure class="poster-card">
     <img src="assets/harry-mudd.png" ... >
