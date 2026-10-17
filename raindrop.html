@@ -1,1 +1,98 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pebble Water Ripple</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center,
+      #123b52 0%, #061923 75%, #02090e 100%);
+    font-family: Arial, sans-serif;
+    color: white;
+    touch-action: manipulation;
+  }
+
+  #water {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    cursor: crosshair;
+  }
+
+  .ripple {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgba(160, 230, 255, .9);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    box-shadow:
+      0 0 12px rgba(120, 220, 255, .6),
+      inset 0 0 12px rgba(120, 220, 255, .3);
+    pointer-events: none;
+    animation: spread 7s ease-out forwards;
+  }
+
+  @keyframes spread {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 1;
+    }
+    35% { opacity: .8; }
+    75% { opacity: .35; }
+    100% {
+      transform: translate(-50%, -50%) scale(120);
+      opacity: 0;
+    }
+  }
+
+  .hint {
+    position: fixed;
+    top: 25px;
+    width: 100%;
+    text-align: center;
+    opacity: .7;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<div id="water"></div>
+<div class="hint">Tap the water to drop a pebble</div>
+
+<script>
+const water = document.getElementById("water");
+
+function dropPebble(x, y) {
+  for (let i = 0; i < 6; i++) {
+    const ring = document.createElement("div");
+    ring.className = "ripple";
+    ring.style.left = x + "px";
+    ring.style.top = y + "px";
+    ring.style.animationDelay = (i * 0.25) + "s";
+    water.appendChild(ring);
+
+    setTimeout(() => ring.remove(), 8500);
+  }
+}
+
+water.addEventListener("pointerdown", (event) => {
+  dropPebble(event.clientX, event.clientY);
+});
+
+// Automatic pebble drop when page opens
+setTimeout(() => {
+  dropPebble(innerWidth / 2, innerHeight / 2);
+}, 500);
+</script>
+
+</body>
+</html>
+
