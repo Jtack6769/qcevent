@@ -16,9 +16,16 @@
     <section class="panel poster"><img src="poster-left.jpg" alt="Left-side movie poster" onerror="this.removeAttribute('src')"><div class="placeholder">LEFT POSTER</div></section>
   </div>
   <div class="gold-edge"></div>
-</div></div>
-  
-</body>
+</div>   <img alt="Enlarged gallery picture">
+</dialog>
+<script>
+  const viewer = document.querySelector('.viewer');
+  const enlargedImage = viewer.querySelector('img');
+  const closeButton = viewer.querySelector('.close');
+  let lastFrame = null;
+  document.querySelectorAll('.hanging-frame').forEach(frame => {
+    const photo = frame.querySelector('img');
+    const showMissing = () => {
       frame.classList.add('missing');
       frame.querySelector('.missing-label').textContent = 'Picture not found: ' + photo.getAttribute('src');
       frame.removeAttribute('role');
