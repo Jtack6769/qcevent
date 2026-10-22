@@ -1,155 +1,168 @@
-<style>
-    .image-container {
-        display: inline-block;
-        cursor: pointer;
-        user-select: none;
-        -webkit-user-select: none; /* For Safari */
-        transition: transform 0.05s ease-out; 
-    }
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quote Challenge 6.5 | Star Trek: The Original Series</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #100d12; color: #fff; font-family: Georgia, serif; transition: background 0.5s ease; }
+    
+    /* Active Light Switch Dimming Overlays */
+    body.lights-off { background: #020103; }
+    body.lights-off .gallery-container { opacity: 0.15; filter: blur(2px); pointer-events: none; transition: all 0.6s ease; }
+    body.lights-off .switch-footer { background: rgba(0,0,0,0.9); }
+    body.lights-off .antique-toggle { filter: drop-shadow(0 0 12px #f3ce67) brightness(1.2); }
 
-    /* This forces the browser to make the light/square background transparent */
-    .image-container img {
-        mix-blend-mode: multiply;
-        display: block;
-    }
+    /* Upper Stage Header Frame Area */
+    .marquee-area { padding: 24px 16px 12px; background: radial-gradient(ellipse at 50% 0%, #401018, #09080d 75%); }
+    .wrap { width: min(750px, 100%); margin: auto; }
+    .label { text-align: center; color: #e9c680; letter-spacing: .12em; font: 13px system-ui; margin-bottom: 14px; }
+    .stage { position: relative; overflow: hidden; aspect-ratio: 3.4/1; min-height: 220px; border: 9px ridge #ad7930; box-shadow: 0 0 0 3px #ffe2a0, 0 0 30px #bd6c16, inset 0 0 30px #000; background: #150f19; margin-bottom: 30px; }
+    .bulbs { position: absolute; inset: 0; pointer-events: none; z-index: 3; border: 12px dotted #ffe4a2; filter: drop-shadow(0 0 6px #f7ac29); }
+    
+    /* Sliding 3-Panel Content Deck Window */
+    .track { height: 100%; display: flex; width: 300%; transform: translateX(-33.333%); transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1); }
+    .panel { flex: 0 0 33.333%; height: 100%; display: grid; place-items: center; position: relative; overflow: hidden; }
+    
+    /* Panel Specific Background Variations */
+    .poster-left { background: linear-gradient(135deg, #1c352d, #081410 60%, #2e441a); }
+    .title { background: radial-gradient(ellipse, #42131a, #120b14 70%); }
+    .poster-right { background: linear-gradient(135deg, #1a2844, #0a101c 60%, #48212a); }
+    
+    .panel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #080b13; }
+    .poster-copy { position: relative; text-align: center; padding: 15px; text-shadow: 0 3px 10px #000, 0 0 15px #000; z-index: 2; }
+    .poster-copy strong { display: block; font-size: clamp(22px, 5vw, 55px); color: #ffdc91; line-height: 1.1; }
+    .poster-copy span { font: clamp(11px, 1.8vw, 18px) system-ui; color: #fff; display: block; margin-bottom: 4px; }
+    .poster-copy em { display: block; font-size: clamp(12px, 2.2vw, 24px); margin-top: 6px; color: #d9efff; font-style: normal; font-weight: bold; }
+    .title h1 { margin: 0; text-align: center; font-size: clamp(34px, 7vw, 75px); line-height: 1.05; letter-spacing: .04em; color: #f3ce67; text-shadow: 0 2px #4a2206, 0 0 14px #f43d26, 0 0 36px #b50c20; }
+    .title small { font: clamp(10px, 1.6vw, 19px) system-ui; letter-spacing: .2em; color: #fff0c0; }
 
-    /* The push-down animation */
-    .flipped {
-        transform: scale(0.95) translate(-4px, 4px) rotate(-2deg);
-    }
-</style>
-      ______________&___
-      <style>
-    .image-container {
-        display: inline-block;
-        cursor: pointer;
-        user-select: none;
-        -webkit-user-select: none; /* For Safari */
-        transition: transform 0.05s ease; /* Fast, snappy transition for a button click */
-    }
+    /* Interactive Picture Gallery Assembly */
+    .gallery-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; transition: all 0.5s ease; }
+    .hanging-frame { background: #1a141f; border: 4px ridge #ad7930; border-radius: 4px; overflow: hidden; aspect-ratio: 2/3; cursor: pointer; position: relative; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 8px 16px rgba(0,0,0,0.5); }
+    .hanging-frame:hover, .hanging-frame:focus { transform: translateY(-4px); box-shadow: 0 12px 24px #bd6c16; outline: none; }
+    .hanging-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    
+    /* Missing Image File Error Boundaries */
+    .hanging-frame.missing { border-color: #5a1818; cursor: default; display: flex; align-items: center; justify-content: center; padding: 15px; text-align: center; }
+    .hanging-frame.missing:hover { transform: none; box-shadow: none; }
+    .hanging-frame.missing img { display: none; }
+    .missing-label { font: 12px system-ui; color: #ff9999; word-break: break-all; }
 
-    /* When clicked, it flips horizontally like a mirror image */
-    .flipped {
-        transform: scaleX(-1); 
-    }
-</style>
+    /* Mechanical Light Switch Footer Layout */
+    .switch-footer { padding: 30px 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,0,0,0.3); margin-top: 40px; border-top: 1px dashed rgba(173, 121, 48, 0.3); transition: background 0.5s; }
+    .antique-toggle-container { position: relative; width: 120px; height: 120px; cursor: pointer; display: flex; justify-content: center; align-items: center; }
+    .antique-toggle { width: 100%; height: 100%; object-fit: contain; transition: transform 0.15s ease, filter 0.3s; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.6)); }
+    .antique-toggle-container:active .antique-toggle { transform: scale(0.94); }
+    .switch-caption { font: 11px system-ui; color: #ad7930; letter-spacing: 0.15em; margin-top: 8px; text-transform: uppercase; }
 
-<!-- Your hidden easter egg button -->
-<div class="image-container" id="flipImageContainer">
-    <img id="myImage" src="your-image.png" alt="" width="150">
-</div>
+    /* Lightbox Modal Window Backdrop */
+    .viewer { border: 6px ridge #ad7930; background: #08050a; color: #fff; padding: 0; max-width: 90vw; max-height: 90vh; border-radius: 8px; box-shadow: 0 0 50px rgba(0,0,0,0.8); overflow: hidden; }
+    .viewer::backdrop { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(4px); }
+    .viewer img { display: block; max-width: 100%; max-height: 80vh; object-fit: contain; margin: 0 auto; }
+    .viewer .close { position: absolute; top: 12px; right: 12px; background: #ad792f; color: #100b0d; border: 0; padding: 6px 12px; font: bold 14px system-ui; border-radius: 4px; cursor: pointer; z-index: 10; }
+    .viewer .close:hover { background: #ffe2a0; }
+  </style>
+</head>
+<body>
 
-<script>
-    let clickCount = 0;
-    const imageContainer = document.getElementById('flipImageContainer');
+  <!-- Top Marquee Display Unit -->
+  <section class="marquee-area">
+    <div class="wrap">
+      <div class="label" id="marquee-banner-text"><!-- Populated dynamically via config --></div>
+      <div class="stage">
+        <div class="bulbs"></div>
+        <div class="track" id="marquee-track">
+          
+          <!-- POSITION 1: Left Slide Panel View -->
+          <section class="panel poster-left" id="panel-left">
+            <!-- Content loaded via JavaScript injection -->
+          </section>
 
-    imageContainer.addEventListener('mousedown', () => {
-        imageContainer.classList.add('flipped');
-    });
+          <!-- POSITION 2: Center Native Title Home View -->
+          <section class="panel title" id="panel-center">
+            <!-- Content loaded via JavaScript injection -->
+          </section>
 
-    imageContainer.addEventListener('mouseup', () => {
-        imageContainer.classList.remove('flipped');
-        
-        clickCount++;
+          <!-- POSITION 3: Right Slide Panel View -->
+          <section class="panel poster-right" id="panel-right">
+            <!-- Content loaded via JavaScript injection -->
+          </section>
 
-        if (clickCount === 3) {
-            // Put the secret treat website link here!
-            window.open('https://google.com', '_blank');
-            clickCount = 0; // Resets the counter so they can do it again later
-        }
-    });
+        </div>
+      </div>
+    </div>
+  </section>
 
-    imageContainer.addEventListener('mouseleave', () => {
-        imageContainer.classList.remove('flipped');
-    });
-</script>
-  
-then these
+  <!-- Puzzle Clue Media Board Container -->
+  <main class="gallery-container" id="puzzle-gallery">
+    <!-- Populated dynamically via config items list -->
+  </main>
 
-<div class="image-container" id="flipImageContainer">
-    <!-- Shrunk down to 70px to make it tiny and realistic -->
-    <img id="myImage" src="your-image.png" alt="" width="70">
-</div>
+  <!-- Interactive Escape Footer Switch Component -->
+  <footer class="switch-footer">
+    <div class="antique-toggle-container" id="secret-switch" role="button" aria-label="Master Room Light Switch" tabindex="0">
+      <img id="switch-asset-img" src="" class="antique-toggle" alt="Antique Toggle Switch Base">
+    </div>
+    <div class="switch-caption">Master Toggle</div>
+  </footer>
 
-  
-and more
+  <!-- Popup Media Lightbox Component Layout -->
+  <dialog class="viewer" aria-label="Enlarged gallery picture">
+    <button class="close" type="button" aria-label="Close enlarged picture">Close ×</button>
+    <img alt="Enlarged gallery picture">
+  </dialog>
 
-<style>
-    .image-container {
-        display: inline-block;
-        cursor: pointer;
-        user-select: none;
-        -webkit-user-select: none; /* For Safari */
-        /* Smooth push down animation */
-        transition: transform 0.05s ease-out; 
-    }
-
-    /* When the mouse is held down, it compresses and tilts slightly down-left */
-    .flipped {
-        transform: scale(0.95) translate(-4px, 4px) rotate(-2deg);
-    }
-</style>
-
-<!-- Your hidden easter egg vintage switch -->
-<div class="image-container" id="flipImageContainer">
-    <!-- Replace 'your-image.png' with the actual filename of this brass switch image -->
-    <img id="myImage" src="your-image.png" alt="" width="120">
-</div>
-
-<script>
-    let clickCount = 0;
-    const imageContainer = document.getElementById('flipImageContainer');
-
-    imageContainer.addEventListener('mousedown', () => {
-        imageContainer.classList.add('flipped');
-    });
-
-    imageContainer.addEventListener('mouseup', () => {
-        imageContainer.classList.remove('flipped');
-        
-        clickCount++;
-
-        if (clickCount === 3) {
-            // Replace with your secret treat website link
-            window.open('https://google.com', '_blank');
-            clickCount = 0; // Reset counter for next time
-        }
-    });
-
-    // If they drag the cursor off the switch while holding, reset the button position
-    imageContainer.addEventListener('mouseleave', () => {
-        imageContainer.classList.remove('flipped');
-    });
-</script>
-
-
-
-  plus more all chopped violently 
-
-      <script>
-    let clickCount = 0;
-    const imageContainer = document.getElementById('flipImageContainer');
-    const counterDisplay = document.getElementById('counter');
-
-    imageContainer.addEventListener('mousedown', () => {
-        imageContainer.classList.add('flipped');
-    });
-
-    imageContainer.addEventListener('mouseup', () => {
-        imageContainer.classList.remove('flipped');
-        clickCount++;
-        counterDisplay.textContent = clickCount;
-
-        if (clickCount === 3) {
-            window.open('https://google.com', '_blank');
-        }
-    });
-
-    imageContainer.addEventListener('mouseleave', () => {
-        imageContainer.classList.remove('flipped');
-    });
-</script>
-
+  <!-- Centralized Game Configuration Script Module -->
+  <script>
+    // =========================================================================
+    // 🕹️ USER CONFIGURATION ENGINE (Change everything right here)
+    // =========================================================================
+    const GAME_CONFIG = {
+      // 📝 Text Running Above the Challenge Banner Frame
+      bannerMarqueeText: "QUOTE CHALLENGE 6.5 | ENJOY STAR TREK: THE ORIGINAL SERIES THINGS CHANGE MONTHLY NEXT MONTH LOGAN'S RUN JANUARY 2027 THE PRINCESS BRIDE I'LL CHECK BACK OFTEN TO SEE WHO WAS ON THE LEADERBOARDS UNWRAPPED FOUND SECRETS TO THE GAME",
       
+      // ⏱️ Display Duration Timing Variable (In Milliseconds)
+      slideHoldDuration: 6000, // 6000ms = 6 Seconds Flat
+      
+      // 🔌 Secret Redirect Path Logic Trigger Configurations
+      switchEscapeClicksRequired: 3,
+      escapeRedirectDestinationUrl: "index.html",
+      switchImageFileAssetPath: "image_kPy-5E.png", // Your vintage brass toggle image
 
+      // 📺 Marquee Slide View Deck Data Structure
+      panels: {
+        left: {
+          image: "", // Leave blank if you want a styling text gradient background color layout
+          span: "UPCOMING JANUARY 2027 SELECTION",
+          strong: "THE PRINCESS BRIDE",
+          em: "INCONCEIVABLE CINEMA TRIVIA"
+        },
+        center: {
+          titleMain: "QUOTE<br>CHALLENGE",
+          titleSub: "THE MOVIE QUOTE GAME"
+        },
+        right: {
+          image: "trek-crew.jpg", // Path to crew background art asset file
+          span: "EXCITING NEW ADVENTURES NEXT MONTH",
+          strong: "LOGAN'S RUN",
+          em: "ESCAPE THE DOME"
+        }
+      },
 
+      // 🖼️ Puzzle Media Grid Clue Array Items List
+      galleryImages: [
+        { src: "image_f769ad30.jpg", alt: "Gallery picture 1" },
+        { src: "squire-of-gothos.jpg", alt: "Gallery picture 2" },
+        { src: "trek-crew.jpg",        alt: "Gallery picture 3" },
+        { src: "gorn-poster.jpg",      alt: "Gallery picture 4" },
+        { src: "anniversary.png",      alt: "Gallery picture 5" },
+        { src: "uhura.jpg",            alt: "Gallery picture 6" },
+        { src: "harry-mudd.png",       alt: "Gallery picture 7" }
+      ]
+    };
+
+    // =========================================================================
+    // ⚙️ AUTOMATED INTERNALS HANDLING (Do not touch unless modifying core layout engines)
+      
