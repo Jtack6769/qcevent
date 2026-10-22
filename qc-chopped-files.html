@@ -1,0 +1,155 @@
+<style>
+    .image-container {
+        display: inline-block;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none; /* For Safari */
+        transition: transform 0.05s ease-out; 
+    }
+
+    /* This forces the browser to make the light/square background transparent */
+    .image-container img {
+        mix-blend-mode: multiply;
+        display: block;
+    }
+
+    /* The push-down animation */
+    .flipped {
+        transform: scale(0.95) translate(-4px, 4px) rotate(-2deg);
+    }
+</style>
+      ______________&___
+      <style>
+    .image-container {
+        display: inline-block;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none; /* For Safari */
+        transition: transform 0.05s ease; /* Fast, snappy transition for a button click */
+    }
+
+    /* When clicked, it flips horizontally like a mirror image */
+    .flipped {
+        transform: scaleX(-1); 
+    }
+</style>
+
+<!-- Your hidden easter egg button -->
+<div class="image-container" id="flipImageContainer">
+    <img id="myImage" src="your-image.png" alt="" width="150">
+</div>
+
+<script>
+    let clickCount = 0;
+    const imageContainer = document.getElementById('flipImageContainer');
+
+    imageContainer.addEventListener('mousedown', () => {
+        imageContainer.classList.add('flipped');
+    });
+
+    imageContainer.addEventListener('mouseup', () => {
+        imageContainer.classList.remove('flipped');
+        
+        clickCount++;
+
+        if (clickCount === 3) {
+            // Put the secret treat website link here!
+            window.open('https://google.com', '_blank');
+            clickCount = 0; // Resets the counter so they can do it again later
+        }
+    });
+
+    imageContainer.addEventListener('mouseleave', () => {
+        imageContainer.classList.remove('flipped');
+    });
+</script>
+  
+then these
+
+<div class="image-container" id="flipImageContainer">
+    <!-- Shrunk down to 70px to make it tiny and realistic -->
+    <img id="myImage" src="your-image.png" alt="" width="70">
+</div>
+
+  
+and more
+
+<style>
+    .image-container {
+        display: inline-block;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none; /* For Safari */
+        /* Smooth push down animation */
+        transition: transform 0.05s ease-out; 
+    }
+
+    /* When the mouse is held down, it compresses and tilts slightly down-left */
+    .flipped {
+        transform: scale(0.95) translate(-4px, 4px) rotate(-2deg);
+    }
+</style>
+
+<!-- Your hidden easter egg vintage switch -->
+<div class="image-container" id="flipImageContainer">
+    <!-- Replace 'your-image.png' with the actual filename of this brass switch image -->
+    <img id="myImage" src="your-image.png" alt="" width="120">
+</div>
+
+<script>
+    let clickCount = 0;
+    const imageContainer = document.getElementById('flipImageContainer');
+
+    imageContainer.addEventListener('mousedown', () => {
+        imageContainer.classList.add('flipped');
+    });
+
+    imageContainer.addEventListener('mouseup', () => {
+        imageContainer.classList.remove('flipped');
+        
+        clickCount++;
+
+        if (clickCount === 3) {
+            // Replace with your secret treat website link
+            window.open('https://google.com', '_blank');
+            clickCount = 0; // Reset counter for next time
+        }
+    });
+
+    // If they drag the cursor off the switch while holding, reset the button position
+    imageContainer.addEventListener('mouseleave', () => {
+        imageContainer.classList.remove('flipped');
+    });
+</script>
+
+
+
+  plus more all chopped violently 
+
+      <script>
+    let clickCount = 0;
+    const imageContainer = document.getElementById('flipImageContainer');
+    const counterDisplay = document.getElementById('counter');
+
+    imageContainer.addEventListener('mousedown', () => {
+        imageContainer.classList.add('flipped');
+    });
+
+    imageContainer.addEventListener('mouseup', () => {
+        imageContainer.classList.remove('flipped');
+        clickCount++;
+        counterDisplay.textContent = clickCount;
+
+        if (clickCount === 3) {
+            window.open('https://google.com', '_blank');
+        }
+    });
+
+    imageContainer.addEventListener('mouseleave', () => {
+        imageContainer.classList.remove('flipped');
+    });
+</script>
+
+      
+
+
