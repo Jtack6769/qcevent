@@ -37,92 +37,7 @@ body{margin:0;background:#100d12;color:#fff;font-family:Georgia,serif}
 <section class="panel title"><div><h1>QUOTE<br>CHALLENGE</h1><center><small>THE MOVIE QUOTE GAME</small></center></div></section>
 <section class="panel poster"><img id="marquee-image" src="image_b572509f.jpg" alt="Featured poster"><div class="poster-copy" id="fallback" hidden><span>EXCITING NEW ADVENTURES NEXT MONTH</span><strong>LOGAN'S RUN</strong><em>ESCAPE THE DOME</em>
   </style>
-</head><body></div> 
-    /* Limited Fringe Alternate Universe: shattered-glass wallpaper */
-    background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.42)), url("fringe-glass.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    box-shadow: inset 0 0 200px rgba(0,0,0,.85);
-  }
-  .wall-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .hanging-frame {
-    position: relative;
-    padding: 12px 12px 14px;
-    background: #111;
-    border: 8px ridge #4a3b2c;
-    border-radius: 4px;
-    box-shadow: 0 25px 35px rgba(0,0,0,.9), 0 5px 15px rgba(0,0,0,.7);
-    transform: rotate(var(--angle, 0deg));
-    transition: transform .3s ease;
-    max-width: 100%;
-    cursor: zoom-in;
-  }
-  .hanging-frame:nth-child(odd) { --angle: -1.5deg; }
-  .hanging-frame:nth-child(even) { --angle: 1.8deg; }
-  .hanging-frame:nth-child(3n) { --angle: -.7deg; }
-  .hanging-frame:hover, .hanging-frame:focus-visible {
-    transform: rotate(0) scale(1.03);
-    z-index: 10;
-  }
-  .hanging-frame:focus-visible { outline: 3px solid #f5c76c; outline-offset: 7px; }
-  .hanging-frame img {
-    display: block;
-    width: 260px;
-    max-width: 100%;
-    height: auto;
-    min-height: 180px;
-    object-fit: contain;
-    border: 1px solid #050505;
-    background: #000;
-  }
-  .missing-label { display: none; padding: 15px; max-width: 260px; font: 14px/1.5 system-ui,sans-serif; overflow-wrap: anywhere; }
-  .hanging-frame.missing { cursor: default; }
-  .hanging-frame.missing .missing-label { display: block; }
-  .hanging-frame.missing img { display: none; }
-  dialog.viewer {
-    border: 8px ridge #4a3b2c;
-    border-radius: 5px;
-    background: #101010;
-    color: white;
-    padding: 15px;
-    width: max-content;
-    max-width: calc(100vw - 24px);
-    max-height: calc(100vh - 24px);
-    box-shadow: 0 20px 50px #000;
-  }
-  dialog.viewer::backdrop { background: rgba(0,0,0,.9); }
-  .viewer img { display: block; max-width: min(88vw, 1100px); max-height: 76vh; object-fit: contain; }
-  .viewer .close {
-    display: block;
-    margin: 0 0 12px auto;
-    padding: 7px 12px;
-    background: #292019;
-    border: 1px solid #9f8868;
-    color: #fff;
-    font-size: 17px;
-    cursor: pointer;
-  }
-  @media (max-width: 600px) {
-    .gallery-area { padding: 28px 16px; }
-    .wall-gallery { gap: 28px; }
-    .hanging-frame img { width: min(260px, 72vw); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .hanging-frame { transition: none; }
-  }
-</style>
-
-<section class="gallery-area">
-<main class="wall-gallery" aria-label="Framed picture gallery">
+</head><body></body>div>
   <!-- Keep these seven JPG files beside this HTML file, with matching lowercase names. -->
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 1"><img src="image_f769ad30.jpg" alt="Gallery picture 1" loading="lazy"><span class="missing-label"></span></div>
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 2"><img src="squire-of-gothos.jpg" alt="Gallery picture 2" loading="lazy"><span class="missing-label"></span></div>
@@ -171,3 +86,5 @@ body{margin:0;background:#100d12;color:#fff;font-family:Georgia,serif}
 </script>
 </section>
 </body></html>
+
+  
