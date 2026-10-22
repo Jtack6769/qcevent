@@ -168,17 +168,22 @@
         transform: scale(0.95) translate(-4px, 4px) rotate(-2deg);
     }
 </style>
- 
+<style>
     .image-container {
         display: inline-block;
         cursor: pointer;
         user-select: none;
         -webkit-user-select: none; /* For Safari */
-        /* Smooth push down animation */
         transition: transform 0.05s ease-out; 
     }
 
-    /* When the mouse is held down, it compresses and tilts slightly down-left */
+    /* This cleanly cuts the image into a perfect circle, cutting off the square edges */
+    .image-container img {
+        display: block;
+        border-radius: 50%; 
+    }
+
+    /* The push-down animation */
     .flipped {
         transform: scale(0.95) translate(-4px, 4px) rotate(-2deg);
     }
@@ -186,10 +191,35 @@
 
 <!-- Your hidden easter egg vintage switch -->
 <div class="image-container" id="flipImageContainer">
-    <!-- Replace 'your-image.png' with the actual filename of this brass switch image -->
-    <img id="myImage" src="image_486ebf86.jpg" alt="" width="120">
+    <!-- Replace 'your-image.png' with your actual switch filename -->
+    <img id="myImage" src="image_486ebf86.jpg" alt="" width="70">
 </div>
 
+<script>
+    let clickCount = 0;
+    const imageContainer = document.getElementById('flipImageContainer');
+
+    imageContainer.addEventListener('mousedown', () => {
+        imageContainer.classList.add('flipped');
+    });
+
+    imageContainer.addEventListener('mouseup', () => {
+        imageContainer.classList.remove('flipped');
+        
+        clickCount++;
+
+        if (clickCount === 3) {
+            // Opens in the same tab smoothly
+            window.location.href = 'https://google.com'; 
+            clickCount = 0; 
+        }
+    });
+
+    imageContainer.addEventListener('mouseleave', () => {
+        imageContainer.classList.remove('flipped');
+    });
+</script>
+ 
 <script>
     let clickCount = 0;
     const imageContainer = document.getElementById('flipImageContainer');
