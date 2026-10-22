@@ -103,7 +103,56 @@
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 1"><img src="image_f769ad30.jpg" alt="Gallery picture 1" loading="lazy"><span class="missing-label"></span></div>
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 2"><img src="squire-of-gothos.jpg" alt="Gallery picture 2" loading="lazy"><span class="missing-label"></span></div>
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 3"><img src="trek-crew.jpg" alt="Gallery picture 3" loading="lazy"><span class="missing-label"></span></div>
- </div>
+   <style>
+    .image-container {
+        display: inline-block;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none; /* For Safari */
+        transition: transform 0.05s ease-out; 
+    }
+
+    /* This forces the browser to make the light/square background transparent */
+    .image-container img {
+    display: block;
+    border-radius: 50%;
+    mix-blend-mode: normal;
+    }
+
+    /* The push-down animation */
+    .flipped {
+        transform: scale(0.95) translate(-4px, 4px) rotate(-4deg);
+    }
+</style>
+<style>
+    .image-container {
+        display: inline-block;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none; /* For Safari */
+        transition: transform 0.05s ease-out; 
+    }
+
+    /* This cleanly cuts the image into a perfect circle, cutting off the square edges */
+    .image-container img {
+        display: block;
+        border-radius: 75%;
+     mix-blend-mode: normal;
+    }
+
+    /* The push-down animation */
+    .flipped {
+        transform: scale(0.95) translate(-4px, 4px) rotate(-4deg);
+    }
+</style>
+
+<!-- Your hidden easter egg vintage switch -->
+<div class="image-container" id="flipImageContainer">
+    <!-- Replace 'your-image.png' with your actual switch filename -->
+    <img id="myImage" src="image_486ebf86.jpg" alt="" width="70">
+</div>
+
+<script>
     let clickCount = 0;
     const imageContainer = document.getElementById('flipImageContainer');
 
@@ -116,8 +165,9 @@
         
         clickCount++;
 
-        if (clickCount === 100) </span>
-         </div><div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 4"><img src="gorn-poster.jpg" alt="Gallery picture 4" loading="lazy"><span class="missing-label"></span></div>
+        if (clickCount === 100) { clickCount = 0; }
+    });
+ <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 4"><img src="gorn-poster.jpg" alt="Gallery picture 4" loading="lazy"><span class="missing-label"></span></div>
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 5"><img src="anniversary.png" alt="Gallery picture 5" loading="lazy"><span class="missing-label"></span></div>
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 6"><img src="uhura.jpg" alt="Gallery picture 6" loading="lazy"><span class="missing-label"></span></div>
    <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 7"><img src="harry-mudd.png" alt="Gallery picture 7" loading="lazy"><span class="missing-label"></span></div>
