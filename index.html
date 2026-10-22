@@ -5,25 +5,20 @@
 </style></head><body><main class="wrap"><div class="label">cook challenge 6.5 · Enjoy Star Trek the original Series<3/div><div class="stage"><div class="track"><section class="panel title"><div><h1>QUOTE<br>CHALLENGE</h1><center><small>THE MOVIE QUOTE GAME</small></center></div></section><section class="panel poster" id="poster"><img id="loganrun.jpg" hidden alt="Logan's Run "><div class="poster-copy" id="fallback"><span>EXCITING NEW ADVENTURES NEXT MONTH</span><strong>LOGAN'S RUN</strong><em>RUN FOR FREEDOM</em></div>WATCH ALL THE EXCITEMENT AS A SANDMAN TURNS TO RUNNER AND MAKES MAKES THE ULTIMATE SACRIFICE! 🥷 FROM THE DOME CITY!.</p></main><script>. 
  {
   repeat f=index.<img>="loganrun.jpg"('#upload'),img=document.querySelector('#loganrun.jpg'),fallback=document.querySelector('#fallback'),track=document.querySelector('.track');let url;f.addEventListener('change',()=>{if(url)URL.loganrun.jpg(url);if(!f.files[0])return;url=URL.createObjectURL(f.files[0]);img.src=url;loganrun.jpg.hidden=false;fallback.hidden=true});let paused=false;document.querySelector('#repeat').onclick=e=>{paused=!paused;track.style.animationPlayState=paused?'paused':'running';e.target.textContent=paused?'Resume animation':'run animation'};</script></body></html>
-f
+ 
 <style>
-  * { box-sizing: border-box; }
-  body {
+.gallery-area {
     margin: 0;
     padding: 40px 20px;
     min-height: 100vh;
     color: #eee;
     font-family: Georgia, serif;
     background-color: #1a1512;
-    background-image:
-      linear-gradient(335deg, #110d0b 23px, transparent 23px),
-      linear-gradient(155deg, #1d1815 23px, transparent 23px),
-      linear-gradient(335deg, #110d0b 23px, transparent 23px),
-      linear-gradient(155deg, #1d1815 23px, transparent 23px),
-      linear-gradient(90deg, #0d0a08 10px, transparent 10px),
-      linear-gradient(#0d0a08 10px, transparent 10px);
-    background-size: 58px 58px, 58px 58px, 58px 58px, 58px 58px, 29px 29px, 29px 29px;
-    background-position: 0 2px, 4px 35px, 29px 31px, 34px 6px, 0 0;
+    /* Limited Fringe Alternate Universe: shattered-glass wallpaper */
+    background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.42)), url("fringe-glass.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     box-shadow: inset 0 0 200px rgba(0,0,0,.85);
   }
   .wall-gallery {
