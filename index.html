@@ -103,6 +103,20 @@
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 1"><img src="image_f769ad30.jpg" alt="Gallery picture 1" loading="lazy"><span class="missing-label"></span></div>
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 2"><img src="squire-of-gothos.jpg" alt="Gallery picture 2" loading="lazy"><span class="missing-label"></span></div>
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 3"><img src="trek-crew.jpg" alt="Gallery picture 3" loading="lazy"><span class="missing-label"></span></div>
+ <script>
+    let clickCount = 0;
+    const imageContainer = document.getElementById('flipImageContainer');
+
+    imageContainer.addEventListener('mousedown', () => {
+        imageContainer.classList.add('flipped');
+    });
+
+    imageContainer.addEventListener('mouseup', () => {
+        imageContainer.classList.remove('flipped');
+        
+        clickCount++;
+
+        if (clickCount === 3) {
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 4"><img src="gorn-poster.jpg" alt="Gallery picture 4" loading="lazy"><span class="missing-label"></span></div>
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 5"><img src="anniversary.png" alt="Gallery picture 5" loading="lazy"><span class="missing-label"></span></div>
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 6"><img src="uhura.jpg" alt="Gallery picture 6" loading="lazy"><span class="missing-label"></span></div>
