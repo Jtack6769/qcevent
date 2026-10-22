@@ -148,6 +148,27 @@
 </section>
  
  <style>
+  <style>
+    .image-container {
+        display: inline-block;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none; /* For Safari */
+        transition: transform 0.05s ease-out; 
+    }
+
+    /* This forces the browser to make the light/square background transparent */
+    .image-container img {
+        mix-blend-mode: multiply;
+        display: block;
+    }
+
+    /* The push-down animation */
+    .flipped {
+        transform: scale(0.95) translate(-4px, 4px) rotate(-2deg);
+    }
+</style>
+ 
     .image-container {
         display: inline-block;
         cursor: pointer;
@@ -184,7 +205,7 @@
 
         if (clickCount === 3) {
             // Replace with your secret treat website link
-            window.open('https://https://jtack6769.github.io/Quote_challenge/');
+            window.open('https://jtack6769.github.io/Quote_challenge/');
             clickCount = 0; // Reset counter for next time
         }
     });
