@@ -159,13 +159,14 @@
 
     /* This forces the browser to make the light/square background transparent */
     .image-container img {
-        mix-blend-mode: multiply;
-        display: block;
+    display: block;
+    border-radius: 50%;
+    mix-blend-mode: normal;
     }
 
     /* The push-down animation */
     .flipped {
-        transform: scale(0.95) translate(-4px, 4px) rotate(-2deg);
+        transform: scale(0.95) translate(-4px, 4px) rotate(-4deg);
     }
 </style>
 <style>
@@ -180,12 +181,13 @@
     /* This cleanly cuts the image into a perfect circle, cutting off the square edges */
     .image-container img {
         display: block;
-        border-radius: 50%; 
+        border-radius: 50%;
+     mix-blend-mode: normal;
     }
 
     /* The push-down animation */
     .flipped {
-        transform: scale(0.95) translate(-4px, 4px) rotate(-2deg);
+        transform: scale(0.95) translate(-4px, 4px) rotate(-4deg);
     }
 </style>
 
