@@ -14,19 +14,19 @@
       font-family: Georgia, 'Times New Roman', serif; 
     }
     
-    body { padding: 12px; }
+    body { padding: 6px; }
 
     /* --- Marquee Header Component --- */
     .marquee {
       position: relative;
-      width: 100%;
+      width: 120%;
       height: clamp(180px, 28vw, 310px);
-      overflow: hidden;
+      overflow-x: hidden;
       clip-path: polygon(0 12px, 12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px));
-      border: 4px solid #f6d678;
+      border: 2px translucent #f6d678;
       box-shadow: inset 0 0 0 3px #633909, inset 0 0 0 8px #d49a31, 0 0 18px #9b4813;
       background: #090609;
-      margin-bottom: 30px;
+      margin-bottom: 15px;
     }
     
     .marquee:before {
@@ -43,7 +43,7 @@
       position: absolute;
       inset: 0;
       display: flex;
-      width: 300%;
+      width: 150%;
       transform: translateX(-33.333333%);
       will-change: transform;
     }
