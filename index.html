@@ -146,4 +146,51 @@
   viewer.addEventListener('close', () => { enlargedImage.removeAttribute('src'); if (lastFrame) lastFrame.focus(); });
 </script>
 </section>
-</body></html>
+ 
+ <style>
+    .image-container {
+        display: inline-block;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none; /* For Safari */
+        /* Smooth push down animation */
+        transition: transform 0.05s ease-out; 
+    }
+
+    /* When the mouse is held down, it compresses and tilts slightly down-left */
+    .flipped {
+        transform: scale(0.95) translate(-4px, 4px) rotate(-2deg);
+    }
+</style>
+
+<!-- Your hidden easter egg vintage switch -->
+<div class="image-container" id="flipImageContainer">
+    <!-- Replace 'your-image.png' with the actual filename of this brass switch image -->
+    <img id="myImage" src="image_486ebf86.jpg" alt="" width="120">
+</div>
+
+<script>
+    let clickCount = 0;
+    const imageContainer = document.getElementById('flipImageContainer');
+
+    imageContainer.addEventListener('mousedown', () => {
+        imageContainer.classList.add('flipped');
+    });
+
+    imageContainer.addEventListener('mouseup', () => {
+        imageContainer.classList.remove('flipped');
+        
+        clickCount++;
+
+        if (clickCount === 3) {
+            // Replace with your secret treat website link
+            window.open('https://https://jtack6769.github.io/Quote_challenge/');
+            clickCount = 0; // Reset counter for next time
+        }
+    });
+
+    // If they drag the cursor off the switch while holding, reset the button position
+    imageContainer.addEventListener('mouseleave', () => {
+        imageContainer.classList.remove('flipped');
+    });
+</script>
