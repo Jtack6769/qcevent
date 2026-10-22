@@ -104,36 +104,14 @@
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 2"><img src="squire-of-gothos.jpg" alt="Gallery picture 2" loading="lazy"><span class="missing-label"></span></div>
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 3"><img src="trek-crew.jpg" alt="Gallery picture 3" loading="lazy"><span class="missing-label"></span></div>
    <style>
+    }
     .image-container {
         display: inline-block;
         cursor: pointer;
         user-select: none;
         -webkit-user-select: none; /* For Safari */
         transition: transform 0.05s ease-out; 
-    }
-
-    /* This forces the browser to make the light/square background transparent */
-    .image-container img {
-    display: block;
-    border-radius: 50%;
-    mix-blend-mode: normal;
-    }
-
-    /* The push-down animation */
-    .flipped {
-        transform: scale(0.95) translate(-4px, 4px) rotate(-4deg);
-    }
-</style>
-<style>
-    .image-container {
-        display: inline-block;
-        cursor: pointer;
-        user-select: none;
-        -webkit-user-select: none; /* For Safari */
-        transition: transform 0.05s ease-out; 
-    }
-
-    /* This cleanly cuts the image into a perfect circle, cutting off the square edges */
+    } /* This cleanly cuts the image into a perfect circle, cutting off the square edges */
     .image-container img {
         display: block;
         border-radius: 75%;
@@ -241,7 +219,6 @@
         -webkit-user-select: none; /* For Safari */
         transition: transform 0.05s ease-out; 
     }
-
     /* This cleanly cuts the image into a perfect circle, cutting off the square edges */
     .image-container img {
         display: block;
