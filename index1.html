@@ -37,8 +37,7 @@ body{margin:0;background:#100d12;color:#fff;font-family:Georgia,serif}
 <section class="panel title"><div><h1>QUOTE<br>CHALLENGE</h1><center><small>THE MOVIE QUOTE GAME</small></center></div></section>
 <section class="panel poster"><img id="marquee-image" src="image_b572509f.jpg" alt="Featured poster"><div class="poster-copy" id="fallback" hidden><span>EXCITING NEW ADVENTURES NEXT MONTH</span><strong>LOGAN'S RUN</strong><em>ESCAPE THE DOME</em></div></section>
 </div></div>
-<div> ✓✓✓✓✓✓✓✓✓\ class="controls"><label for="upload">Choose a poster (JPEG, PNG, WebP):</label><input type="file" id="upload" accept="image/jpeg,image/png,image/webp"><button id="repeat" type="button">Pause animation</button></div>
-<p class="note">Selected images stay on your device for this preview. For a permanent website poster, update the image filename in the HTML and upload that image to the site.</p>
+<div>
 </div></section>
 <script>
 (()=>{const input=document.querySelector('#upload'),img=document.querySelector('#marquee-image'),fallback=document.querySelector('#fallback'),track=document.querySelector('#marquee-track'),button=document.querySelector('#repeat');let url=null;img.addEventListener('error',()=>{img.hidden=true;fallback.hidden=false});img.addEventListener('load',()=>{img.hidden=false;fallback.hidden=true});input.addEventListener('change',()=>{const file=input.files[0];if(!file||!['image/jpeg','image/png','image/webp'].includes(file.type))return;if(url)URL.revokeObjectURL(url);url=URL.createObjectURL(file);img.src=url});button.addEventListener('click',()=>{const paused=track.style.animationPlayState!=='paused';track.style.animationPlayState=paused?'paused':'running';button.textContent=paused?'Resume animation':'Pause animation'});})();
