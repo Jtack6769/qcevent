@@ -9,7 +9,7 @@
 body { margin:0; min-height:100vh; background:radial-gradient(ellipse at 25% 0%, yellow,red 75%); color:#eee; font-family:Georgia,serif; }
 .wrap { width:min(1000px,calc(100% - 24px)); margin:28px auto 34px; }
 .label { text-align:center; color:#red; letter-spacing:.19em; font:700 clamp(12px,2vw,19px) system-ui; margin-bottom:18px; text-shadow:0 0 10px yellow,0 0 24px red; }
-.stage { position:relative; height:clamp(250px,43vw,430px); overflow:hidden; border:10px ridge5 #c9b25b; border-radius:24px; background:#ff3300; box-shadow:0 0 0 3px #eaff9b,0 0 25px #a7ff00,0 0 70px #39ff14,inset 0 0 55px #000; isolation:isolate; }
+.stage { position:relative; height:clamp(250px,43vw,430px); overflow:hidden; border:10px ridge #C82909; border-radius:24px; background:#ff3300; box-shadow:0 0 0 3px #eaff9b,0 0 25px #a7ff00,0 0 70px #39ff14,inset 0 0 55px #000; isolation:isolate; }
 .stage::before { content:""; position:absolute; inset:0; z-index:3; pointer-events:none; border:12px dotted #e6ff8c; filter:drop-shadow(0 0 7px #aaff00); }
 .stage::after { content:""; position:absolute; inset:0; z-index:2; pointer-events:none; background:repeating-linear-gradient(0deg,transparent 0 5px,#a5ff1310 6px 7px); }
 .track { display:flex; width:300%; height:100%; transform:translateX(-33.333333%); animation:trek-panels 21s ease-in-out infinite; }
