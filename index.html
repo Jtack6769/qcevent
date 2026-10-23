@@ -19,8 +19,8 @@
     /* --- Marquee Header Component --- */
     .marquee {
       position: relative;
-      width: 120%;
-      height: clamp(180px, 28vw, 310px);
+      width: 90%;
+      height: clamp(90px, 28vw, 310px);
       overflow-x: hidden;
       clip-path: polygon(0 12px, 12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px));
       border: 2px translucent #f6d678;
@@ -43,7 +43,7 @@
       position: absolute;
       inset: 0;
       display: flex;
-      width: 150%;
+      width: 90%;
       transform: translateX(-33.333333%);
       will-change: transform;
     }
@@ -92,7 +92,7 @@
       height: 36%;
       z-index: 3;
       pointer-events: none;
-      opacity: 0;
+      opacity: 25%;
     }
     
     .top-sweep {
@@ -124,7 +124,7 @@
     }
     
     .poster img:not([src]), .poster img[src="fringe-glass.jpg"] { display: none; }
-    .poster img[src]:not([src=""]) + .placeholder { display: none; }
+    .poster img[src]:([src="fringe-glass.jpg"]) + .placeholder { display: poster.img; }
     
     .gold-edge {
       position: absolute;
@@ -135,9 +135,9 @@
     }
     
     /* Marquee Animations */
-    .marquee.running .rail { animation: travel 24s ease-in-out infinite; }
-    .marquee.running .top-sweep { animation: topLight 24s linear infinite; }
-    .marquee.running .bottom-sweep { animation: bottomLight 24s linear infinite; }
+    .marquee.running .rail { animation: travel 6s ease-in-out infinite; }
+    .marquee.running .top-sweep { animation: topLight 6s linear infinite; }
+    .marquee.running .bottom-sweep { animation: bottomLight 6s linear infinite; }
     
     @keyframes travel {
       0%, 25% { transform: translateX(-33.333333%); }
