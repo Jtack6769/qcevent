@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Quote Challenge | Theater 6.9.1-2</title>
- </style>
+<style>
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#03050b;color:#fff;font-family:system-ui,Arial,sans-serif}
 .theater{position:relative;width:100%;max-width:1648px;aspect-ratio:1648/928;margin:auto;background:url('theater-691-2.png') center/100% 100% no-repeat;overflow:hidden}
 /* Overlay precisely on the artwork's existing illuminated marquee */
 .marquee{position:absolute;left:24.2%;top:24.4%;width:51.8%;height:9.2%;overflow:hidden;background:linear-gradient(#090d17,#080b12);border-top:2px solid #d89524;border-bottom:2px solid #d89524;display:flex;align-items:center;mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent)}
-.marquee-track{white-space:nowrap;display:inline-block;width:max-content;animation:roll 33s linear infinite;color:#ffd15a;font-weight:800;font-size:clamp(9px,2.15vw,34px);letter-spacing:.06em;text-shadow:0 0 8px #d58b1a}
+.marquee-track{white-space:nowrap;display:inline-block;width:max-content;animation:roll 45s linear infinite;color:#ffd15a;font-weight:800;font-size:clamp(9px,2.15vw,34px);letter-spacing:.06em;text-shadow:0 0 8px #d58b1a}
 @keyframes roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .marquee:hover .marquee-track{animation-play-state:paused}
 .suggestions{position:absolute;left:47.3%;top:64.5%;width:5.5%;height:12.5%;border:0;background:transparent;cursor:pointer;border-radius:8px}
@@ -62,12 +62,6 @@ dialog.viewer{border:0!important;border-radius:0!important;box-shadow:none!impor
 </head>
 <body>
 <main class="theater" aria-label="Quote Challenge theater entrance">
-  <a href="next.html" class="flip-sign" aria-label="Open coming attractions">
-  <span class="flip-inner">
-    <span class="flip-front">COMING NEXT MONTH</span>
-    <span class="flip-back">COMING ATTRACTIONS</span>
-  </span>
-  </a>
   <div class="marquee" aria-label="Scrolling theater announcements"><div class="marquee-track" id="marqueeTrack"></div></div>
   <button class="suggestions" id="openSuggestions" aria-label="Open suggestions and bug report form" title="Suggestions and bug reports"></button>
 </main>
@@ -88,7 +82,7 @@ dialog.viewer{border:0!important;border-radius:0!important;box-shadow:none!impor
     <p class="help">Opens your email app with the subject and message filled in. No message is sent until you send it from your email app.</p>
   </section>
 </div>
-<div class="qc-banner"><div class="qc-banner-text">🎬 QUOTE CHALLENGE • 💙 UNDER CONSTRUCTION • WE ARE WORKING HARD TO BRING YOU EXCITING NEW ADVENTURES! 💙 🎬</div></div>
+<div class="qc-banner"><div class="qc-banner-text">🎬 QUOTE CHALLENGE • 💙 UNDER CONSTRUCTION • WE ARE WORKING HARD TO BRING YOU EXCITING NEW ADVENTURES! 🔜 LOGAN'S RUN THEME IS ON IT'S WAY 🔚💙 🎬</div></div>
 <section class="gallery-area">
 <main class="wall-gallery" aria-label="Framed picture gallery">
   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 1"><img src="trek-crew.jpg" alt="Gallery picture 1" loading="lazy"><span class="missing-label"></span></div>
@@ -158,4 +152,4 @@ viewer.addEventListener('click',e=>{if(e.target===viewer)viewer.close()});
 viewer.addEventListener('close',()=>{enlargedImage.removeAttribute('src');if(lastFrame)lastFrame.focus()});
 </script>
 </body>
-  </html>
+</html>
