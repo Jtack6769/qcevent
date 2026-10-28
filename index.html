@@ -63,6 +63,48 @@ window.location.href='mailto:qcchallenger67@gmail.com?subject='+encodeURICompone
 });
 </script>
 </body>
-  
+ <!doctype html>
+
+<!-- QUOTE CHALLENGE SCROLLING BANNER -->
+
+<style>
+.qc-banner {
+  width: 100%;
+  overflow: hidden;
+  background: #080808;
+  border: 2px solid #e4b83f;
+  border-radius: 6px;
+  padding: 12px 0;
+  color: #ffda54;
+  font: bold 18px Arial, sans-serif;
+}
+
+.qc-banner-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: qc-scroll 22s linear infinite;
+}
+
+@keyframes qc-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .qc-banner-text {
+    animation: none;
+    padding-left: 0;
+    white-space: normal;
+    text-align: center;
+  }
+}
+</style>
+
+<div class="qc-banner">
+  <div class="qc-banner-text">
+    🎬 QUOTE CHALLENGE • UNDER CONSTRUCTION •
+    PLEASE CHECK BACK DAILY FOR EXCITING NEW ADVENTURES! 🎬
+  </div> 
 </html>
 </style>
