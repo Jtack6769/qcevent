@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Quote Challenge | Theater 6.9.1</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#03050b;color:#fff;font-family:system-ui,Arial,sans-serif}
+.theater{position:relative;width:100%;max-width:1648px;aspect-ratio:1648/928;margin:auto;background:url('theater-691.png') center/100% 100% no-repeat;overflow:hidden}
+/* Overlay precisely on the artwork's existing illuminated marquee */
+.marquee{position:absolute;left:24.2%;top:24.4%;width:51.8%;height:9.2%;overflow:hidden;background:linear-gradient(#090d17,#080b12);border-top:2px solid #d89524;border-bottom:2px solid #d89524;display:flex;align-items:center;mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent)}
+.marquee-track{white-space:nowrap;display:inline-block;width:max-content;animation:roll 22s linear infinite;color:#ffd15a;font-weight:800;font-size:clamp(9px,2.15vw,34px);letter-spacing:.06em;text-shadow:0 0 8px #d58b1a}
+@keyframes roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.suggestions{position:absolute;left:47.3%;top:64.5%;width:5.5%;height:12.5%;border:0;background:transparent;cursor:pointer;border-radius:8px}
+.suggestions:focus-visible{outline:3px solid #fff08a;outline-offset:3px}
+.suggestions:hover{box-shadow:0 0 15px 4px #ffe08388}
+.dialog-backdrop{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:16px;z-index:5}
+.dialog-backdrop.open{display:flex}
+.dialog{width:min(440px,100%);padding:24px;border:2px solid #d6a54e;border-radius:12px;background:#101b30;box-shadow:0 0 30px #e6a73a55}
+.dialog h2{margin:0 0 16px;color:#ffdf84}.dialog label{display:block;margin:12px 0 5px}.dialog select,.dialog textarea{width:100%;padding:10px;background:#f8f4eb;color:#151515;border-radius:5px;border:0;font:inherit}.dialog textarea{min-height:120px;resize:vertical}.buttons{display:flex;gap:12px;justify-content:flex-end;margin-top:16px}.buttons button{padding:10px 16px;cursor:pointer;border:0;border-radius:5px;font-weight:700}.send{background:#e4b45b;color:#17100b}
+.help{font-size:12px;color:#d9d9d9;margin-top:12px}
+@media(max-width:600px){.marquee-track{font-size:clamp(7px,2.1vw,13px)}.marquee{border-width:1px}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation-duration:55s}}
+</style>
+</head>
+<body>
+<main class="theater" aria-label="Quote Challenge theater entrance">
+  <div class="marquee" aria-label="Scrolling theater announcements"><div class="marquee-track" id="marqueeTrack"></div></div>
+  <button class="suggestions" id="openSuggestions" aria-label="Open suggestions and bug report form" title="Suggestions and bug reports"></button>
+</main>
+<div class="dialog-backdrop" id="backdrop">
+  <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+    <h2 id="dialogTitle">Quote Challenge Suggestions</h2>
+    <form id="suggestionForm">
+      <label for="subject">What would you like to send?</label>
+      <select id="subject"><option>Idea / Suggestion</option><option>Bug Report</option></select>
+      <label for="message">Your message</label>
+      <textarea id="message" required placeholder="Tell us what you found or what you'd like to see..."></textarea>
+      <div class="buttons"><button type="button" id="closeSuggestions">Cancel</button><button class="send" type="submit">Open Email</button></div>
+    </form>
+    <p class="help">Opens your email app with the subject and message filled in. No message is sent until you send it from your email app.</p>
+  </section>
+</div>
+<script>
+// EDIT THIS LINE to change the rolling marquee message.
+const marqueeMessage = 'CHOOSE YOUR ENTRANCE  ★  WELCOME TO QUOTE CHALLENGE  ★  GREAT QUOTES  ★  GREAT SHOWS  ★  TEST YOUR KNOWLEDGE  ★  ';
+const track=document.getElementById('marqueeTrack');
+const text=marqueeMessage.repeat(3);
+track.textContent=text+text;
+const backdrop=document.getElementById('backdrop');
+const openBtn=document.getElementById('openSuggestions');
+function closeDialog(){backdrop.classList.remove('open');openBtn.focus()}
+openBtn.addEventListener('click',()=>{backdrop.classList.add('open');document.getElementById('subject').focus()});
+document.getElementById('closeSuggestions').addEventListener('click',closeDialog);
+backdrop.addEventListener('click',e=>{if(e.target===backdrop)closeDialog()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&backdrop.classList.contains('open'))closeDialog()});
+document.getElementById('suggestionForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const subject='Quote Challenge - '+document.getElementById('subject').value;
+ const message=document.getElementById('message').value;
+ window.location.href='mailto:qcchallenger67@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(message);
+});
+</script>
+</body>
+</html>
