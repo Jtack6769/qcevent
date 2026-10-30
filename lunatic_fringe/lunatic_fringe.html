@@ -148,12 +148,13 @@ background-attachment: fixed;
   viewer.addEventListener('close', () => { enlargedImage.removeAttribute('src'); if (lastFrame) lastFrame.focus(); });
 </script>
 
+
 <script>
 const pumpkin = document.createElement("img");
 
 pumpkin.src = "gettyimages-2200044778-612x612.jpg";
-pumpkin.alt = "Enter the Lunatic Fringe";
-pumpkin.title = "Dare to enter?";
+pumpkin.alt = "Scary pumpkin";
+pumpkin.title = "Click for a surprise!";
 
 pumpkin.style.cssText = `
   position: fixed;
@@ -176,16 +177,19 @@ pumpkin.addEventListener("mouseleave", () => {
   pumpkin.style.transform = "scale(1)";
 });
 
-</body>
- pumpkin.addEventListener("click", () => {
-  const sound = new Audio("petergriffinstarwars.mp3");
-  sound.play().catch(error => {
-    console.error("Sound failed:", error);
+const pumpkinSound = new Audio("petergriffinstarwars.mp3");
+
+pumpkin.addEventListener("click", () => {
+  pumpkinSound.currentTime = 0;
+  pumpkinSound.play().catch(error => {
+    console.error("Pumpkin sound error:", error);
   });
-});
-  </html>
 });
 
 document.body.appendChild(pumpkin);
 </script>
+
+</body>
+</html>
+
  
