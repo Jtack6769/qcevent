@@ -115,6 +115,77 @@ background-attachment: fixed;
   <img alt="Enlarged gallery picture">
 </dialog>
 <script>
+ 
+<script>
+let exploding = false;
+
+function triggerExplosion() {
+  if (exploding) return;
+  exploding = true;
+
+  const box = document.getElementById('explosion-box');
+  const img = document.getElementById('gemini_remix_20261030_162736.jpg');
+
+  // Save the original image
+  const source = img.src;
+
+  // Hide original pumpkin
+  img.style.visibility = 'hidden';
+
+  // Create scattered pumpkin fragments
+  const pieces = [];
+  const columns = 6;
+  const rows = 4;
+
+  for (let y = 0; y < rows; y++) {
+    for (let x = 0; x < columns; x++) {
+      const piece = document.createElement('div');
+
+      piece.style.cssText = `
+        position:absolute;
+        width:${100 / columns}%;
+        height:${100 / rows}%;
+        left:${x * 100 / columns}%;
+        top:${y * 100 / rows}%;
+        background-image:url("${source}");
+        background-size:${columns * 100}% ${rows * 100}%;
+        background-position:
+          ${x * 100 / (columns - 1)}%
+          ${y * 100 / (rows - 1)}%;
+        transition:transform 1s ease-out, opacity 1s;
+        pointer-events:none;
+      `;
+
+      box.appendChild(piece);
+      pieces.push(piece);
+    }
+  }
+
+  // Explode!
+  requestAnimationFrame(() => {
+    pieces.forEach(piece => {
+      const dx = (Math.random() - 0.5) * 600;
+      const dy = (Math.random() - 0.5) * 500;
+      const rotation = (Math.random() - 0.5) * 900;
+
+      piece.style.transform =
+        `translate(${dx}px, ${dy}px) rotate(${rotation}deg)`;
+    });
+  });
+
+  // Leave the wreckage for 12 seconds
+  setTimeout(() => {
+    pieces.forEach(piece => piece.remove());
+
+    img.style.visibility = 'visible';
+    img.style.transform = '';
+    img.style.filter = '';
+
+    exploding = false;
+  }, 12000);
+}
+</script>
+ 
   const viewer = document.querySelector('.viewer');
   const enlargedImage = viewer.querySelector('img');
   const closeButton = viewer.querySelector('.close');
