@@ -48,83 +48,46 @@ h1{font-size:clamp(30px,6vw,60px);color:#bd1820;text-shadow:0 0 16px #7a0808;mar
 </main>
 <dialog class="viewer" aria-label="Enlarged gallery picture"><button class="close" type="button" aria-label="Close enlarged picture">Close ×</button><img alt="Enlarged gallery picture"></dialog>
 <script>
-(() => {
-  const stage = document.getElementById('explosion-box');
-  const img = document.getElementById('pumpkin-img');
-  const canvas = document.getElementById('shatter');
-  const ctx = canvas.getContext('2d');
-  const instructions = document.getElementById('instructions');
-  let busy = false;
-  let frameId = 0;
-  let resetTimer = 0;
 
-  function explode() {
-    if (busy || !img.complete || !img.naturalWidth) return;
-    busy = true;
-    const w = stage.clientWidth, h = stage.clientHeight;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = Math.round(w * dpr);
-    canvas.height = Math.round(h * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const cols = 9, rows = 6;
-    const sw = img.naturalWidth / cols, sh = img.naturalHeight / rows;
-    const pw = w / cols, ph = h / rows;
-    const pieces = [];
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < cols; c++) {
-        const cx = (c + .5) * pw, cy = (r + .5) * ph;
-        const angle = Math.atan2(cy - h * .5, cx - w * .5);
-        const speed = 180 + Math.random() * 260;
-        pieces.push({sx:c*sw,sy:r*sh,x:cx,y:cy,vx:Math.cos(angle)*speed+(Math.random()-.5)*140,vy:Math.sin(angle)*speed-100-Math.random()*160,rot:0,vr:(Math.random()-.5)*7,landed:false});
-      }
-    }
-    img.style.visibility = 'hidden';
-    instructions.textContent = 'Pumpkin wreckage! Rebuilding in 12 seconds...';
-    const start = performance.now();
-    let last = start;
-    function animate(now) {
-      const dt = Math.min((now-last)/1000,.035); last=now;
-      ctx.clearRect(0,0,w,h);
-      for (const p of pieces) {
-        if (!p.landed) {
-          p.vy += 680*dt;
-          p.x += p.vx*dt;
-          p.y += p.vy*dt;
-          p.rot += p.vr*dt;
-          if (p.y + ph*.45 >= h) {p.y=h-ph*.45;p.landed=true;}
-          p.x=Math.max(-pw*.1,Math.min(w+pw*.1,p.x));
-        }
-        ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);
-        ctx.drawImage(img,p.sx,p.sy,sw+.2,sh+.2,-pw/2,-ph/2,pw+1,ph+1);
-        ctx.restore();
-      }
-      if (now-start < 12000) frameId=requestAnimationFrame(animate);
-    }
-    frameId=requestAnimationFrame(animate);
-    resetTimer=setTimeout(() => {
-      cancelAnimationFrame(frameId);
-      ctx.clearRect(0,0,w,h);
-      img.style.visibility='visible';
-      instructions.textContent='Click the pumpkin to explode it!';
-      busy=false;
-    },12000);
-  }
-  stage.addEventListener('click',explode);
-  stage.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();explode();}});
-  const viewer=document.querySelector('.viewer');
-  const enlarged=viewer.querySelector('img');
-  document.querySelectorAll('.hanging-frame').forEach(button=>{
-    const photo=button.querySelector('img');
-    photo.addEventListener('error',()=>button.classList.add('missing'));
-    button.addEventListener('click',()=>{
-      if (!photo.complete || !photo.naturalWidth) return;
-      enlarged.src=photo.src;enlarged.alt=photo.alt;
-      viewer.showModal();
-    });
+<script>
+const pumpkin = document.createElement("img");
+
+pumpkin.src = "gettyimages-2200044778-612x612.jpg";
+pumpkin.alt = "Scary pumpkin";
+pumpkin.title = "Click for a surprise!";
+
+pumpkin.style.cssText = `
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 160px;
+  max-width: 30vw;
+  height: auto;
+  cursor: pointer;
+  z-index: 9999;
+  border: none;
+  transition: transform 0.3s ease;
+`;
+
+pumpkin.addEventListener("mouseenter", () => {
+  pumpkin.style.transform = "scale(1.15)";
+});
+
+pumpkin.addEventListener("mouseleave", () => {
+  pumpkin.style.transform = "scale(1)";
+});
+
+const pumpkinSound = new Audio("petergriffinstarwars.mp3");
+
+pumpkin.addEventListener("click", () => {
+  pumpkinSound.currentTime = 0;
+  pumpkinSound.play().catch(error => {
+    console.error("Pumpkin sound error:", error);
   });
-  viewer.querySelector('.close').addEventListener('click',()=>viewer.close());
-  viewer.addEventListener('click',e=>{if(e.target===viewer)viewer.close();});
-})();
+});
+
+document.body.appendChild(pumpkin);
 </script>
+
 </body>
-  </html>
+</html>
