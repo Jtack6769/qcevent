@@ -1,1 +1,1 @@
-check the working files QC chopped files .html
+sandbox for these pages together this next page is going to be Logan's run for the month of December and I run through the end of the year and then come January we're going to switch the theme from Logan's run I'm not sure which one I'm doing yet I'm thinking about Austin Powers maybe I'm avoiding Star wars all together, might find tidbits here and there but Star Trek the original is this month next month Logan's run and then I got a decision to make with January anybody has a request let me know I'll build that thing
