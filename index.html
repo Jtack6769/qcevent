@@ -16,20 +16,7 @@
 .dialog-backdrop.open{display:flex}
 .dialog{width:min(440px,100%);padding:24px;border:2px solid #d6a54e;border-radius:12px;background:#101b30;box-shadow:0 0 30px #e6a73a55}
 .dialog h2{margin:0 0 16px;color:#ffdf84}.dialog label{display:block;margin:12px 0 5px}.dialog textarea{width:100%;padding:10px;background:#f8f4eb;color:#151515;border-radius:5px;border:0;font:inherit;min-height:120px;resize:vertical}
-/* Four clearly separated message controls */
-.}
-/* Invisible picture frames: photographs and enlargement still work. */
-.hanging-frame{padding:0;background:transparent;border:0;box-shadow:none;border-radius:0;transform:none}
-.hanging-frame:hover,.hanging-frame:focus-visible{transform:none}
-.hanging-frame img{border:0;background:transparent}
-/* Frame-free gallery: no visible frames, including hover and enlarged view. */
-.hanging-frame{padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;transform:none!important}
-.hanging-frame:hover,.hanging-frame:focus-visible{transform:none!important;box-shadow:none!important;outline:none!important}
-.hanging-frame img{border:0!important;background:transparent!important}
-dialog.viewer{border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;padding:0!important}
-.viewer img{border:0!important;box-shadow:none!important;background:transparent!important}
-/* Top marquee: angled color waves and subtle heat shimmer */
-.marquee{isolation:isolate;display:grid;place-items:center;background:radial-gradient(ellipse at center,#17356d,#07132e 75%);box-shadow:0 0 24px #e5b84955,inset 0 0 20px #000}
+
 /* Very subtle, continuously drifting road-heat shimmer behind the lettering. */
 .marquee::after{content:"";position:absolute;inset:-28%;z-index:0;pointer-events:none;opacity:.27;background:repeating-linear-gradient(101deg,transparent 0 30px,#ffc76a12 37px,transparent 51px 82px),radial-gradient(ellipse at 38% 65%,#ff8b3d18,transparent 53%),radial-gradient(ellipse at 72% 38%,#a74bff20,transparent 55%);filter:blur(12px);animation:heatDrift 8s ease-in-out infinite alternate;transform-origin:center}
 @keyframes heatDrift{0%{transform:translate(-1.5%,2%) skewX(-2deg) scale(1.02);filter:blur(12px)}50%{transform:translate(1%,-1.5%) skewX(2deg) scale(1.06);filter:blur(8px)}100%{transform:translate(-.5%,1%) skewX(-1deg) scale(1.03);filter:blur(13px)}}
@@ -94,8 +81,8 @@ dialog.viewer{border:0!important;border-radius:0!important;box-shadow:none!impor
 </style>
 </head>
 <body>
-<main class="theater" aria-label="Quote Challenge theater entrance">
-  <div class="marquee" aria-label="Animated Quote Challenge welcome messages"><div class="wave-message" id="waveMessage">WELCOME TO QUOTE CHALLENGE</div><div class="wave" id="wave" aria-hidden="true"></div></div>
+</script>
+      <div class="marquee" aria-label="Animated Quote Challenge welcome messages"><div class="wave-message" id="waveMessage">WELCOME TO QUOTE CHALLENGE</div><div class="wave" id="wave" aria-hidden="true"></div></div>
   <a class="door-link door-one" href="one-player.html" aria-label="Enter one-player game" title="ADMIT ONE"></a>
 <a class="door-link door-two" href="two-player.html" aria-label="Enter two-player game" title="ADMIT TWO"></a>
   <a   <div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 3"><img src="IMG_20260909_203401795_HDR.jpg" alt="Gallery picture 3" loading="lazy"><span class="missing-label"></span></div>
@@ -114,7 +101,8 @@ dialog.viewer{border:0!important;border-radius:0!important;box-shadow:none!impor
 <script>
 // EDIT THESE THREE TEXT VALUES to change the top marquee messages.
 const slides=[
-  {text:"WELCOME TO QUOTE CHALLENGE 7.0 LOGAN'S RUN!",direction:'right',hold:4000},
+    
+    {text:"WELCOME TO QUOTE CHALLENGE 7.0 LOGAN'S RUN!",direction:'right',hold:4000},
   {text:'WE WISH YOU A HAPPY HOLIDAY SEASON',direction:'left',hold:4000},
   {text:'QC AND LOGANS RUN ALL DECEMBER 2026!',direction:'right',hold:7000}
 ];
