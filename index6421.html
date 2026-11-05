@@ -1,6 +1,93 @@
 <!doctype html>
 </head>
 </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Clock & Date</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #transparent;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .clock-container {
+            background: #880808;
+            padding: 16px 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 0px solid transparent;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .time {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #38bdf8;
+            letter-spacing: 1px;
+            font-variant-numeric: tabular-nums;
+            line-height: 1.2;
+        }
+
+        .date {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clock-container">
+        <div class="time" id="clock">00:00:00 AM</div>
+        <div class="date" id="date">Loading...</div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            
+            // Format Time
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            // Convert to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // The hour '0' should be '12'
+            const hoursStr = String(hours).padStart(2, '0');
+            
+            document.getElementById('clock').textContent = `${hoursStr}:${minutes}:${seconds} ${ampm}`;
+            
+            // Format Date
+            const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+            document.getElementById('date').textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        // Update the clock immediately, then every second
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+
+</body>
+</html>
+
 <!doctype html>
 <html lang="en">
 <head>
