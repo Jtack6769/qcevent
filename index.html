@@ -1,126 +1,129 @@
 <!doctype html>
+</head>
+</body>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Quote Challenge | Theater 7.0</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quote Challenge Marquee</title>
 <style>
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#03050b;color:#fff;font-family:system-ui,Arial,sans-serif}
-.theater{position:relative;width:100%;max-width:1648px;aspect-ratio:1648/928;margin:auto;background:url('file_00000000ef1c81f5822c514fb25c6b2f.png') center/100% 100% no-repeat;overflow:hidden}
-/* Overlay precisely on the artwork's existing illuminated marquee */
-.marquee{position:absolute;left:24.2%;top:24.4%;width:51.8%;height:12.5%;overflow:hidden;background:linear-gradient(#090d17,#080b12);border-top:2px solid #d89524;border-bottom:2px solid #d89524;display:flex;align-items:center;justify-content:center;mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent)}
-.suggestions{position:absolute;left:47.3%;top:64.5%;width:5.5%;height:12.5%;border:0;background:transparent;cursor:pointer;border-radius:8px}
-.suggestions:focus-visible{outline:3px solid #fff08a;outline-offset:3px}
-.suggestions:hover{box-shadow:0 0 15px 4px #ffe08388}
-.dialog-backdrop{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:16px;z-index:5}
-.dialog-backdrop.open{display:flex}
-.dialog{width:min(440px,100%);padding:24px;border:2px solid #d6a54e;border-radius:12px;background:#101b30;box-shadow:0 0 30px #e6a73a55}
-.dialog h2{margin:0 0 16px;color:#ffdf84}.dialog label{display:block;margin:12px 0 5px}.dialog textarea{width:100%;padding:10px;background:#f8f4eb;color:#151515;border-radius:5px;border:0;font:inherit;min-height:120px;resize:vertical}
-
-/* Very subtle, continuously drifting road-heat shimmer behind the lettering. */
-.marquee::after{content:"";position:absolute;inset:-28%;z-index:0;pointer-events:none;opacity:.27;background:repeating-linear-gradient(101deg,transparent 0 30px,#ffc76a12 37px,transparent 51px 82px),radial-gradient(ellipse at 38% 65%,#ff8b3d18,transparent 53%),radial-gradient(ellipse at 72% 38%,#a74bff20,transparent 55%);filter:blur(12px);animation:heatDrift 8s ease-in-out infinite alternate;transform-origin:center}
-@keyframes heatDrift{0%{transform:translate(-1.5%,2%) skewX(-2deg) scale(1.02);filter:blur(12px)}50%{transform:translate(1%,-1.5%) skewX(2deg) scale(1.06);filter:blur(8px)}100%{transform:translate(-.5%,1%) skewX(-1deg) scale(1.03);filter:blur(13px)}}
-.marquee::before{content:"";position:absolute;inset:5px;border:1px solid #ffe5a588;border-radius:9px;pointer-events:none;z-index:5}
-.wave-message{position:relative;z-index:2;text-align:center;padding:0 8px;font-size:clamp(10px,2.8vw,42px);font-weight:bold;letter-spacing:.015em;color:#fff5b8;text-shadow:0 2px 2px #241000,0 0 6px #ffb742,0 0 14px rgba(255,255,255,.2);opacity:1;transition:opacity .12s ease}
-.wave-message.hide{opacity:0}
-.wave{position:absolute;z-index:3;top:-12%;height:124%;width:85%;pointer-events:none;opacity:0;filter:drop-shadow(0 0 14px #48caffaa);background:linear-gradient(90deg,transparent 0%,#7130e6c9 16%,#ec366ae8 36%,#ffc444f5 59%,#2cb8ff 82%,transparent 100%)}
-/* Right-moving wave has a / leading edge; left-moving wave has a \ leading edge. */
-.wave.run-right{clip-path:polygon(0 0,100% 0,67% 100%,0 100%);animation:sweepRight 2.2s ease-in-out both}
-.wave.run-left{clip-path:polygon(0 0,100% 0,100% 100%,33% 100%);animation:sweepLeft 2.2s ease-in-out both;background:linear-gradient(270deg,transparent 0%,#7130e6c9 16%,#ec366ae8 36%,#ffc444f5 59%,#2cb8ff 82%,transparent 100%)}
-@keyframes sweepRight{0%{left:0;transform:translateX(-110%);opacity:0}12%{opacity:1}85%{opacity:1}100%{left:100%;transform:translateX(5%);opacity:0}}
-@keyframes sweepLeft{0%{right:0;transform:translateX(110%);opacity:0}12%{opacity:1}85%{opacity:1}100%{right:100%;transform:translateX(-5%);opacity:0}}
-@media(prefers-reduced-motion:reduce){.wave{display:none}.wave-message{transition:none}.marquee::after{animation:none}}
-/* Interactive theater entrances and hidden bonuses */
-.door-link{position:absolute;display:block;top:43.3%;height:43.8%;z-index:2;cursor:pointer;border-radius:5px}
-.door-one{left:32.5%;width:14.4%}.door-two{left:52.9%;width:13.8%}
-.door-link:focus-visible{outline:3px solid #fff39b;outline-offset:2px}
-.freddy{position:absolute;left:44.5%;bottom:6.4%;width:8.3%;height:18%;z-index:3;cursor:pointer;background:none;border:0;padding:0}
-.freddy img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 5px 3px #0009)}
-.freddy .standing{opacity:0}.freddy:hover .standing,.freddy:focus-visible .standing,.freddy:active .standing{opacity:1}
-.freddy:hover .sitting,.freddy:focus-visible .sitting,.freddy:active .sitting{opacity:0}
-.secret-portrait{position:absolute;left:18.7%;top:37.8%;width:4.2%;height:10.6%;z-index:2;opacity:.48;filter:brightness(.58) sepia(.4);border:0;background:transparent;padding:0;cursor:pointer;transform:rotate(-5deg)}
-.secret-portrait img{width:100%;height:100%;object-fit:cover}.secret-portrait:focus-visible{outline:2px solid #fff}
-.robot-glow{position:absolute;left:60.15%;top:80.5%;width:2.15%;height:2.5%;z-index:3;pointer-events:auto;cursor:pointer;border-radius:50%;background:transparent}
-.robot-glow::after{content:'';position:absolute;inset:-35%;border-radius:50%;opacity:0;transition:opacity .2s;background:radial-gradient(ellipse,#a7faffbb 5%,#00eaff77 33%,transparent 72%);filter:blur(4px)}
-.robot-glow:hover::after,.robot-glow:focus-visible::after{opacity:1}
-@media(prefers-reduced-motion:reduce){.robot-glow::after{transition:none}}
-/* QUOTE CHALLENGE - GALLERY WALLPAPER */
-.gallery-area {
-    background-color: #080c18;
-    background-image: url('gemini_remix_20261022_233612.jpg');
-    background-position: top left;
-    background-size: 400px auto;
-    background-repeat: repeat;
-    background-attachment: scroll;
-  }
-.coming-link {
-  display: block;
-  width: fit-content;
-  margin: 15px auto;
-  font-size: 18px;
-  color: red;
-  text-decoration: none
-}
-    .link {
-  display: block;
-  width: fit-content;
-  margin: 14px auto;
-  font-size: 17px;
-  color: yellow;
-  text-decoration: none;
-}
-.coming-attractions{font-family:'Brush Script MT',cursive;text-align:center}
-.float-left{float:left;margin:0 15px 15px 0}
-.halloween-callout{max-width:1000px;margin:32px auto;padding:20px;color:#fff;text-align:center;font:20px/1.5 system-ui,Arial,sans-serif}
-.halloween-callout strong{color:#d22;text-shadow:0 0 12px #f60}
-.pumpkin-link{position:fixed;right:20px;bottom:20px;z-index:20;display:block;width:160px;max-width:30vw;transition:transform .3s ease}
-.pumpkin-link:hover,.pumpkin-link:focus-visible{transform:scale(1.1)}
-.pumpkin-link img{display:block;width:100%;height:auto;border:0}
-.pumpkin-link:focus-visible{outline:3px solid #ffb347;outline-offset:4px}
-@media(prefers-reduced-motion:reduce){.pumpkin-link{transition:none}}
+*{box-sizing:border-box}html,body{margin:0;background:transparent;font-family:Georgia,'Times New Roman',serif}body{padding:12px;overflow:hidden}.marquee{position:relative;width:100%;height:clamp(180px,28vw,310px);overflow:hidden;clip-path:polygon(0 12px,12px 0,calc(100% - 12px) 0,100% 12px,100% calc(100% - 12px),calc(100% - 12px) 100%,12px 100%,0 calc(100% - 12px));border:4px solid #f6d678;box-shadow:inset 0 0 0 3px #633909, inset 0 0 0 8px #d49a31,0 0 18px #9b4813;background:#090609}.marquee:before{content:"";position:absolute;inset:8px;border:2px solid #f8da7c;pointer-events:none;z-index:10;box-shadow:inset 0 0 12px #d48b2b}.rail{position:absolute;inset:0;display:flex;width:300%;transform:translateX(-33.333333%);will-change:transform}.panel{width:33.333333%;height:100%;position:relative;display:grid;place-items:center;overflow:hidden}.center{background:radial-gradient(ellipse at center,#3d1117 0%,#14080c 68%,#080508 100%)}.center .text{position:relative;text-align:center;z-index:2;padding:10px 28px}.center h1{margin:0;color:#ff2929;font-size:clamp(32px,7.5vw,91px);line-height:.99;letter-spacing:.035em;-webkit-text-stroke:1px #f8d88a;text-shadow:0 2px 0 #4e2104,0 0 6px #ff4734,0 0 17px #ed001c,0 0 32px #c6001c}.center p{margin:12px 0 0;font:600 clamp(9px,1.5vw,17px) system-ui,sans-serif;letter-spacing:.22em;color:#f8d99c}.center .sweep{position:absolute;left:0;right:0;height:36%;z-index:3;pointer-events:none;opacity:0}.top-sweep{top:0;background:linear-gradient(to bottom,rgba(255,238,171,.68),rgba(255,36,24,.23),transparent);transform:translateY(-110%)}.bottom-sweep{bottom:0;background:linear-gradient(to top,rgba(255,223,131,.65),rgba(255,36,24,.19),transparent);transform:translateY(110%)}.poster{background:#101019}.poster img{width:100%;height:100%;object-fit:cover;display:block}.poster .placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:#e8bd67;font-size:clamp(18px,4vw,43px);letter-spacing:.07em;padding:20px;background:radial-gradient(ellipse,#352018,#100c16)}.poster img:not([src]),.poster img[src=""]{display:none}.poster img[src]:not([src=""])+.placeholder{display:none}.gold-edge{position:absolute;inset:0;pointer-events:none;z-index:9;box-shadow:inset 0 0 0 8px #ad782c,inset 0 0 0 11px #f7d989,inset 0 0 25px #080300}.marquee.running .rail{animation:travel 24s ease-in-out infinite}.marquee.running .top-sweep{animation:topLight 24s linear infinite}.marquee.running .bottom-sweep{animation:bottomLight 24s linear infinite}@keyframes travel{0%,25%{transform:translateX(-33.333333%)}35%,46%{transform:translateX(-66.666667%)}56%,65%{transform:translateX(-33.333333%)}75%,86%{transform:translateX(0)}96%,100%{transform:translateX(-33.333333%)}}@keyframes topLight{0%{opacity:0;transform:translateY(-110%)}1%{opacity:1}6%{opacity:.9;transform:translateY(0)}8%{opacity:0;transform:translateY(120%)}100%{opacity:0}}@keyframes bottomLight{0%,6%{opacity:0;transform:translateY(110%)}7%{opacity:1}11%{opacity:.9;transform:translateY(0)}13%{opacity:0;transform:translateY(-120%)}100%{opacity:0}}@media(prefers-reduced-motion:reduce){.marquee.running .rail,.marquee.running .top-sweep,.marquee.running .bottom-sweep{animation:none}}
 </style>
 </head>
 <body>
-</script>
-      <div class="marquee" aria-label="Animated Quote Challenge welcome messages"><div class="wave-message" id="waveMessage">WELCOME TO QUOTE CHALLENGE</div>
-          </style>
-</head>
-<body>
-<header class="fringe-banner">WELCOME TO THE DARK SIDE!? I SEEN SOME LIGHT SOMEWHERE? 😕</header>
-<main class="wall-gallery" aria-label="Framed picture gallery">
-<div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 1"><img src="gemini_remix_20261021_234409.jpg" alt="Gallery picture 1" loading="lazy"><span class="missing-label"></span></div>
-<div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 2"><img src="gemini_remix_20261021_232243.jpg" alt="Gallery picture 2" loading="lazy"><span class="missing-label"></span></div>
-<div class="hanging-frame" tabindex="0" role="button" aria-label="Enlarge gallery picture 3"><img src="image_eadaddeb.jpg" alt="Gallery picture 3" loading="lazy"><span class="missing-label"></span></div>
-    
-          <div
-              
-</head>
-<body>
-<header
-<script
-    </style>
-// EDIT THESE THREE TEXT VALUES to change the top marquee messages.
-const slides=[
-    {text:"WELCOME TO QUOTE CHALLENGE 7.0 LOGAN'S RUN!",direction:'right',hold:4000},
-  {text:'WE WISH YOU A HAPPY HOLIDAY SEASON',direction:'left',hold:4000},
-  {text:'QC AND LOGANS RUN ALL DECEMBER 2026!',direction:'right',hold:7000}
-</style>
-</header>
+<div class="marquee running" aria-label="Animated Quote Challenge marquee featuring two movie posters">
+  <div class="rail">
+    <section class="panel poster"><img src="poster-right.jpg" alt="Right-side movie poster" onerror="this.removeAttribute('src')"><div class="placeholder">RIGHT POSTER</div></section>
+    <section class="panel center"><div class="text"><h1>QUOTE<br>CHALLENGE</h1><p>THE MOVIE QUOTE GAME</p></div><div class="sweep top-sweep"></div><div class="sweep bottom-sweep"></div></section>
+    <section class="panel poster"><img src="poster-left.jpg" alt="Left-side movie poster" onerror="this.removeAttribute('src')"><div class="placeholder">LEFT POSTER</div></section>
+  </div>
+  <div class="gold-edge"></div>
+</div></div>
+  
 </body>
-          </style>         if(photo.complete&&photo.naturalWidth===0)showMissing();
- const open=()=>{if(frame.classList.contains('missing'))return;lastFrame=frame;enlargedImage.src=photo.currentSrc||photo.src;enlargedImage.alt=photo.alt;viewer.showModal();closeButton.focus();};
- frame.addEventListener('click',open);
- frame.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open();}});
-});
-closeButton.addEventListener('click',()=>viewer.close());
-viewer.addEventListener('click',e=>{if(e.target===viewer)viewer.close();});
-viewer.addEventListener('close',()=>{enlargedImage.removeAttribute('src');if(lastFrame)lastFrame.focus();});
-const surpriseSound=new Audio('petergriffinstarwars.mp3');
-document.getElementById('sound-switch').addEventListener('click',async()=>{
- const status=document.getElementById('sound-status');
- status.textContent='';
-          </style>
-</div> 
+      frame.classList.add('missing');
+      frame.querySelector('.missing-label').textContent = 'Picture not found: ' + photo.getAttribute('src');
+      frame.removeAttribute('role');
+      frame.removeAttribute('tabindex');
+      frame.removeAttribute('aria-label');
+    };
+    photo.addEventListener('error', showMissing);
+    if (photo.complete && photo.naturalWidth === 0) showMissing();
+    const open = () => { 
+      if (frame.classList.contains('missing')) return;
+      lastFrame = frame;
+      enlargedImage.src = photo.src;
+      enlargedImage.alt = photo.alt;
+      viewer.showModal();
+      closeButton.focus();
+    };
+    frame.addEventListener('click', open);
+    frame.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+  closeButton.addEventListener('click', () => viewer.close());
+  viewer.addEventListener('click', e => { if (e.target === viewer) viewer.close(); });
+  viewer.addEventListener('close', () => { enlargedImage.removeAttribute('src'); if (lastFrame) lastFrame.focus(); });
+</script>
+</section>
+ 
+ <style>
+  <style>
+    .image-container {
+        display: inline-block;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none; /* For Safari */
+        transition: transform 0.05s ease-out; 
+    }
+
+    /* This forces the browser to make the light/square background transparent */
+    .image-container img {
+    display: block;
+    border-radius: 50%;
+    mix-blend-mode: normal;
+    }
+
+    /* The push-down animation */
+    .flipped {
+        transform: scale(0.95) translate(-4px, 4px) rotate(-4deg);
+    }
+</style>
+<style>
+    .image-container {
+        display: inline-block;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none; /* For Safari */
+        transition: transform 0.05s ease-out; 
+    }
+    /* This cleanly cuts the image into a perfect circle, cutting off the square edges */
+    .image-container img {
+        display: block;
+        border-radius: 75%;
+     mix-blend-mode: normal;
+    }
+
+    /* The push-down animation */
+    .flipped {
+        transform: scale(0.95) translate(-4px, 4px) rotate(-4deg);
+    }
+</style>
+
+<!-- Your hidden easter egg vintage switch -->
+<div class="image-container" id="flipImageContainer">
+    <!-- Replace 'your-image.png' with your actual switch filename -->
+    <img id="myImage" src="image_486ebf86.jpg" alt="" width="70">
+</div>
+
+<script>
+    let clickCount = 0;
+    const imageContainer = document.getElementById('flipImageContainer');
+
+    imageContainer.addEventListener('mousedown', () => {
+        imageContainer.classList.add('flipped');
+    });
+
+    imageContainer.addEventListener('mouseup', () => {
+        imageContainer.classList.remove('flipped');
+        
+        clickCount++;
+
+        if (clickCount === 3) {
+            // Opens in the same tab smoothly
+            window.location.href = 'https://jtack6769.github.io/Quote_challenge/'; 
+            clickCount = 0; 
+        }
+    });
+
+    imageContainer.addEventListener('mouseleave', () => {
+        imageContainer.classList.remove('flipped'); }); </script>
+           </section>
+           </body>
+</html>
+
 
 </script>
 <section class="halloween-callout" aria-label="Halloween invitation">
