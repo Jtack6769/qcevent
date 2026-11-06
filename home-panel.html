@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quote Challenge | Home</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;padding:clamp(14px,3vw,32px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:18px;background:radial-gradient(ellipse at center,#172443,#03050b 75%);color:#fff;font-family:system-ui,Arial,sans-serif}
+.marquee{width:min(100%,1000px);overflow:hidden;border:1px solid #ffe083;border-radius:8px;padding:12px 0;background:#07132e;box-shadow:0 0 20px #e5b84955}
+.marquee span{display:inline-block;white-space:nowrap;padding-left:100%;font-weight:800;letter-spacing:.08em;color:#fff0a8;text-shadow:0 0 10px #ffc44d;animation:scroll 22s linear infinite}
+@keyframes scroll{to{transform:translateX(-100%)}}
+.poster{display:block;width:min(100%,1000px);max-height:68vh;object-fit:contain;border:1px solid #d6a54e;border-radius:8px;box-shadow:0 12px 38px #000b}
+.caption{margin:0;color:#ffe7a0;text-align:center;font-size:clamp(14px,2vw,20px)}
+@media(prefers-reduced-motion:reduce){.marquee span{animation:none;padding-left:0;white-space:normal;text-align:center;display:block}}
+</style>
+</head>
+<body>
+<div class="marquee" aria-label="Quote Challenge scrolling welcome"><span>WELCOME TO QUOTE CHALLENGE 7.0 • CHOOSE A GAME FROM THE LEFT • ENJOY THE SHOW •</span></div>
+<img class="poster" src="loganrun.jpg" alt="Logan's Run movie poster">
+<p class="caption">Welcome to the Quote Challenge. Choose a game from the links on the left.</p>
+</body>
+</html>
