@@ -3,22 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Quote Challenge | Theater 7.0</title>
+<title>Quote Challenge | Theater 7.6</title>
 <style>
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;background:#03050b;color:#fff;font-family:system-ui,Arial,sans-serif}
 body{padding-bottom:24px}
 .theater{position:relative;width:100%;max-width:1648px;aspect-ratio:1648/928;margin:0 auto;background:url('file_00000000edac81f5a897ec15c9dd5d18.png') center/100% 100% no-repeat;overflow:hidden}
 /* This ticker sits over the theater artwork's illuminated screen, directly below its sign. */
-.marquee{position:absolute;left:24.2%;top:24.4%;width:51.8%;height:12.5%;overflow:hidden;display:flex;align-items:center;isolation:isolate;background:radial-gradient(ellipse at center,#17356d,#07132e 75%);border-top:2px solid #d89524;border-bottom:2px solid #d89524;box-shadow:0 0 24px #e5b84955,inset 0 0 20px #000;padding:0 2.5%}
+.marquee{position:absolute;left:24.2%;top:22.8%;width:51.8%;height:15.5%;overflow:hidden;display:flex;align-items:center;isolation:isolate;background:radial-gradient(ellipse at center,#254b91,#07132e 78%);border-top:2px solid #ffd46d;border-bottom:2px solid #ffd46d;box-shadow:0 0 26px #e5b84988,inset 0 0 16px #000;padding:0 2.5%}
 .marquee:before{content:"";position:absolute;inset:5px;border:1px solid #ffe5a588;border-radius:9px;pointer-events:none;z-index:2}
 .marquee:after{content:"";position:absolute;inset:-28%;z-index:0;pointer-events:none;opacity:.27;background:repeating-linear-gradient(101deg,transparent 0 30px,#ffc76a12 37px,transparent 51px 82px),radial-gradient(ellipse at 38% 65%,#ff8b3d18,transparent 53%),radial-gradient(ellipse at 72% 38%,#a74bff20,transparent 55%);filter:blur(12px);animation:heatDrift 8s ease-in-out infinite alternate}
 @keyframes heatDrift{0%{transform:translate(-1.5%,2%) skewX(-2deg) scale(1.02)}50%{transform:translate(1%,-1.5%) skewX(2deg) scale(1.06)}100%{transform:translate(-.5%,1%) skewX(-1deg) scale(1.03)}}
 .marquee-track{position:relative;z-index:1;display:flex;flex:0 0 auto;width:max-content;white-space:nowrap;animation:marqueeScroll 24s linear infinite}
-.marquee-track span{flex:0 0 auto;padding-right:2.5em;font-size:clamp(10px,2.2vw,32px);font-weight:800;letter-spacing:.04em;line-height:1;color:#fff5b8;text-shadow:0 2px 2px #241000,0 0 6px #ffb742,0 0 14px #fff3}
+.marquee-track span{flex:0 0 auto;padding-right:2.5em;font-size:clamp(12px,2.35vw,35px);font-weight:900;letter-spacing:.04em;line-height:1;color:#fffbe3;text-shadow:0 2px 2px #241000,0 0 8px #ffcf54,0 0 18px #ffda7299}
 @keyframes marqueeScroll{to{transform:translateX(-50%)}}
 .door-link{position:absolute;display:block;top:43.3%;height:43.8%;z-index:2;cursor:pointer;border-radius:5px}
 .door-one{left:32.5%;width:14.4%}.door-two{left:52.9%;width:13.8%}
+.door-link::after{content:attr(data-label);position:absolute;left:50%;bottom:8%;transform:translateX(-50%);width:max-content;max-width:98%;padding:3px 5px;border:1px solid #ffdf84;border-radius:4px;background:#091225e8;color:#fff0ae;font-size:clamp(7px,1.05vw,16px);font-weight:800;text-align:center;text-shadow:0 0 5px #ffb742;pointer-events:none}
 .door-link:focus-visible{outline:3px solid #fff39b;outline-offset:2px}
 .below-stage{width:min(1500px,96%);margin:18px auto 0;display:grid;grid-template-columns:minmax(180px,250px) minmax(0,1fr);gap:16px;align-items:stretch}
 .navigation,.viewer-panel{min-width:0;border:1px solid #d6a54e88;border-radius:12px;background:linear-gradient(145deg,#101b30,#070b14 72%);box-shadow:0 8px 28px #0009,inset 0 1px #ffffff12}
@@ -29,25 +30,28 @@ body{padding-bottom:24px}
 .nav-links a{display:block;padding:12px 14px;border:1px solid #d6a54e88;border-radius:8px;background:#111a2b;color:#ffe7a0;text-decoration:none;font-weight:700;transition:background .18s ease,transform .18s ease,border-color .18s ease}
 .nav-links a:hover,.nav-links a:focus-visible{background:#263451;border-color:#ffe083;transform:translateX(2px)}
 .nav-links a:focus-visible{outline:3px solid #fff;outline-offset:2px}
-.viewer-panel{display:flex;flex-direction:column;padding:16px;min-height:620px}
+.picture-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:12px}.picture-slot{padding:9px 4px;border:1px dashed #bba16a;border-radius:7px;background:#111a2b;color:#ffe7a0;cursor:pointer;font:600 12px system-ui}.picture-slot:hover,.picture-slot:focus-visible{border-style:solid;background:#263451}.viewer-panel{display:flex;flex-direction:column;padding:16px;min-height:620px}
 .viewer-panel h2{margin-bottom:10px}
 .viewer-panel iframe{display:block;flex:1;width:100%;min-height:560px;border:1px solid #4d5b75;border-radius:8px;background:#03050b}
 @media(max-width:700px){.below-stage{grid-template-columns:1fr;margin-top:12px}.navigation{padding:14px}.nav-links{grid-template-columns:repeat(2,minmax(0,1fr))}.viewer-panel{min-height:520px;padding:12px}.viewer-panel iframe{min-height:460px}}
 @media(max-width:420px){.nav-links{grid-template-columns:1fr}.viewer-panel{min-height:440px}.viewer-panel iframe{min-height:380px}}
 @media(prefers-reduced-motion:reduce){.marquee-track{animation:none;transform:none}.marquee-track span{white-space:normal}.marquee:after{animation:none}}
+
+/* QC 7.6: sculpted, glossy midnight-blue lower dashboard. Visual styling only. */
+.below-stage{position:relative;padding:14px;border-radius:24px;background:radial-gradient(ellipse 85% 75% at 72% 4%,#3b75c044,transparent 72%),linear-gradient(180deg,#142d51 0%,#071224 48%,#02060e 100%);border:1px solid #82b9ed55;box-shadow:inset 0 2px 2px #d6efff88,inset 0 -8px 20px #000b,0 16px 35px #000b}
+.navigation,.viewer-panel{position:relative;isolation:isolate;overflow:hidden;border-radius:22px;border:1px solid #8bb9e077;background:radial-gradient(ellipse 110% 52% at 72% 16%,#3f7ab94a,transparent 75%),linear-gradient(155deg,#234a78 0%,#132a4b 27%,#0a1933 58%,#030a18 100%);box-shadow:inset 0 2px 2px #e0f6ff99,inset 2px 0 10px #a2cfff22,inset -9px -15px 30px #0008,0 12px 20px #0009,0 0 18px #2779c01a}
+.navigation::before,.viewer-panel::before{content:"";position:absolute;z-index:-1;pointer-events:none;left:5%;right:5%;top:2px;height:36%;border-radius:55% 55% 45% 45% / 30% 30% 70% 70%;background:linear-gradient(180deg,#e3f5ff45 0%,#9ccfff1a 28%,transparent 100%);filter:blur(8px)}
+.navigation::after,.viewer-panel::after{content:"";position:absolute;z-index:-1;pointer-events:none;width:42%;height:95%;top:-24%;right:-18%;transform:rotate(22deg);background:linear-gradient(90deg,transparent,#d7efff13 48%,#f3fbff30 53%,transparent 72%);filter:blur(12px)}
+.nav-links a,.picture-slot{border-radius:12px;border:1px solid #92c4e077;background:linear-gradient(180deg,#517ca856 0%,#1b3c63 12%,#10233e 54%,#07152a 100%);box-shadow:inset 0 1px 1px #e7f7ff77,inset 0 -5px 10px #0006,0 4px 9px #0006;text-shadow:0 1px 5px #000}
+.nav-links a:hover,.nav-links a:focus-visible,.picture-slot:hover,.picture-slot:focus-visible{background:linear-gradient(180deg,#527ba6,#234d7c 40%,#0b2447);border-color:#b5e2ff;box-shadow:inset 0 1px 2px #fff9,0 0 13px #5cbaff55}
+.viewer-panel iframe{border-radius:14px;border-color:#8ab7e088;box-shadow:inset 0 0 15px #000,0 0 0 1px #0008,0 6px 16px #0008}
 </style>
 </head>
 <body>
 <main>
   <section class="theater" aria-label="Quote Challenge theater entrance">
-    <div class="marquee" aria-label="Scrolling Quote Challenge welcome messages">
-      <div class="marquee-track">
-        <span>WELCOME TO QUOTE CHALLENGE 7.0 LOGAN'S RUN! &nbsp; • &nbsp; WE WISH YOU A HAPPY HOLIDAY SEASON &nbsp; • &nbsp; QC AND LOGAN'S RUN ALL DECEMBER 2026! &nbsp; • &nbsp;</span>
-        <span aria-hidden="true">WELCOME TO QUOTE CHALLENGE 7.0 LOGAN'S RUN! &nbsp; • &nbsp; WE WISH YOU A HAPPY HOLIDAY SEASON &nbsp; • &nbsp; QC AND LOGAN'S RUN ALL DECEMBER 2026! &nbsp; • &nbsp;</span>
-      </div>
-    </div>
-    <a class="door-link door-one" href="one-player.html" target="mainViewer" aria-label="Open one-player game in the main viewing panel" title="ADMIT ONE"></a>
-    <a class="door-link door-two" href="two-player.html" target="mainViewer" aria-label="Open two-player game in the main viewing panel" title="ADMIT TWO"></a>
+    <a class="door-link door-one" href="one-player.html" target="mainViewer" aria-label="Open one-player game in the main viewing panel" title="Parking for One" data-label="PARKING FOR ONE"></a>
+    <a class="door-link door-two" href="two-player.html" target="mainViewer" aria-label="Open two-player game in the main viewing panel" title="Parking for Two" data-label="PARKING FOR TWO"></a>
   </section>
   <div class="below-stage">
     <nav class="navigation" aria-label="Site pages">
@@ -57,6 +61,32 @@ body{padding-bottom:24px}
         <a href="one-player.html" target="mainViewer">One-player challenge</a>
         <a href="two-player.html" target="mainViewer">Two-player challenge</a>
         <a href="home-panel.html" target="mainViewer">Home</a>
+        <!-- TEN EDITABLE SLOTS: change href="#" to your page (e.g. box_robot.html), and rename Feature 01. -->
+        <a href="#" target="mainViewer" class="feature-slot">Feature 01</a>
+        <a href="#" target="mainViewer" class="feature-slot">Feature 02</a>
+        <a href="#" target="mainViewer" class="feature-slot">Feature 03</a>
+        <a href="#" target="mainViewer" class="feature-slot">Feature 04</a>
+        <a href="#" target="mainViewer" class="feature-slot">Feature 05</a>
+        <a href="#" target="mainViewer" class="feature-slot">Feature 06</a>
+        <a href="#" target="mainViewer" class="feature-slot">Feature 07</a>
+        <a href="#" target="mainViewer" class="feature-slot">Feature 08</a>
+        <a href="#" target="mainViewer" class="feature-slot">Feature 09</a>
+        <a href="#" target="mainViewer" class="feature-slot">Feature 10</a>
+      </div>
+      <!-- PICTURE SLOTS: change data-image="" to your image filename, e.g. poster.jpg.
+           Change the button label to whatever you want. Each picture opens in mainViewer. -->
+      <h2 style="margin-top:20px">Picture projector</h2>
+      <div class="picture-links" aria-label="Picture shortcuts">
+        <button type="button" class="picture-slot" data-image="">Picture 01</button>
+        <button type="button" class="picture-slot" data-image="">Picture 02</button>
+        <button type="button" class="picture-slot" data-image="">Picture 03</button>
+        <button type="button" class="picture-slot" data-image="">Picture 04</button>
+        <button type="button" class="picture-slot" data-image="">Picture 05</button>
+        <button type="button" class="picture-slot" data-image="">Picture 06</button>
+        <button type="button" class="picture-slot" data-image="">Picture 07</button>
+        <button type="button" class="picture-slot" data-image="">Picture 08</button>
+        <button type="button" class="picture-slot" data-image="">Picture 09</button>
+        <button type="button" class="picture-slot" data-image="">Picture 10</button>
       </div>
     </nav>
     <section class="viewer-panel" aria-labelledby="viewerTitle">
@@ -65,5 +95,57 @@ body{padding-bottom:24px}
     </section>
   </div>
 </main>
+<script>
+// Project pictures into the existing main viewing panel without changing the theater.
+// Only filenames you enter in data-image are loaded. No guessing image locations.
+const mainViewer = document.querySelector('iframe[name="mainViewer"]');
+function projectMessage(title, message, imagePath) {
+  const doc = document.implementation.createHTMLDocument(title);
+  const style = doc.createElement('style');
+  style.textContent = 'body{margin:0;min-height:100vh;background:#03050b;color:#ffe7a0;font-family:system-ui;display:grid;place-items:center;text-align:center}main{padding:18px;width:100%}img{max-width:100%;max-height:85vh;object-fit:contain;border:2px solid #d6a54e;border-radius:8px}';
+  doc.head.append(style);
+  const main = doc.createElement('main');
+  if (imagePath) {
+    const img = doc.createElement('img');
+    img.alt = title;
+    // Resolve relative paths against this theater page, not the srcdoc document.
+    img.src = new URL(imagePath, location.href).href;
+    main.append(img);
+  } else {
+    const heading = doc.createElement('h1'); heading.textContent = title;
+    const paragraph = doc.createElement('p'); paragraph.textContent = message;
+    main.append(heading, paragraph);
+  }
+  doc.body.append(main);
+  mainViewer.removeAttribute('src');
+  mainViewer.srcdoc = '<!doctype html>' + doc.documentElement.outerHTML;
+}
+document.querySelectorAll('.picture-slot').forEach(button => {
+  button.addEventListener('click', () => {
+    const filename = button.dataset.image.trim();
+    projectMessage(button.textContent.trim(), 'Picture slot ready. Add an image filename in data-image.', filename);
+    document.querySelector('.viewer-panel').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+// When following a normal page link, clear srcdoc so the iframe can navigate again.
+document.querySelectorAll('a[target="mainViewer"]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (link.getAttribute('href') !== '#') mainViewer.removeAttribute('srcdoc');
+  });
+});
+// Unassigned slots show a friendly placeholder inside the existing viewing panel.
+// Once you replace href="#" with a real HTML filename, the link works normally.
+document.querySelectorAll('.feature-slot').forEach(link => {
+  link.addEventListener('click', event => {
+    if (link.getAttribute('href') !== '#') return;
+    event.preventDefault();
+    const viewer = document.querySelector('iframe[name="mainViewer"]');
+    if (!viewer) return;
+    const title = link.textContent.trim();
+    viewer.removeAttribute('src');
+    viewer.srcdoc = `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><body style="margin:0;min-height:100vh;display:grid;place-items:center;background:#03050b;color:#ffe7a0;font-family:system-ui,Arial,sans-serif;text-align:center"><main><h1>${title.replace(/[&<>"']/g, '')}</h1><p>Coming soon to Quote Challenge</p></main></body></html>`;
+  });
+});
+</script>
 </body>
-</html>
+  </html>
