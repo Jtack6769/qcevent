@@ -1,6 +1,10 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
-
+runs:
+  using: 'node24'
+  pre: 'setup.js'
+  main: 'index.js'
+  post: 'cleanup.js
 on:
   # Runs on pushes targeting the default branch
   push:
