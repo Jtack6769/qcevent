@@ -9,12 +9,14 @@
 html,body{margin:0;min-height:100%;background:#03050b;color:#fff;font-family:system-ui,Arial,sans-serif}
 body{padding-bottom:24px}
 .theater{position:relative;width:100%;max-width:1648px;aspect-ratio:1648/928;margin:0 auto;background:url('file_00000000edac81f5a897ec15c9dd5d18.png') center/100% 100% no-repeat;overflow:hidden}
-.marquee{position:absolute;left:24.2%;top:24.4%;width:51.8%;height:12.5%;overflow:hidden;display:grid;place-items:center;isolation:isolate;background:radial-gradient(ellipse at center,#17356d,#07132e 75%);border-top:2px solid #d89524;border-bottom:2px solid #d89524;box-shadow:0 0 24px #e5b84955,inset 0 0 20px #000}
-.marquee:before{content:"";position:absolute;inset:5px;border:1px solid #ffe5a588;border-radius:9px;pointer-events:none;z-index:5}
+/* This ticker sits over the theater artwork's illuminated screen, directly below its sign. */
+.marquee{position:absolute;left:24.2%;top:24.4%;width:51.8%;height:12.5%;overflow:hidden;display:flex;align-items:center;isolation:isolate;background:radial-gradient(ellipse at center,#17356d,#07132e 75%);border-top:2px solid #d89524;border-bottom:2px solid #d89524;box-shadow:0 0 24px #e5b84955,inset 0 0 20px #000;padding:0 2.5%}
+.marquee:before{content:"";position:absolute;inset:5px;border:1px solid #ffe5a588;border-radius:9px;pointer-events:none;z-index:2}
 .marquee:after{content:"";position:absolute;inset:-28%;z-index:0;pointer-events:none;opacity:.27;background:repeating-linear-gradient(101deg,transparent 0 30px,#ffc76a12 37px,transparent 51px 82px),radial-gradient(ellipse at 38% 65%,#ff8b3d18,transparent 53%),radial-gradient(ellipse at 72% 38%,#a74bff20,transparent 55%);filter:blur(12px);animation:heatDrift 8s ease-in-out infinite alternate}
 @keyframes heatDrift{0%{transform:translate(-1.5%,2%) skewX(-2deg) scale(1.02)}50%{transform:translate(1%,-1.5%) skewX(2deg) scale(1.06)}100%{transform:translate(-.5%,1%) skewX(-1deg) scale(1.03)}}
-.wave-message{position:relative;z-index:2;text-align:center;padding:0 8px;font-size:clamp(10px,2.8vw,42px);font-weight:bold;letter-spacing:.015em;color:#fff5b8;text-shadow:0 2px 2px #241000,0 0 6px #ffb742,0 0 14px #fff3;transition:opacity .12s ease}
-.wave-message.hide{opacity:0}
+.marquee-track{position:relative;z-index:1;display:flex;flex:0 0 auto;width:max-content;white-space:nowrap;animation:marqueeScroll 24s linear infinite}
+.marquee-track span{flex:0 0 auto;padding-right:2.5em;font-size:clamp(10px,2.2vw,32px);font-weight:800;letter-spacing:.04em;line-height:1;color:#fff5b8;text-shadow:0 2px 2px #241000,0 0 6px #ffb742,0 0 14px #fff3}
+@keyframes marqueeScroll{to{transform:translateX(-50%)}}
 .door-link{position:absolute;display:block;top:43.3%;height:43.8%;z-index:2;cursor:pointer;border-radius:5px}
 .door-one{left:32.5%;width:14.4%}.door-two{left:52.9%;width:13.8%}
 .door-link:focus-visible{outline:3px solid #fff39b;outline-offset:2px}
@@ -32,13 +34,18 @@ body{padding-bottom:24px}
 .viewer-panel iframe{display:block;flex:1;width:100%;min-height:560px;border:1px solid #4d5b75;border-radius:8px;background:#03050b}
 @media(max-width:700px){.below-stage{grid-template-columns:1fr;margin-top:12px}.navigation{padding:14px}.nav-links{grid-template-columns:repeat(2,minmax(0,1fr))}.viewer-panel{min-height:520px;padding:12px}.viewer-panel iframe{min-height:460px}}
 @media(max-width:420px){.nav-links{grid-template-columns:1fr}.viewer-panel{min-height:440px}.viewer-panel iframe{min-height:380px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none;transform:none}.marquee-track span{white-space:normal}.marquee:after{animation:none}}
 </style>
 </head>
 <body>
 <main>
   <section class="theater" aria-label="Quote Challenge theater entrance">
-    <div class="marquee" aria-label="Animated Quote Challenge welcome messages"><div class="wave-message" id="waveMessage">WELCOME TO QUOTE CHALLENGE</div></div>
+    <div class="marquee" aria-label="Scrolling Quote Challenge welcome messages">
+      <div class="marquee-track">
+        <span>WELCOME TO QUOTE CHALLENGE 7.0 LOGAN'S RUN! &nbsp; • &nbsp; WE WISH YOU A HAPPY HOLIDAY SEASON &nbsp; • &nbsp; QC AND LOGAN'S RUN ALL DECEMBER 2026! &nbsp; • &nbsp;</span>
+        <span aria-hidden="true">WELCOME TO QUOTE CHALLENGE 7.0 LOGAN'S RUN! &nbsp; • &nbsp; WE WISH YOU A HAPPY HOLIDAY SEASON &nbsp; • &nbsp; QC AND LOGAN'S RUN ALL DECEMBER 2026! &nbsp; • &nbsp;</span>
+      </div>
+    </div>
     <a class="door-link door-one" href="one-player.html" target="mainViewer" aria-label="Open one-player game in the main viewing panel" title="ADMIT ONE"></a>
     <a class="door-link door-two" href="two-player.html" target="mainViewer" aria-label="Open two-player game in the main viewing panel" title="ADMIT TWO"></a>
   </section>
@@ -58,24 +65,5 @@ body{padding-bottom:24px}
     </section>
   </div>
 </main>
-<script>
-const slides=[
-  {text:"WELCOME TO QUOTE CHALLENGE 7.0 LOGAN'S RUN!",hold:4000},
-  {text:'WE WISH YOU A HAPPY HOLIDAY SEASON',hold:4000},
-  {text:'QC AND LOGANS RUN ALL DECEMBER 2026!',hold:7000}
-];
-const message=document.getElementById('waveMessage');
-let slideIndex=0;
-function showNextSlide(){
-  message.classList.add('hide');
-  window.setTimeout(()=>{
-    slideIndex=(slideIndex+1)%slides.length;
-    message.textContent=slides[slideIndex].text;
-    message.classList.remove('hide');
-    window.setTimeout(showNextSlide,slides[slideIndex].hold);
-  },120);
-}
-window.setTimeout(showNextSlide,slides[0].hold);
-</script>
 </body>
 </html>
