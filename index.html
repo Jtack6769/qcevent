@@ -10,7 +10,9 @@ html,body{margin:0;min-height:100%;background:#03050b;color:#fff;font-family:sys
 body{padding-bottom:4px}
 .theater{position:relative;width:100%;max-width:848px;aspect-ratio:848/428;margin:0 auto;background:url('file_00000000edac81f5a897ec15c9dd5d18.png') center/100% 100% no-repeat;overflow:hidden}
 /* This ticker sits over the theater artwork's illuminated screen, directly below its sign. */
-.marquee{position:absolute;left:12.2%;top:34.4%;width:31.8%;height:22.5%;overflow:hidden;display:flex;align-items:center;isolation:isolate;background:radial-gradient(ellipse at center,#17356d,#07132e 75%);border-top:0px solid #d89524;border-bottom:0px solid #d89524;box-shadow:0 0 4px #e5b84955,inset 0 0 0px #000;padding:0 .5%}
+.marquee{position:absolute;left:12.2%;top:34.4%;width:31.8%;height:22.5%;overflow:hidden;display:flex;align-
+  <div class="marquee-track">
+        <span>WELCOME TO QUOTE CHALLENGE 7.0 LOGAN'S RUN! &nbsp; • &nbsp; WE WISH YOU A HAPPY HOLIDAY SEASON &nbsp; • &nbsp; QC AND LOGAN'S RUN ALL DECEMBER 2026! &nbsp; • &nbsp;</span>items:center;isolation:isolate;background:radial-gradient(ellipse at center,#17356d,#07132e 75%);border-top:0px solid #d89524;border-bottom:0px solid #d89524;box-shadow:0 0 4px #e5b84955,inset 0 0 0px #000;padding:0 .5%}
 .marquee:before{content:"";position:crntered-top;inset:5px;border:1px solid #ffe5a588;border-radius:9px;pointer-events:none;z-index:2}
 .marquee:after{content:"";position:absolute;inset:-28%;z-index:0;pointer-events:none;opacity:.27;background:repeating-linear-gradient(101deg,transparent 0 30px,#ffc76a12 37px,transparent 51px 82px),radial-gradient(ellipse at 38% 65%,#ff8b3d18,transparent 53%),radial-gradient(ellipse at 72% 38%,#a74bff20,transparent 55%);filter:blur(12px);animation:heatDrift 8s ease-in-out infinite alternate}
 @keyframes heatDrift{0%{transform:translate(-1.5%,2%) skewX(-2deg) scale(1.02)}50%{transform:translate(1%,-1.5%) skewX(2deg) scale(1.06)}100%{transform:translate(-.5%,1%) skewX(-1deg) scale(1.03)}}
@@ -41,9 +43,7 @@ body{padding-bottom:4px}
 <main>
   <section class="theater" aria-label="Quote Challenge theater entrance">
     <div class="marquee" aria-label="Scrolling Quote Challenge welcome messages">
-      <div class="marquee-track">
-        <span>WELCOME TO QUOTE CHALLENGE 7.0 LOGAN'S RUN! &nbsp; • &nbsp; WE WISH YOU A HAPPY HOLIDAY SEASON &nbsp; • &nbsp; QC AND LOGAN'S RUN ALL DECEMBER 2026! &nbsp; • &nbsp;</span>
-        <span aria-hidden="true">WELCOME TO QUOTE CHALLENGE 7.0 LOGAN'S RUN! &nbsp; • &nbsp; WE WISH YOU A HAPPY HOLIDAY SEASON &nbsp; • &nbsp; QC AND LOGAN'S RUN ALL DECEMBER 2026! &nbsp; • &nbsp;</span>
+    </div> <span aria-hidden="true">WELCOME TO QUOTE CHALLENGE 7.0 LOGAN'S RUN! &nbsp; • &nbsp; WE WISH YOU A HAPPY HOLIDAY SEASON &nbsp; • &nbsp; QC AND LOGAN'S RUN ALL DECEMBER 2026! &nbsp; • &nbsp;</span>
       </div>
     </div>
     <a class="door-link door-one" href="one-player.html" target="mainViewer" aria-label="Open one-player game in the main viewing panel" title="ADMIT ONE"></a>
