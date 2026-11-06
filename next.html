@@ -28,12 +28,12 @@ body{min-height:100svh;overflow:hidden;display:grid;place-items:center;font-fami
 .gold-reveal::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,#ffd34855 0%,#ffc52b12 27%,transparent 62%);opacity:0;animation:light-pulse 2.05s ease 1.85s forwards}
 @keyframes gold-burst{
   0%{opacity:0;transform:scale(1.92);filter:brightness(1)}
-  12%{opacity:1;transform:scale(3.04);filter:brightness(2.4)}
-  30%{opacity:1;transform:scale(3);filter:brightness(1)}
-  53%{opacity:1;transform:scale(3.04);filter:brightness(2.6)}
-  70%{opacity:1;transform:scale(3);filter:brightness(1.15)}
-  87%{opacity:1;transform:scale(3.06);filter:brightness(3)}
-  100%{opacity:0;transform:scale(3.2);filter:brightness(4)}
+  12%{opacity:1;transform:scale(1.04);filter:brightness(2.4)}
+  30%{opacity:1;transform:scale(1);filter:brightness(1)}
+  53%{opacity:1;transform:scale1.5);filter:brightness(2.6)}
+  70%{opacity:1;transform:scale(1);filter:brightness(1.15)}
+  87%{opacity:1;transform:scale(1.06);filter:brightness(3)}
+  100%{opacity:0;transform:scale(1.2);filter:brightness(4)}
 }
 @keyframes light-pulse{0%,25%,43%,66%,80%,100%{opacity:0}12%,53%,87%{opacity:1}}
 .error{position:absolute;bottom:16px;left:12px;right:12px;text-align:center;color:#fff;font:14px system-ui,sans-serif;display:none}
@@ -41,7 +41,7 @@ body{min-height:100svh;overflow:hidden;display:grid;place-items:center;font-fami
 </style>
 </head>
 <body>
-<main class="stage" aria-label="Next month's movie teaser">
+<main class="stage" aria-label="It's here right now">
   <div class="poster" aria-label="Logan's Run poster assembling in four pieces">
     <div class="tile"></div><div class="tile"></div><div class="tile"></div><div class="tile"></div>
   </div>
@@ -53,8 +53,8 @@ body{min-height:100svh;overflow:hidden;display:grid;place-items:center;font-fami
 <script>
 // Chrome Logan's Run poster filename supplied by the creator.
 // Keep that image in the same GitHub folder as next.html.
-const POSTER_FILE = '20261105_191529-CINEMATIC.mp4';
-document.documentElement.style.setProperty('--poster-url', `url("${20261105_191529-CINEMATIC.mp4}")`);
+const POSTER_FILE = 'file_00000000107481f594bf439a6b3a6038.png';
+document.documentElement.style.setProperty('--poster-url'file_00000000107481f594bf439a6b3a6038.png' url("${file_00000000107481f594bf439a6b3a6038.png}")`);
 const check = new Image();
 check.onerror = () => { document.querySelector('.error').style.display = 'block'; };
 check.src = POSTER_FILE;
