@@ -1,0 +1,3902 @@
+"q": "I have a feeling we're not in Kansas anymore.",
+    "s": "The Wizard of Oz",
+    "sp": "Dorothy Gale",
+    "b": "Toto, I've a feeling we're not in Kansas anymore.",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "May the Force be with you.",
+    "s": "Star Wars",
+    "sp": "General Dodonna",
+    "b": "Remember, the Force will be with you, always.",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Easy"
+  },
+  {
+    "q": "I'm gonna make him an offer he can't refuse.",
+    "s": "The Godfather",
+    "sp": "Vito Corleone",
+    "b": "Leave the gun. Take the cannoli.",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "Here's looking at you, kid.",
+    "s": "Casablanca",
+    "sp": "Rick Blaine",
+    "b": "Louis, I think this is the beginning of a beautiful friendship.",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  },
+  {
+    "q": "Live long and prosper.",
+    "s": "Star Trek",
+    "sp": "Spock",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Easy"
+  },
+  {
+    "q": "You can't handle the truth!",
+    "s": "A Few Good Men",
+    "sp": "Col. Nathan Jessup",
+    "b": "I want the truth!",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "There's no place like home.",
+    "s": "The Wizard of Oz",
+    "sp": "Dorothy Gale",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "Roads? Where we're going, we don't need roads.",
+    "s": "Back to the Future",
+    "sp": "Doc Brown",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "I'll be back.",
+    "s": "The Terminator",
+    "sp": "The Terminator",
+    "b": "",
+    "a": "",
+    "c": "Action",
+    "d": "Easy"
+  },
+  {
+    "q": "The truth is out there.",
+    "s": "The X-Files",
+    "sp": "Fox Mulder",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Easy"
+  },
+  {
+    "q": "D'oh!",
+    "s": "The Simpsons",
+    "sp": "Homer Simpson",
+    "b": "",
+    "a": "",
+    "c": "Comedy",
+    "d": "Easy"
+  },
+  {
+    "q": "Beam me up, Scotty.",
+    "s": "Star Trek",
+    "sp": "Captain Kirk",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Easy"
+  },
+  {
+    "q": "Shut up, Meg.",
+    "s": "Family Guy",
+    "sp": "Peter Griffin",
+    "b": "Meg: Dad, can I use the car?",
+    "a": "Lois: Peter, you better be nice to her. She won't be your little girl forever.",
+    "c": "Comedy",
+    "d": "Easy"
+  },
+  {
+    "q": "If I'm not back in five minutes, just wait longer.",
+    "s": "Ace Ventura: Pet Detective",
+    "sp": "Ace Ventura",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  },
+  {
+    "q": "Oh my God, he doesn't flog the dolphin before a big date.",
+    "s": "There's Something About Mary",
+    "sp": "Dom Woganowski",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "Boy, when you die at the palace, you really die at the palace.",
+    "s": "History of the World, Part I",
+    "sp": "Comicus",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "Stifle yourself, meathead!",
+    "s": "All in the Family",
+    "sp": "Archie Bunker",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Medium"
+  },
+  {
+    "q": "Be vewy, vewy quiet. I'm hunting wabbits.",
+    "s": "Looney Tunes",
+    "sp": "Elmer Fudd",
+    "b": "",
+    "a": "",
+    "c": "Cartoons",
+    "d": "Easy"
+  },
+  {
+    "q": "This is my urine sample. It's my sister's, and she is pregnant.",
+    "s": "Up in Smoke",
+    "sp": "Anthony 'Man' Stoner",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "I am superior, sir, in many ways. But I would gladly give it up to be human.",
+    "s": "Star Trek: The Next Generation",
+    "sp": "Data",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Medium"
+  },
+  {
+    "q": "If a man was born October 3rd, 1928, and he's still alive, how old is he?",
+    "s": "Phenomenon",
+    "sp": "Dr. Bob Niedorf",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "I'm sorry, Dave. I'm afraid I can't do that.",
+    "s": "2001: A Space Odyssey",
+    "sp": "HAL 9000",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Medium"
+  },
+  {
+    "q": "Lots of people go to college for seven years.",
+    "s": "Tommy Boy",
+    "sp": "Tommy Callahan",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "Hurry up, Doctor! This baby gots to go winky-tinky!",
+    "s": "Paper Moon",
+    "sp": "Trixie Delight",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "And his name ain't Frank, it's Franklin!",
+    "s": "Paper Moon",
+    "sp": "Moses Pray",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "Frankly, my dear, I don't give a damn.",
+    "s": "Gone with the Wind",
+    "sp": "Rhett Butler",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  },
+  {
+    "q": "Father? I hate that name.",
+    "s": "Wagons East",
+    "sp": "Little Feather",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "What could be there for you?",
+    "s": "Wagons East",
+    "sp": "Belle",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "Yes, I can see that.",
+    "s": "Almost Heroes",
+    "sp": "Edwards",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Hard"
+  },
+  {
+    "q": "I'm a doctor, not a bricklayer!",
+    "s": "Star Trek: The Original Series",
+    "sp": "Dr. Leonard McCoy",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Medium"
+  },
+  {
+    "q": "Nothing to eat anyway? Matilda, do you hear me?",
+    "s": "Space Truckers",
+    "sp": "Keller",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Hard"
+  },
+  {
+    "q": "Set course, warp six.",
+    "s": "Star Trek: The Next Generation",
+    "sp": "Captain Jean-Luc Picard",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Medium"
+  },
+  {
+    "q": "Run, bitch! Run!",
+    "s": "Scary Movie",
+    "sp": "Shorty Meeks",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "Missed it by that much.",
+    "s": "Get Smart",
+    "sp": "Maxwell Smart",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Medium"
+  },
+  {
+    "q": "This is the big one! I'm coming to join you, Elizabeth!",
+    "s": "Sanford and Son",
+    "sp": "Fred Sanford",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Easy"
+  },
+  {
+    "q": "You're gonna need a bigger boat.",
+    "s": "Jaws",
+    "sp": "Martin Brody",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Easy"
+  },
+  {
+    "q": "What we're dealing with here is a complete lack of respect for the law.",
+    "s": "Smokey and the Bandit",
+    "sp": "Sheriff Buford T. Justice",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  },
+  {
+    "q": "I love it when a plan comes together.",
+    "s": "The A-Team",
+    "sp": "John 'Hannibal' Smith",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Easy"
+  },
+  {
+    "q": "Danger, Will Robinson!",
+    "s": "Lost in Space",
+    "sp": "The Robot",
+    "b": "",
+    "a": "",
+    "c": "Sci-Fi",
+    "d": "Easy"
+  },
+  {
+    "q": "Kiss my grits!",
+    "s": "Alice",
+    "sp": "Flo Castleberry",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Medium"
+  },
+  {
+    "q": "Na-nu, na-nu.",
+    "s": "Mork & Mindy",
+    "sp": "Mork",
+    "b": "",
+    "a": "",
+    "c": "TV",
+    "d": "Medium"
+  },
+  {
+    "q": "What in the wide, wide world of sports is going on here?",
+    "s": "Blazing Saddles",
+    "sp": "Taggart",
+    "b": "",
+    "a": "",
+    "c": "Movies",
+    "d": "Medium"
+  }
+];
+const bonusQuotes=[{q:"You can't be a little pregnant.",choices:["Rosemary's Baby","The Exorcist","The Omen"],answer:0},{q:"I see dead people.",choices:["The Sixth Sense","Jacob's Ladder","The Others"],answer:0},{q:"Forget it, Jake. It's Chinatown.",choices:["Chinatown","The Big Sleep","L.A. Confidential"],answer:0},{q:"They're here.",choices:["Poltergeist","The Changeling","The Haunting"],answer:0},{q:"I'm mad as hell, and I'm not going to take this anymore!",choices:["Network","Dog Day Afternoon","Serpico"],answer:0},{q:"Klaatu barada nikto.",choices:["The Day the Earth Stood Still","The Thing","The Forbidden Planet"],answer:0}];
+{
+  "version": "6.0",
+  "quotes": [
+    {
+      "q": "There's no place like home.",
+      "s": "The Wizard of Oz",
+      "character": "Dorothy Gale",
+      "d": "Easy",
+      "aliases": [
+        "Dorothy"
+      ],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I'll be back.",
+      "s": "The Terminator",
+      "character": "The Terminator",
+      "d": "Easy",
+      "aliases": [
+        "Terminator",
+        "T-800"
+      ],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Live long and prosper.",
+      "s": "Star Trek",
+      "character": "Spock",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You can't handle the truth!",
+      "s": "A Few Good Men",
+      "character": "Nathan Jessup",
+      "d": "Easy",
+      "aliases": [
+        "Colonel Jessup",
+        "Jessup"
+      ],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Roads? Where we're going, we don't need roads.",
+      "s": "Back to the Future",
+      "character": "Dr. Emmett Brown",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Here's Johnny!",
+      "s": "The Shining",
+      "character": "Jack Torrance",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I'm gonna make him an offer he can't refuse.",
+      "s": "The Godfather",
+      "character": "Vito Corleone",
+      "d": "Easy",
+      "aliases": [
+        "Don Corleone"
+      ],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "D'oh!",
+      "s": "The Simpsons",
+      "character": "Homer Simpson",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Here's looking at you, kid.",
+      "s": "Casablanca",
+      "character": "Rick Blaine",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "What’s a yoot?",
+      "s": "My Cousin Vinny",
+      "character": "Judge Chamberlain Haller",
+      "d": "Medium",
+      "aliases": [
+        "Judge Haller",
+        "Haller"
+      ],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Resistance is futile.",
+      "s": "Star Trek: The Next Generation",
+      "character": "The Borg",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "So what? A lot of people go to college for seven years.",
+      "s": "Tommy Boy",
+      "character": "Tommy Callahan",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The needs of the many outweigh the needs of the few.",
+      "s": "Star Trek II: The Wrath of Khan",
+      "character": "Spock",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [
+        "The Wrath of Khan",
+        "Wrath of Khan",
+        "Star Trek 2"
+      ],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Please state the nature of the medical emergency.",
+      "s": "Star Trek: Voyager",
+      "character": "The Doctor",
+      "d": "Hard",
+      "aliases": [
+        "Doctor",
+        "EMH",
+        "Emergency Medical Hologram"
+      ],
+      "titleAliases": [
+        "Voyager"
+      ],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "They're not killers, they're just hungry!",
+      "s": "Critters",
+      "character": "Charlie McFadden",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The local sheriff points his flashlight down into the dark, blood-splattered barn.",
+      "a": "A tiny, rolling ball of fur and razor-sharp teeth darts across the wooden floorboards."
+    },
+    {
+      "q": "Greetings, Starfighter! You have been recruited by the Star League to defend the Frontier against Xur and the Ko-Dan Armada.",
+      "s": "The Last Starfighter",
+      "character": "Centauri",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Alex Rogan steps back from the arcade cabinet as the glowing screen begins to morph.",
+      "a": "The sleek, futuristic sports car doors slide upward, revealing an alien cockpit."
+    },
+    {
+      "q": "Bidi-bidi-bidi! What's cooking, Buck?",
+      "s": "Buck Rogers in the 25th Century",
+      "character": "Twiki",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Captain Rogers walks into the futuristic starship kitchen, looking for breakfast.",
+      "a": "The tiny silver robot waddles over with a high-tech metal tray of glowing cubes."
+    },
+    {
+      "q": "Mega-damage! This is going to leave a mark!",
+      "s": "Exosquad",
+      "character": "Jace Fletcher",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The Neosapien frontline heavy tanks fire a plasma volley across the city ruins.",
+      "a": "His robotic e-frame stumbles backward, venting gray steam from the hydraulic legs."
+    },
+    {
+      "q": "Prepare the lava cannons! We bury the surface world tonight!",
+      "s": "Inhumanoids",
+      "character": "Metlar",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The giant rock monster slams his fists together, causing an earthquake in the canyon.",
+      "a": "The Earth Corps squad locks their heavy cybernetic armor suits to seal the breach."
+    },
+    {
+      "q": "Hey, toxic waste is good for you! It builds character!",
+      "s": "The Toxic Avenger",
+      "character": "Toxie",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The neighborhood bullies laugh as they push the mop boy out the window.",
+      "a": "He lands directly in the glowing green vat behind the health club facility."
+    },
+    {
+      "q": "I'm a dynamic, super-charged, crime-fighting machine!",
+      "s": "The Tick: The Animated Series",
+      "character": "The Tick",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Arthur: Tick, we can't just break through the bank wall without a search warrant!",
+      "a": "He leaps headfirst into the bricks, leaving a massive superhero-shaped hole."
+    },
+    {
+      "q": "If you don't eat your meat, you can't have any pudding! How can you have any pudding if you don't eat your meat?!",
+      "s": "Pink Floyd – The Wall",
+      "character": "The Schoolmaster",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The faceless school children slide down the conveyor belt directly into the meat grinder.",
+      "a": "A massive hammer emblem flashes across the dark stadium screen in a red glare."
+    },
+    {
+      "q": "I can do anything! I'm the wizard!",
+      "s": "The Wizard",
+      "character": "Lucas",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "He unzips the long gray travel case, pulling out a brand-new Nintendo Power Glove.",
+      "a": "The kids gather around the arcade monitor in absolute awe as he inputs the cheat codes."
+    },
+    {
+      "q": "The ultimate battle between good and evil is about to take place in your backyard.",
+      "s": "The Monster Squad",
+      "character": "Narrator",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Sean checks his diary, verifying that Dracula has successfully summoned the Mummy.",
+      "a": "The kids load their silver bullet slingshots and prepare to defend the treehouse."
+    },
+    {
+      "q": "Let the simulation begin.",
+      "s": "Tron",
+      "character": "Sark",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The blue glowing grid lines light up the dark electronic landscape for miles.",
+      "a": "Two light cycles materialize out of thin air, speeding down the digital highway."
+    },
+    {
+      "q": "We're going to turn your planet into an intergalactic theme park!",
+      "s": "Killer Klowns from Outer Space",
+      "character": "Klown (Klownzilla)",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The massive, building-sized puppet shadow steps over the amusement park gates.",
+      "a": "The ice cream truck tries to swerve out of the way, crashing into a hot dog stand."
+    },
+    {
+      "q": "I see you shiver with anticip... ation.",
+      "s": "The Rocky Horror Picture Show",
+      "character": "Dr. Frank-N-Furter",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "He steps out of the castle elevator wearing his signature fishnet stockings.",
+      "a": "He drops his velvet cape to the floor, strutting toward the lab tables."
+    },
+    {
+      "q": "I've got a bad feeling about this, space rat.",
+      "s": "Biker Mice from Mars",
+      "character": "Throttle",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The mechanical garage doors open, revealing a squad of robotic exterminators.",
+      "a": "He revs his custom chopper engine, pulling a laser pistol from his leather vest."
+    },
+    {
+      "q": "Meet me at the cemetery gates at midnight. Bring the shovel.",
+      "s": "Dead Alive (Braindead)",
+      "character": "Lionel Cosgrove",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "His zombie mother scratches aggressively at the wooden basement door planks.",
+      "a": "He grabs a fresh bottle of tranquilizers and runs out into the rainy street."
+    },
+    {
+      "q": "He's gonna eat me! Oh my Gooooooooood!",
+      "s": "Troll 2",
+      "character": "Arnold",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The mysterious forest witch sprinkles magic green powder over his shoulders.",
+      "a": "The camera zooms in frantically on his face as a tiny green sapling sprouts from his head."
+    },
+    {
+      "q": "Gordon's alive?!",
+      "s": "Flash Gordon",
+      "character": "Prince Vultan",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The communication screen flashes static inside the sky city control chamber.",
+      "a": "The heavy synthesizer music explodes as the Hawkmen prepare their flying fleet for war."
+    },
+    {
+      "q": "It's all in the reflexes.",
+      "s": "Big Trouble in Little China",
+      "character": "Jack Burton",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Wang Chi: How did you catch that flying dagger without looking, Jack?",
+      "a": "He puts on his aviator sunglasses and takes another massive drag from his cigarette."
+    },
+    {
+      "q": "Garbage day!",
+      "s": "Silent Night, Deadly Night Part 2",
+      "character": "Ricky Caldwell",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "A neighborhood man casually walks down his driveway carrying a large metal trash can.",
+      "a": "Ricky pulls a revolver from his coat pocket and points it across the suburban street."
+    },
+    {
+      "q": "I'm a little wired right now.",
+      "s": "The Adventures of Buckaroo Banzai Across the 8th Dimension",
+      "character": "Lord John Whorfin",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The alien commander hooks up massive electrical cables directly to his own head.",
+      "a": "The entire room fills with bright red smoke as he commands his troops to attack."
+    },
+    {
+      "q": "Chop 'em up, bag 'em up!",
+      "s": "Blood Diner",
+      "character": "Sheetar",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The ancient goddess commands the two kitchen brothers to prepa
+{
+  "version": "6.0",
+  "quotes": [
+    {
+      "q": "There's no place like home.",
+      "s": "The Wizard of Oz",
+      "character": "Dorothy Gale",
+      "d": "Easy",
+      "aliases": [
+        "Dorothy"
+      ],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I'll be back.",
+      "s": "The Terminator",
+      "character": "The Terminator",
+      "d": "Easy",
+      "aliases": [
+        "Terminator",
+        "T-800"
+      ],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Live long and prosper.",
+      "s": "Star Trek",
+      "character": "Spock",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You can't handle the truth!",
+      "s": "A Few Good Men",
+      "character": "Nathan Jessup",
+      "d": "Easy",
+      "aliases": [
+        "Colonel Jessup",
+        "Jessup"
+      ],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Roads? Where we're going, we don't need roads.",
+      "s": "Back to the Future",
+      "character": "Emmett Brown",
+      "d": "Easy",
+      "aliases": [
+        "Doc",
+        "Doc Brown"
+      ],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Here's Johnny!",
+      "s": "The Shining",
+      "character": "Jack Torrance",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I'm gonna make him an offer he can't refuse.",
+      "s": "The Godfather",
+      "character": "Vito Corleone",
+      "d": "Easy",
+      "aliases": [
+        "Don Corleone"
+      ],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "D’oh!",
+      "s": "The Simpsons",
+      "character": "Homer Simpson",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Here's looking at you, kid.",
+      "s": "Casablanca",
+      "character": "Rick Blaine",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "What’s a yoot?",
+      "s": "My Cousin Vinny",
+      "character": "Judge Chamberlain Haller",
+      "d": "Medium",
+      "aliases": [
+        "Judge Haller",
+        "Haller"
+      ],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Resistance is futile.",
+      "s": "Star Trek: First Contact",
+      "character": "The Borg",
+      "d": "Medium",
+      "aliases": [
+        "Borg"
+      ],
+      "titleAliases": [
+        "First Contact"
+      ],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "So what? A lot of people go to college for seven years.",
+      "s": "Tommy Boy",
+      "character": "Tommy Callahan",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The needs of the many outweigh the needs of the few.",
+      "s": "Star Trek II: The Wrath of Khan",
+      "character": "Spock",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [
+        "The Wrath of Khan",
+        "Wrath of Khan",
+        "Star Trek 2"
+      ],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Please state the nature of the medical emergency.",
+      "s": "Star Trek: Voyager",
+      "character": "The Doctor",
+      "d": "Hard",
+      "aliases": [
+        "Doctor",
+        "EMH",
+        "Emergency Medical Hologram"
+      ],
+      "titleAliases": [
+        "Voyager"
+      ],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "They're not killers, they're just hungry!",
+      "s": "Critters",
+      "character": "Charlie McFadden",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The local sheriff points his flashlight down into the dark, blood-splattered barn.",
+      "a": "A tiny, rolling ball of fur and razor-sharp teeth darts across the wooden floorboards."
+    },
+    {
+      "q": "Greetings, Starfighter! You have been recruited by the Star League to defend the Frontier against Xur and the Ko-Dan Armada.",
+      "s": "The Last Starfighter",
+      "character": "Centauri",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Alex Rogan steps back from the arcade cabinet as the glowing screen begins to morph.",
+      "a": "The sleek, futuristic sports car doors slide upward, revealing an alien cockpit."
+    },
+    {
+      "q": "Bidi-bidi-bidi! What's cooking, Buck?",
+      "s": "Buck Rogers in the 25th Century",
+      "character": "Twiki",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Captain Rogers walks into the futuristic starship kitchen, looking for breakfast.",
+      "a": "The tiny silver robot waddles over with a high-tech metal tray of glowing cubes."
+    },
+    {
+      "q": "Mega-damage! This is going to leave a mark!",
+      "s": "Exosquad",
+      "character": "Jace Fletcher",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The Neosapien frontline heavy tanks fire a plasma volley across the city ruins.",
+      "a": "His robotic e-frame stumbles backward, venting gray steam from the hydraulic legs."
+    },
+    {
+      "q": "Prepare the lava cannons! We bury the surface world tonight!",
+      "s": "Inhumanoids",
+      "character": "Metlar",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The giant rock monster slams his fists together, causing an earthquake in the canyon.",
+      "a": "The Earth Corps squad locks their heavy cybernetic armor suits to seal the breach."
+    },
+    {
+      "q": "Hey, toxic waste is good for you! It builds character!",
+      "s": "The Toxic Avenger",
+      "character": "Toxie",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The neighborhood bullies laugh as they push the mop boy out the window.",
+      "a": "He lands directly in the glowing green vat behind the health club facility."
+    },
+    {
+      "q": "I'm a dynamic, super-charged, crime-fighting machine!",
+      "s": "The Tick: The Animated Series",
+      "character": "The Tick",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Arthur: Tick, we can't just break through the bank wall without a search warrant!",
+      "a": "He leaps headfirst into the bricks, leaving a massive superhero-shaped hole."
+    },
+    {
+      "q": "If you don't eat your meat, you can't have any pudding! How can you have any pudding if you don't eat your meat?!",
+      "s": "Pink Floyd – The Wall",
+      "character": "The Schoolmaster",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The faceless school children slide down the conveyor belt directly into the meat grinder.",
+      "a": "A massive hammer emblem flashes across the dark stadium screen in a red glare."
+    },
+    {
+      "q": "I can do anything! I'm the wizard!",
+      "s": "The Wizard",
+      "character": "Lucas",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "He unzips the long gray travel case, pulling out a brand-new Nintendo Power Glove.",
+      "a": "The kids gather around the arcade monitor in absolute awe as he inputs the cheat codes."
+    },
+    {
+      "q": "The ultimate battle between good and evil is about to take place in your backyard.",
+      "s": "The Monster Squad",
+      "character": "Narrator",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Sean checks his diary, verifying that Dracula has successfully summoned the Mummy.",
+      "a": "The kids load their silver bullet slingshots and prepare to defend the treehouse."
+    },
+    {
+      "q": "Let the simulation begin.",
+      "s": "Tron",
+      "character": "Sark",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The blue glowing grid lines light up the dark electronic landscape for miles.",
+      "a": "Two light cycles materialize out of thin air, speeding down the digital highway."
+    },
+    {
+      "q": "We're going to turn your planet into an intergalactic theme park!",
+      "s": "Killer Klowns from Outer Space",
+      "character": "Klown (Klownzilla)",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The massive, building-sized puppet shadow steps over the amusement park gates.",
+      "a": "The ice cream truck tries to swerve out of the way, crashing into a hot dog stand."
+    },
+    {
+      "q": "I see you shiver with anticip... ation.",
+      "s": "The Rocky Horror Picture Show",
+      "character": "Dr. Frank-N-Furter",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "He steps out of the castle elevator wearing his signature fishnet stockings.",
+      "a": "He drops his velvet cape to the floor, strutting toward the lab tables."
+    },
+    {
+      "q": "I've got a bad feeling about this, space rat.",
+      "s": "Biker Mice from Mars",
+      "character": "Throttle",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The mechanical garage doors open, revealing a squad of robotic exterminators.",
+      "a": "He revs his custom chopper engine, pulling a laser pistol from his leather vest."
+    },
+    {
+      "q": "Meet me at the cemetery gates at midnight. Bring the shovel.",
+      "s": "Dead Alive (Braindead)",
+      "character": "Lionel Cosgrove",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "His zombie mother scratches aggressively at the wooden basement door planks.",
+      "a": "He grabs a fresh bottle of tranquilizers and runs out into the rainy street."
+    },
+    {
+      "q": "He's gonna eat me! Oh my Gooooooooood!",
+      "s": "Troll 2",
+      "character": "Arnold",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The mysterious forest witch sprinkles magic green powder over his shoulders.",
+      "a": "The camera zooms in frantically on his face as a tiny green sapling sprouts from his head."
+    },
+    {
+      "q": "Gordon's alive?!",
+      "s": "Flash Gordon",
+      "character": "Prince Vultan",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The communication screen flashes static inside the sky city control chamber.",
+      "a": "The heavy synthesizer music explodes as the Hawkmen prepare their flying fleet for war."
+    },
+    {
+      "q": "It's all in the reflexes.",
+      "s": "Big Trouble in Little China",
+      "character": "Jack Burton",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Wang Chi: How did you catch that flying dagger without looking, Jack?",
+      "a": "He puts on his aviator sunglasses and takes another massive drag from his cigarette."
+    },
+    {
+      "q": "Garbage day!",
+      "s": "Silent Night, Deadly Night Part 2",
+      "character": "Ricky Caldwell",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "A neighborhood man casually walks down his driveway carrying a large metal trash can.",
+      "a": "Ricky pulls a revolver from his coat pocket and points it across the suburban street."
+    },
+    {
+      "q": "I'm a little wired right now.",
+      "s": "The Adventures of Buckaroo Banzai Across the 8th Dimension",
+      "character": "Lord John Whorfin",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The alien commander hooks up massive electrical cables directly to his own head.",
+      "a": "The entire room fills with bright red smoke as he commands his troops to attack."
+    },
+    {
+      "q": "Chop 'em up, bag 'em up!",
+      "s": "Blood Diner",
+      "character": "Sheetar",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The ancient goddess commands the two kitchen brothers to prepare the massive royal buffet.",
+      "a": "They crank up the heavy industrial meat grinder in the back of the restaurant."
+    },
+    {
+      "q": "We've got to find that ancient artifact before the solar eclipse!",
+      "s": "Inhumanoids",
+      "character": "Liquidator",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The subterranean lava monster cracks open the valley floor, revealing a glowing cave.",
+      "a": "The science squad activates their chemical freeze guns to build a temporary wall."
+    },
+    {
+      "q": "You can't stop the futuristic metal army!",
+      "s": "SilverHawks",
+      "character": "Hardware",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The cybernetic space pirate deploys a swarm of mechanical attack drones into orbit.",
+      "a": "Quicksilver flashes his metallic wings and launches directly from the mothership bay."
+    },
+    {
+      "q": "Eat recycled food. It's good for the environment and okay for you.",
+      "s": "Judge Dredd",
+      "character": "Automated City Voice",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The massive floating transport bus glides smoothly through the neon-lit neon rain.",
+      "a": "A group of scrap scavengers ducks into a dark alleyway to dodge the patrol craft."
+    },
+    {
+      "q": "Welcome to prime time, bitch!",
+      "s": "A Nightmare on Elm Street 3: Dream Warriors",
+      "character": "Freddy Krueger",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Jennifer stares at the television screen as two mechanical arms sprout from the chassis.",
+      "a": "He lifts her directly toward the static display tube while laughing maniacally."
+    },
+    {
+      "q": "I kick ass for the Lord!",
+      "s": "Dead Alive (Braindead)",
+      "character": "Father McGruder",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The zombie pack breaks through the cemetery gates, cornering the local priest.",
+      "a": "He executes a flawless martial arts leap over the tombstones to clear the path."
+    },
+    {
+      "q": "Sleep all day. Party all night. Never grow old. Never die.",
+      "s": "The Lost Boys",
+      "character": "Movie Tagline",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Michael rides his motorcycle down the foggy California boardwalk after midnight.",
+      "a": "The mysterious pack of leather-clad teenagers disappears into the dark sea cave."
+    },
+    {
+      "q": "They're eating her... and then they're going to eat me!",
+      "s": "Troll 2",
+      "character": "Arnold",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The goblin horde wraps the screaming teenager in layers of thick green foliage.",
+      "a": "A fat green fly lands squarely on his forehead while he stands frozen in terror."
+    },
+    {
+      "q": "Fasten your seatbelts, we're entering the warp zone!",
+      "s": "Captain N: The Game Master",
+      "character": "Kevin Keene",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The glowing gray television screen begins pulling the teenager out of his bedroom.",
+      "a": "His dog Duke leaps directly into the portal behind him to start the digital trip."
+    },
+    {
+      "q": "I'm a mechanical man, and I'm doing the best I can!",
+      "s": "The Phantom Tollbooth",
+      "character": "Tock the Watchdog",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Milo steps into his tiny plastic toy car, driving through the mysterious gateway.",
+      "a": "The giant grandfather clock ticking sound echoes across the strange colorful landscape."
+    },
+    {
+      "q": "Fasten your seatbelts, goons! The midnight cruise is about to begin!",
+      "s": "The Monster Squad",
+      "character": "Dracula",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The ancient vampire opens his velvet cape, releasing a massive swarm of dark bats.",
+      "a": "The kids barricade the heavy wooden treehouse doors using steel padlocks."
+    },
+    {
+      "q": "You have a beautiful face, but your mind is a complete swamp!",
+      "s": "The Red Green Show",
+      "character": "Red Green",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Harold tries to explain why he duct-taped an old lawnmower motor to a bicycle frame.",
+      "a": "Red: If the women don't find you handsome, they should at least find you handy."
+    },
+    {
+      "q": "I am the rhinestone on the modern costume of justice!",
+      "s": "Darkwing Duck",
+      "character": "Darkwing Duck",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The supervillain laughs loudly while holding the bank vault doors open.",
+      "a": "Darkwing snaps his fingers, dropping a massive smoke bomb onto the floor tiles."
+    },
+    {
+      "q": "The choice is yours, and yours alone. Choose wisely, or face the consequences.",
+      "s": "The Prisoner",
+      "character": "Number Two",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Number Six stands inside the metallic spherical chamber, refusing to answer.",
+      "a": "The automatic doors slide shut, locking him back inside the mysterious village."
+    },
+    {
+      "q": "Drink hot liquid death, space scum!",
+      "s": "Biker Mice from Mars",
+      "character": "Modo",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The corporate villain orders his giant mechanical drills to flatten the block.",
+      "a": "The three mice rev their custom choppers and fly over the construction barriers."
+    },
+    {
+      "q": "I have come here to chew bubblegum and kick ass... and I'm all out of bubblegum.",
+      "s": "They Live",
+      "character": "Nada",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "He pushes open the double glass doors of the bank while racking his shotgun.",
+      "a": "The hidden alien crowd looks up in pure panic as he pulls his dark sunglasses down."
+    },
+    {
+      "q": "Spoon!",
+      "s": "The Tick: The Animated Series",
+      "character": "The Tick",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Chairface Chippendale points his giant laser cannon directly at the moon's face.",
+      "a": "Arthur flies over the warehouse roof, trying to stabilize his plastic wings."
+    },
+    {
+      "q": "Don't dream it, be it.",
+      "s": "The Rocky Horror Picture Show",
+      "character": "Dr. Frank-N-Furter",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The golden stage curtain rises, revealing the eccentric castle assembly.",
+      "a": "The entire ballroom erupts into a synchronized, high-energy musical number."
+    },
+    {
+      "q": "You locked me in a dungeon with a bunch of weirdos!",
+      "s": "Dungeons & Dragons",
+      "character": "Hank the Ranger",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The dark wizard commands his shadow gargoyles to steel the magical energy bows.",
+      "a": "The mysterious old Dungeon Master appears in a puff of purple smoke."
+    },
+    {
+      "q": "I'm a mog: half man, half dog. I'm my own best friend!",
+      "s": "Spaceballs",
+      "character": "Barf",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Lone Starr: Barf! Check the radar! What's our current trajectory?",
+      "a": "He wags his ears excitedly and pulls a giant silver lever on the dashboard."
+    },
+    {
+      "q": "Do, or do not. There is no try.",
+      "s": "Star Wars: The Empire Strikes Back",
+      "character": "Yoda",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Luke: All right, I'll give it a try.",
+      "a": "Luke sighs and closes his eyes, trying to focus his mind on the sunken X-wing."
+    },
+    {
+      "q": "I'm having a friend for dinner.",
+      "s": "The Silence of the Lambs",
+      "character": "Hannibal Lecter",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Clarice: Dr. Lecter? Dr. Lecter?",
+      "a": "He hangs up the payphone and blends smoothly into the crowded tropical street."
+    },
+    {
+      "q": "I will find you, and I will kill you.",
+      "s": "Taken",
+      "character": "Bryan Mills",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Marko: Good luck.",
+      "a": "The line goes dead, leaving Bryan staring coldly at the static receiver."
+    },
+    {
+      "q": "Just keep swimming.",
+      "s": "Finding Nemo",
+      "character": "Dory",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Marlin: Disconsolate, I'm lost! I don't even know where I am!",
+      "a": "Marlin: Dory, please, I don't want to swim anymore."
+    },
+    {
+      "q": "Fasten your seatbelts. It's going to be a bumpy night.",
+      "s": "All About Eve",
+      "character": "Margo Channing",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Margo downs her drink and looks around the crowded room with a sharp glare.",
+      "a": "She struts over to the piano to confront her guests."
+    },
+    {
+      "q": "By the power of Ra!",
+      "s": "Mummies Alive!",
+      "character": "Ja-Kal",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Scarab summons a giant stone scorpion to crush the modern city streets.",
+      "a": "The ancient armor materializes, transforming the mummies into super-powered protectors."
+    },
+    {
+      "q": "I am the terror that flaps in the night!",
+      "s": "Darkwing Duck",
+      "character": "Darkwing Duck",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Megavolt laughs maniacally as he hooks up the city's power grid to his battery.",
+      "a": "Darkwing: I am the rhinestone on the modern costume of justice!"
+    },
+    {
+      "q": "Go, Gadget, Go!",
+      "s": "Inspector Gadget",
+      "character": "Penny",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Dr. Claw: Next time, Gadget! Next time!",
+      "a": "The Gadgetmobile transforms into a high-speed jet boat to cross the river."
+    },
+    {
+      "q": "You modern teams lack discipline!",
+      "s": "C.O.P.S.",
+      "character": "Bulletproof",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Big Boss unleashes his cybernetic henchmen to rob the central bank.",
+      "a": "The federal squad deploys their advanced tactical interceptors to block the highway."
+    },
+    {
+      "q": "Yo Joe!",
+      "s": "G.I. Joe: A Real American Hero",
+      "character": "The Joe Team",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Cobra Commander orders a fleet of Rattler jets to bomb the research facility.",
+      "a": "Duke leads the frontline charge over the sandy ridge to clash with Cobra."
+    },
+    {
+      "q": "Sufferin' succotash!",
+      "s": "Looney Tunes",
+      "character": "Sylvester the Cat",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "A massive bulldog snaps its jaws shut just inches from Sylvester's tail.",
+      "a": "He leaps onto the top of the refrigerator, shaking with absolute panic."
+    },
+    {
+      "q": "Yabba-Dabba-Doo!",
+      "s": "The Flintstones",
+      "character": "Fred Flintstone",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The heavy stone whistle blows, signaling the official end of the workday.",
+      "a": "Fred slides down the tail of his brontosaurus crane right into his canopy car."
+    },
+    {
+      "q": "Pivot! Pivot! Pivot!",
+      "s": "Friends",
+      "character": "Ross Geller",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Chandler: I don't think it's gonna turn anymore, man.",
+      "a": "Chandler: Shut up! Shut up! Shut up!"
+    },
+    {
+      "q": "Homey don't play that!",
+      "s": "In Living Color",
+      "character": "Homey D. Clown",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "A neighborhood kid runs up, asking for a silly balloon animal.",
+      "a": "He swings his giant rolled-up sock, bopping the kid cleanly on top of the head."
+    },
+    {
+      "q": "Whatchoutnow!",
+      "s": "Martin",
+      "character": "Martin Payne",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Gina walks through the front door wearing a stunning new evening dress.",
+      "a": "Martin does a chaotic dance across the living room rug to celebrate."
+    },
+    {
+      "q": "You got it, dude!",
+      "s": "Full House",
+      "character": "Michelle Tanner",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Danny: Michelle, promise me you won't give any more cookies to the dog.",
+      "a": "She flashes a huge smile and gives a double thumbs-up to the camera."
+    },
+    {
+      "q": "Bears, beets, Battlestar Galactica.",
+      "s": "The Office",
+      "character": "Jim Halpert",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Jim: Question. What kind of bear is best?",
+      "a": "Dwight: Identity theft is not a joke, Jim! Millions of families suffer every year!"
+    },
+    {
+      "q": "Life moves pretty fast. If you don't stop and look around once in a while, you could miss it.",
+      "s": "Ferris Bueller's Day Off",
+      "character": "Ferris Bueller",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Ferris crosses his arms behind his head, relaxing comfortably on his bed.",
+      "a": "The upbeat synthesizer music kicks in as he outlines his plan for the day."
+    },
+    {
+      "q": "You're gonna need a bigger flashlight.",
+      "s": "The Conjuring",
+      "character": "Ed Warren",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Lorraine stares down into the pitch-black crawlspace under the old house.",
+      "a": "A sudden, violent slamming noise echoes from deep within the basement walls."
+    },
+    {
+      "q": "Do you like scary movies?",
+      "s": "Scream",
+      "character": "Ghostface",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Casey: Who is this?",
+      "a": "Casey: Uh, yeah, I guess so. Why do you ask?"
+    },
+    {
+      "q": "I'm your number one fan.",
+      "s": "Misery",
+      "character": "Annie Wilkes",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Paul opens his eyes groggily, realizing he's trapped in a strange bed.",
+      "a": "Annie smiles warmly while adjusting the heavy blankets around his broken legs."
+    },
+    {
+      "q": "One, two, Freddy's coming for you...",
+      "s": "A Nightmare on Elm Street",
+      "character": "Children's Choir",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Nancy splashes freezing cold water on her face, desperate to stay awake.",
+      "a": "The jump rope hits the pavement in a slow, rhythmic, terrifying beat."
+    },
+    {
+      "q": "Clever girl.",
+      "s": "Jurassic Park",
+      "character": "Robert Muldoon",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Muldoon aims his shotgun at the raptor in the bushes ahead of him.",
+      "a": "A second raptor ambushes him directly from the foliage on his left flank."
+    },
+    {
+      "q": "Hulk... smash!",
+      "s": "The Avengers: Earth's Mightiest Heroes",
+      "character": "Hulk",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Iron Man: Cap, we've got a swarm of alien leviathans closing in fast!",
+      "a": "The giant green Avenger leaps high into the air, bringing both fists down hard."
+    },
+    {
+      "q": "I am Iron Man.",
+      "s": "Iron Man",
+      "character": "Tony Stark",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Reporter: Mr. Stark, you don't really expect us to believe that, do you?",
+      "a": "The flashbulbs explode frantically as the press room erupts into absolute chaos."
+    },
+    {
+      "q": "I'm going to make him an offer he can't refuse.",
+      "s": "The Godfather",
+      "character": "Vito Corleone",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Bonasera: I ask for justice.",
+      "a": "Don Corleone: We have known each other many years, but this is the first time you've ever come to me for counsel or for help."
+    },
+    {
+      "q": "May the Force be with you.",
+      "s": "Star Wars: A New Hope",
+      "character": "Han Solo",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Luke: Take care of yourself, Han. I guess that's what you're best at, isn't it?",
+      "a": "Luke: (Walks away toward his X-wing)"
+    },
+    {
+      "q": "Say 'hello' to my little friend!",
+      "s": "Scarface",
+      "character": "Tony Montana",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "The assassin is approaching the doors.",
+      "a": "(Tony fires the grenade launcher through the door)"
+    },
+    {
+      "q": "Welcome to the real world! It sucks. You're gonna love it.",
+      "s": "Friends",
+      "character": "Monica Geller",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Rachel: (On the phone with her dad) Daddy, I'm sorry. I'm gonna buy my own boots.",
+      "a": "Monica: (Mutes the TV) Okay, area rugs. What are we thinking?"
+    },
+    {
+      "q": "Open the bomb bay doors, Hal.",
+      "s": "2001: A Space Odyssey",
+      "character": "Dave Bowman",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Dave: Hello, Hal. Do you read me, Hal?",
+      "a": "HAL 9000: I'm afraid I can't do that, Dave."
+    },
+    {
+      "q": "I tawt I taw a puddy tat!",
+      "s": "Looney Tunes",
+      "character": "Tweety Bird",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "Sylvester the Cat sneaks up to the birdcage with a hungry grin.",
+      "a": "Tweety: I did! I did taw a puddy tat!"
+    },
+    {
+      "q": "You find your lack of faith disturbing.",
+      "s": "Star Wars: Episode IV - A New Hope",
+      "character": "Darth Vader",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Aren't you a little short for a stormtrooper?",
+      "s": "Star Wars: Episode IV - A New Hope",
+      "character": "Princess Leia",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Look, I ain't in this for your revolution, and I'm not in it for you, princess.",
+      "s": "Star Wars: Episode IV - A New Hope",
+      "character": "Han Solo",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Everything that has a beginning has an end.",
+      "s": "The Matrix Revolutions",
+      "character": "The Oracle",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I'm trying to free your mind, Neo. But I can only show you the door. You're the one that has to walk through it.",
+      "s": "The Matrix",
+      "character": "Morpheus",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The choice is an illusion, you already know what you have to do.",
+      "s": "The Matrix Reloaded",
+      "character": "The Oracle",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Dunder Mifflin, paper real estate.",
+      "s": "The Office",
+      "character": "Dwight Schrute",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I'm an early bird and I'm a night owl so I'm wise and I also don't sleep.",
+      "s": "The Office",
+      "character": "Michael Scott",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I feel like neapolitan ice cream.",
+      "s": "The Office",
+      "character": "Michael Scott",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Would I rather be feared or loved? Easy. Both. I want people to be afraid of how much they love me.",
+      "s": "The Office",
+      "character": "Michael Scott",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "No one can understand the structural integrity of this paper mill like me.",
+      "s": "The Office",
+      "character": "Creed Bratton",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Look at me. I'm the captain now.",
+      "s": "Captain Phillips",
+      "character": "Muse",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Why so serious? Let's put a smile on that face!",
+      "s": "The Dark Knight",
+      "character": "The Joker",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Madness, as you know, is a lot like gravity. All it takes is a little push.",
+      "s": "The Dark Knight",
+      "character": "The Joker",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I'm a mechanical, tactical wizard.",
+      "s": "The Dark Knight Rises",
+      "character": "Bane",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You merely adopted the dark. I was born in it, molded by it.",
+      "s": "The Dark Knight Rises",
+      "character": "Bane",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I have a cunning plan.",
+      "s": "Blackadder",
+      "character": "Baldrick",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Wubba lubba dub dub means I am in great pain, please help me.",
+      "s": "Rick and Morty",
+      "character": "Birdperson",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "To live is to risk it all; otherwise you're just an inert chunk of randomly assembled molecules floating wheresoever the universe blows you.",
+      "s": "Rick and Morty",
+      "character": "Rick Sanchez",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Science is more art than science, Morty. A lot of people don't get that.",
+      "s": "Rick and Morty",
+      "character": "Rick Sanchez",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "What is my purpose? You pass butter. Oh my god.",
+      "s": "Rick and Morty",
+      "character": "Butter Robot",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Clear eyes, full hearts, can't lose. That's a system.",
+      "s": "Friday Night Lights",
+      "character": "Coach Eric Taylor",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Live long and prosper, my friend.",
+      "s": "Star Trek",
+      "character": "Spock",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Logic is the beginning of wisdom, not the end.",
+      "s": "Star Trek VI: The Undiscovered Country",
+      "character": "Spock",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Things are only impossible until they're not.",
+      "s": "Star Trek: The Next Generation",
+      "character": "Captain Jean-Luc Picard",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The truth is out there, somewhere in the stars.",
+      "s": "The X-Files",
+      "character": "Fox Mulder",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I want to believe the truth is out there.",
+      "s": "The X-Files",
+      "character": "Fox Mulder",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Trust no one, not even yourself.",
+      "s": "The X-Files",
+      "character": "Deep Throat",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Bazinga! You fell victim to another one of my classic pranks.",
+      "s": "The Big Bang Theory",
+      "character": "Sheldon Cooper",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "That is my spot and it will always be my spot.",
+      "s": "The Big Bang Theory",
+      "character": "Sheldon Cooper",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Rock, paper, scissors, lizard, Spock.",
+      "s": "The Big Bang Theory",
+      "character": "Sheldon Cooper",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Legen—wait for it—dary! Legendary!",
+      "s": "How I Met Your Mother",
+      "character": "Barney Stinson",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "When I get sad, I stop being sad and be awesome instead.",
+      "s": "How I Met Your Mother",
+      "character": "Barney Stinson",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Nothing good happens after 2:00 AM.",
+      "s": "How I Met Your Mother",
+      "character": "Ted Mosby",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I'm fine. It's totally fine.",
+      "s": "Friends",
+      "character": "Ross Geller",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Oh. My. God. Chandler Bing!",
+      "s": "Friends",
+      "character": "Janice Litman-Goralnik",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Smelly cat, smelly cat, what are they feeding you? It's not your fault.",
+      "s": "Friends",
+      "character": "Phoebe Buffay",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I grew up with mononucleosis. I'm dynamic when I'm under pressure.",
+      "s": "Friends",
+      "character": "Monica Geller",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Are you not entertained? Is this not why you are here?",
+      "s": "Gladiator",
+      "character": "Maximus Decimus Meridius",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "What we do in life echoes in eternity.",
+      "s": "Gladiator",
+      "character": "Maximus Decimus Meridius",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "A million dollars isn't cool.",
+      "s": "The Social Network",
+      "character": "Sean Parker",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You're not standard digital enterprise material, Mark.",
+      "s": "The Social Network",
+      "character": "Erika Albright",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You're going to lose her, Mark. You're going to lose the system.",
+      "s": "The Social Network",
+      "character": "Divya Narendra",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Keep the change, ya filthy animal. Merry Christmas.",
+      "s": "Home Alone",
+      "character": "Johnny",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Look what you did, ya little jerk! You ruined the pizza!",
+      "s": "Home Alone",
+      "character": "Uncle Frank",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Buzz, your girlfriend, woof! She looks terrible.",
+      "s": "Home Alone",
+      "character": "Kevin McCallister",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "By the power of Grayskull! I have the power!",
+      "s": "He-Man and the Masters of the Universe",
+      "character": "He-Man",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Good news, everyone! I've invented a device that makes you read this in my voice.",
+      "s": "Futurama",
+      "character": "Professor Farnsworth",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Bite my shiny metal ass, meatbag!",
+      "s": "Futurama",
+      "character": "Bender",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Shut up and take my money right now!",
+      "s": "Futurama",
+      "character": "Fry",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Please tell me you're seeing this too. Don't leave me alone.",
+      "s": "Mr. Robot",
+      "character": "Elliot Alderson",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Hello, friend. That's lame. Maybe I should give you a name.",
+      "s": "Mr. Robot",
+      "character": "Elliot Alderson",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "That is America's ass right there.",
+      "s": "Avengers: Endgame",
+      "character": "Steve Rogers",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I am inevitable. And I... am... Iron Man.",
+      "s": "Avengers: Endgame",
+      "character": "Tony Stark",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Puny god. Is that all you've got?",
+      "s": "The Avengers",
+      "character": "Hulk",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Genius, billionaire, playboy, philanthropist. That's me.",
+      "s": "The Avengers",
+      "character": "Tony Stark",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I'm Mary Poppins, y'all! Is he cool?",
+      "s": "Guardians of the Galaxy Vol. 2",
+      "character": "Yondu Udonta",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Welcome to Jurassic Park. We spared no expense.",
+      "s": "Jurassic Park",
+      "character": "John Hammond",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Life, uh, finds a way. It always does.",
+      "s": "Jurassic Park",
+      "character": "Dr. Ian Malcolm",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Clever girl. You caught me.",
+      "s": "Jurassic Park",
+      "character": "Robert Muldoon",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Hold onto your butts. It's going to be a bumpy ride.",
+      "s": "Jurassic Park",
+      "character": "Ray Arnold",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The right man in the wrong place can make all the difference in the world.",
+      "s": "Half-Life 2",
+      "character": "G-Man",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Wake up, Mr. Freeman. Wake up and smell the ashes.",
+      "s": "Half-Life 2",
+      "character": "G-Man",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Our business is life itself.",
+      "s": "Resident Evil",
+      "character": "Umbrella Corp Slogan",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You were almost a Jill sandwich!",
+      "s": "Resident Evil",
+      "character": "Barry Burton",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "What is better? To be born good, or to overcome your evil nature through great effort?",
+      "s": "The Elder Scrolls V: Skyrim",
+      "character": "Paarthurnax",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Endure and survive.",
+      "s": "The Last of Us",
+      "character": "Ellie",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "No matter what, you keep finding something to fight for.",
+      "s": "The Last of Us",
+      "character": "Joel Miller",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "A man chooses. A slave obeys.",
+      "s": "BioShock",
+      "character": "Andrew Ryan",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "We all make choices, but in the end our choices make us.",
+      "s": "BioShock",
+      "character": "Andrew Ryan",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Protocol 3: I will not lose another pilot.",
+      "s": "Titanfall 2",
+      "character": "BT-7274",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The cosmos, and all the stars, are ours to explore.",
+      "s": "Starfield",
+      "character": "Constellation Dialogue",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Stand amongst the ashes of a trillion dead ghosts, and ask the轉honour if it matters. The silence is your answer.",
+      "s": "Mass Effect 3",
+      "character": "Javik",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I am Urdnot Wrex, and this is my planet!",
+      "s": "Mass Effect 3",
+      "character": "Urdnot Wrex",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Don't wish it were easier. Wish you were better.",
+      "s": "Animal Crossing",
+      "character": "Resetti",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The sun is a wondrous body. Like a magnificent father! If only I could be so grossly incandescant!",
+      "s": "Dark Souls",
+      "character": "Solaire of Astora",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Fear the old blood.",
+      "s": "Bloodborne",
+      "character": "Master Willem",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "A hunter must hunt.",
+      "s": "Bloodborne",
+      "character": "Eileen the Crow",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The wind is howling.",
+      "s": "The Witcher 3: Wild Hunt",
+      "character": "Geralt of Rivia",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Evil is evil. Lesser, greater, middling, it's all the same.",
+      "s": "The Witcher 3: Wild Hunt",
+      "character": "Geralt of Rivia",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You look like a piece of malleable trash.",
+      "s": "Cyberpunk 2077",
+      "character": "Adam Smasher",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Wake up, Samurai. We have a city to burn.",
+      "s": "Cyberpunk 2077",
+      "character": "Johnny Silverhand",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Five years ago, I lost 30,000 men in the blink of an eye, and the world just fuckin' watched.",
+      "s": "Call of Duty: Modern Warfare 2",
+      "character": "General Shepherd",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "History is written by the victors.",
+      "s": "Call of Duty: Modern Warfare 2",
+      "character": "General Shepherd",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "What kind of a name is Soap, anyway?",
+      "s": "Call of Duty 4: Modern Warfare",
+      "character": "Captain Price",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Remember, no Russian.",
+      "s": "Call of Duty: Modern Warfare 2",
+      "character": "Vladimir Makarov",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You have died of dysentery.",
+      "s": "The Oregon Trail",
+      "character": "Game Over Screen",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Whether we wanted it or not, we've stepped into a war with the Cabal on Mars.",
+      "s": "Destiny",
+      "character": "Commander Zavala",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I don't even have time to explain why I don't have time to explain.",
+      "s": "Destiny",
+      "character": "The Exo Stranger",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Eyes up, Guardian.",
+      "s": "Destiny",
+      "character": "Ghost",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I'm coming home, Ace.",
+      "s": "Destiny 2",
+      "character": "Cayde-6",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The internal metrics of the colony are stable.",
+      "s": "RimWorld",
+      "character": "AI Storyteller",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "So, you're finally awake.",
+      "s": "The Elder Scrolls V: Skyrim",
+      "character": "Ralof",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "All you had to do was follow the damn train, CJ!",
+      "s": "Grand Theft Auto: San Andreas",
+      "character": "Big Smoke",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Ah shit, here we go again.",
+      "s": "Grand Theft Auto: San Andreas",
+      "character": "Carl Johnson",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You forget a thousand things every day, pal. Make sure this is one of 'em.",
+      "s": "Grand Theft Auto V",
+      "character": "Michael De Santa",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Does this trolley go to Tahiti?",
+      "s": "Red Dead Redemption 2",
+      "character": "Arthur Morgan",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I have a plan! You just need to have a little faith!",
+      "s": "Red Dead Redemption 2",
+      "character": "Dutch van der Linde",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Outlaws for life.",
+      "s": "Red Dead Redemption 2",
+      "character": "Tagline",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I gave you all I had. I did.",
+      "s": "Red Dead Redemption 2",
+      "character": "Arthur Morgan",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You're my brother. I know, I know.",
+      "s": "Red Dead Redemption",
+      "character": "John Marston",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "People don't forget. Nothing gets forgiven.",
+      "s": "Red Dead Redemption",
+      "character": "John Marston",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I ain't no hero. Never was. Never will be.",
+      "s": "InFamous",
+      "character": "Cole MacGrath",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "We are scanning for local anomalies.",
+      "s": "No Man's Sky",
+      "character": "Exosuit AI",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "16 / 16 / 16 / 16",
+      "s": "No Man's Sky",
+      "character": "Portal Terminal",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The coordinates are calculated.",
+      "s": "Outer Wilds",
+      "character": "Nomai Computer",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Science compels us to explode the sun!",
+      "s": "Outer Wilds",
+      "character": "Pye",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "This is the story of a man named Stanley.",
+      "s": "The Stanley Parable",
+      "character": "The Narrator",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "When Stanley came to a set of two open doors, he entered the door on his left.",
+      "s": "The Stanley Parable",
+      "character": "The Narrator",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The building is locked down under security protocol.",
+      "s": "Control",
+      "character": "Bureau Announcement",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You are a worm through time.",
+      "s": "Control",
+      "character": "The Hiss Incantation",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "It's not a loop, it's a spiral.",
+      "s": "Alan Wake II",
+      "character": "Alan Wake",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "In a horror story, there are only victims and monsters.",
+      "s": "Alan Wake",
+      "character": "Alan Wake",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The anomalies must be cataloged.",
+      "s": "S.T.A.L.K.E.R.: Shadow of Chernobyl",
+      "character": "Professor Sakharov",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Good hunting, S.T.A.L.K.E.R.",
+      "s": "S.T.A.L.K.E.R.: Shadow of Chernobyl",
+      "character": "Trader Cordon",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Get out of here, S.T.A.L.K.E.R.!",
+      "s": "S.T.A.L.K.E.R.: Shadow of Chernobyl",
+      "character": "Duty Guard",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "See you in another life, brother.",
+      "s": "Lost",
+      "character": "Desmond Hume",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Don't tell me what I can't do!",
+      "s": "Lost",
+      "character": "John Locke",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "We have to go back, Kate! We have to go back!",
+      "s": "Lost",
+      "character": "Jack Shephard",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Guys, where are we?",
+      "s": "Lost",
+      "character": "Charlie Pace",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "If we can't live together, we're gonna die alone.",
+      "s": "Lost",
+      "character": "Jack Shephard",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Walt! Have you seen my boy?!",
+      "s": "Lost",
+      "character": "Michael Dawson",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Not Penny's boat.",
+      "s": "Lost",
+      "character": "Charlie Pace",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The numbers are bad.",
+      "s": "Lost",
+      "character": "Hugo 'Hurley' Reyes",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You're a wizard, Harry.",
+      "s": "Harry Potter and the Sorcerer's Stone",
+      "character": "Rubeus Hagrid",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.",
+      "s": "Harry Potter and the Sorcerer's Stone",
+      "character": "Albus Dumbledore",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to suffering.",
+      "s": "Star Wars: Episode I - The Phantom Menace",
+      "character": "Yoda",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Hello there.",
+      "s": "Star Wars: Episode III - Revenge of the Sith",
+      "character": "Obi-Wan Kenobi",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "So uncivilized.",
+      "s": "Star Wars: Episode III - Revenge of the Sith",
+      "character": "Obi-Wan Kenobi",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Great Scott!",
+      "s": "Back to the Future",
+      "character": "Dr. Emmett Brown",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "There's a snake in my boot!",
+      "s": "Toy Story",
+      "character": "Woody",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You are a toy!",
+      "s": "Toy Story",
+      "character": "Woody",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "That wasn't flying. That was... falling with style.",
+      "s": "Toy Story",
+      "character": "Woody",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I am the danger.",
+      "s": "Breaking Bad",
+      "character": "Walter White",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "A guy opens his door and gets shot and you think that of me? No. I am the one who knocks!",
+      "s": "Breaking Bad",
+      "character": "Walter White",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Excellent.",
+      "s": "The Simpsons",
+      "character": "Mr. Burns",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I, for one, welcome our new insect overlords.",
+      "s": "The Simpsons",
+      "character": "Kent Brockman",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Wubba lubba dub dub!",
+      "s": "Rick and Morty",
+      "character": "Rick Sanchez",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Nobody exists on purpose. Nobody belongs anywhere. Everybody's gonna die. Come watch TV?",
+      "s": "Rick and Morty",
+      "character": "Morty Smith",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "To love is to be vulnerable.",
+      "s": "Ted Lasso",
+      "character": "Ted Lasso",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I believe in hope. I believe in belief.",
+      "s": "Ted Lasso",
+      "character": "Ted Lasso",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "He's here, he's there, he's every-fucking-where, Roy Kent!",
+      "s": "Ted Lasso",
+      "character": "AFC Richmond Fans",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "That's what she said.",
+      "s": "The Office",
+      "character": "Michael Scott",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I uniform protection. Security. I am the regional manager.",
+      "s": "The Office",
+      "character": "Dwight Schrute",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Boom. Roasted.",
+      "s": "The Office",
+      "character": "Michael Scott",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The tribe has spoken.",
+      "s": "Survivor",
+      "character": "Jeff Probst",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Clear eyes, full hearts, can't lose.",
+      "s": "Friday Night Lights",
+      "character": "Coach Eric Taylor",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Highly illogical.",
+      "s": "Star Trek",
+      "character": "Spock",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Tea. Earl Grey. Hot.",
+      "s": "Star Trek: The Next Generation",
+      "character": "Captain Jean-Luc Picard",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The truth is out there.",
+      "s": "The X-Files",
+      "character": "Fox Mulder",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I want to believe.",
+      "s": "The X-Files",
+      "character": "Fox Mulder",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Trust no one.",
+      "s": "The X-Files",
+      "character": "Deep Throat",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Bazinga!",
+      "s": "The Big Bang Theory",
+      "character": "Sheldon Cooper",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Our whole universe was in a hot, dense state...",
+      "s": "The Big Bang Theory",
+      "character": "Theme Song",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "That's my spot.",
+      "s": "The Big Bang Theory",
+      "character": "Sheldon Cooper",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Legen—wait for it—dary!",
+      "s": "How I Met Your Mother",
+      "character": "Barney Stinson",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Challenge accepted.",
+      "s": "How I Met Your Mother",
+      "character": "Barney Stinson",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Suit up!",
+      "s": "How I Met Your Mother",
+      "character": "Barney Stinson",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "A dynamic duo. Like Batman and Robin, or... Barney and Robin.",
+      "s": "How I Met Your Mother",
+      "character": "Barney Stinson",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Dynamic storytelling happened.",
+      "s": "Parks and Recreation",
+      "character": "Chris Traeger",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I'm fine. It's fine. Everything's fine.",
+      "s": "Friends",
+      "character": "Ross Geller",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Oh. My. God.",
+      "s": "Friends",
+      "character": "Janice Litman-Goralnik",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Smelly cat, smelly cat, what are they feeding you?",
+      "s": "Friends",
+      "character": "Phoebe Buffay",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Joey doesn't share food!",
+      "s": "Friends",
+      "character": "Joey Tribbiani",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Are you not entertained?",
+      "s": "Gladiator",
+      "character": "Maximus Decimus Meridius",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "My name is Maximus Decimus Meridius, commander of the Armies of the North...",
+      "s": "Gladiator",
+      "character": "Maximus Decimus Meridius",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I code because I must.",
+      "s": "The Social Network",
+      "character": "Mark Zuckerberg",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "A million dollars isn't cool. You know what's cool? A billion dollars.",
+      "s": "The Social Network",
+      "character": "Sean Parker",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "If you guys were the inventors of Facebook, you'd have invented Facebook.",
+      "s": "The Social Network",
+      "character": "Mark Zuckerberg",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Keep the change, ya filthy animal.",
+      "s": "Home Alone 2: Lost in New York",
+      "character": "Johnny",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Look what you did, ya little jerk!",
+      "s": "Home Alone",
+      "character": "Uncle Frank",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Buzz, your girlfriend, woof!",
+      "s": "Home Alone",
+      "character": "Kevin McCallister",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "By the power of Grayskull!",
+      "s": "He-Man and the Masters of the Universe",
+      "character": "He-Man",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Thundercats, H0!",
+      "s": "Thundercats",
+      "character": "Lion-0",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Good news, everyone!",
+      "s": "Futurama",
+      "character": "Professor Farnsworth",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Bite my shiny metal ass!",
+      "s": "Futurama",
+      "character": "Bender",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Shut up and take my money!",
+      "s": "Futurama",
+      "character": "Fry",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You metadata is compromised.",
+      "s": "Mr. Robot",
+      "character": "Elliot Alderson",
+      "d": "Hard",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Please tell me you're seeing this too.",
+      "s": "Mr. Robot",
+      "character": "Elliot Alderson",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Hello, friend.",
+      "s": "Mr. Robot",
+      "character": "Elliot Alderson",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "That is America's ass.",
+      "s": "Avengers: Endgame",
+      "character": "Steve Rogers",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I am inevitable.",
+      "s": "Avengers: Endgame",
+      "character": "Thanos",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Avengers... assemble.",
+      "s": "Avengers: Endgame",
+      "character": "Steve Rogers",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Puny god.",
+      "s": "The Avengers",
+      "character": "Hulk",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Genius, billionaire, playboy, philanthropist.",
+      "s": "The Avengers",
+      "character": "Tony Stark",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "There are no strings on me.",
+      "s": "Avengers: Age of Ultron",
+      "character": "Ultron",
+      "d": "Medium",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I'm Mary Poppins, y'all!",
+      "s": "Guardians of the Galaxy Vol. 2",
+      "character": "Yondu Udonta",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Welcome to Jurassic Park.",
+      "s": "Jurassic Park",
+      "character": "John Hammond",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Of all the souls I have encountered, his was the most human.",
+      "s": "Star Trek the motion picture",
+      "character": "Captain James t Kirk",
+      "d": "Easy",
+      "aliases": [
+        "Captain"
+      ],
+      "titleAliases": [
+        "the captain"
+      ],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Reader beware, you're in for a scare.",
+      "s": "Goosebumps",
+      "character": "Tagline",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Safety lights are for dudes.",
+      "s": "Ghostbusters: Answer the Call",
+      "character": "Kevin",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Who you calling dummy, dummy?",
+      "s": "Goosebumps",
+      "character": "Slappy the Dummy",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Be your own anchor.",
+      "s": "Teen Wolf",
+      "character": "Melissa McCall",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I ain't afraid of no ghosts. That's a double negative! That means I am afraid of ghosts!",
+      "s": "Ghostbusters: Answer the Call",
+      "character": "Patty Tolan",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "An owl isn't wiser just because it's older. It's just had more time to learn things.",
+      "s": "Teen Wolf",
+      "character": "Dr. Deaton",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Yeah, 220... 221, whatever it takes.",
+      "s": "Mr. Mom",
+      "character": "Jack Butler",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You're doing it wrong. You're doing it wrong, big guy.",
+      "s": "Mr. Mom",
+      "character": "School Drop-Off Parent",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Believe me, as a bowler, I know that right about now, your bladder feels like an overstuffed vacuum cleaner bag.",
+      "s": "Kingpin",
+      "character": "Ernie McCracken",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "A ghost may not tup with a human. So this means a ghost cannot make love with a human being.",
+      "s": "High Spirits",
+      "character": "Jack Crawford",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You're gonna look pretty funny trying to eat corn on the cob with no fucking teeth!",
+      "s": "Kingpin",
+      "character": "Roy Munson",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Sir, once again I must remind you that my first name is not 'Dick'. Nor is my surname 'face'. It is simply 'Peter'.",
+      "s": "High Spirits",
+      "character": "Peter Plunkett",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "This room is evil.",
+      "s": "1408",
+      "character": "Gerald Olin",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "It's the same with the world of the supernatural. Until we know how it works, we'll continue to carry around this unnecessary burden of fear.",
+      "s": "The Haunting",
+      "character": "Dr. John Markway",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You can choose to repeat this hour over and over again, or you can take advantage of our express checkout system.",
+      "s": "1408",
+      "character": "Automated Room Phone",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The Taj Mahal wasn't a palace, it was a tomb. And equally overdone.",
+      "s": "The Haunting",
+      "character": "Theo",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Vines should not go in there... They feed on bad memories.",
+      "s": "R.L. Stine's Pumpkinhead",
+      "character": "Unknown",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Eight. This is eight. We have killed your friends. Every friend is now dead.",
+      "s": "1408",
+      "character": "Disembodied Voice",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Be excellent to each other. And... party on, dudes!",
+      "s": "Bill & Ted's Excellent Adventure",
+      "character": "Abraham Lincoln",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "They eat?",
+      "s": "Critters",
+      "character": "Brad Brown",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "They're here.",
+      "s": "She Was Here",
+      "character": "Carol Anne Freeling (Archival Footage)",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Strange things are afoot at the Circle K.",
+      "s": "Bill & Ted's Excellent Adventure",
+      "character": "Ted Logan",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "We're not bounty hunters, we're travelers. The Crites are our target.",
+      "s": "Critters",
+      "character": "Alien Bounty Hunters",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I'm not coming back. It's time for me to go.",
+      "s": "She Was Here",
+      "character": "Heather O'Rourke (Attributed)",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "No one laughs at a master of Quack Fu!",
+      "s": "Howard the Duck",
+      "character": "Howard",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "If there is no random universe, and everything is determined, then what's the point of going to work? What's the point of breathing?",
+      "s": "Knowing",
+      "character": "John Koestler",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Every duck has his limit, and you scum have pushed me over the line!",
+      "s": "Howard the Duck",
+      "character": "Howard",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "How can a person disappear without leaving tracks and a scent trail for bloodhounds to follow?",
+      "s": "Missing 411",
+      "character": "David Paulides (Narrator)",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "If God intended us to fly, he wouldn't have taken away our wings.",
+      "s": "Howard the Duck",
+      "character": "Howard",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "The numbers are a warning, but not just to me or any random group. They're a warning to everyone.",
+      "s": "Knowing",
+      "character": "John Koestler",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "If I knew then what I know now, I would have done a lot of things differently. But I didn't, so I did what I did.",
+      "s": "Peggy Sue Got Married",
+      "character": "Peggy Sue Bodell",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "We shouldn't have stayed after closing. This place changes when the lights go out.",
+      "s": "Spirit Halloween: The Movie",
+      "character": "Unknown",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You know, you're the only person who can make me feel like I'm totally alone in a crowded room.",
+      "s": "Peggy Sue Got Married",
+      "character": "Peggy Sue Bodell",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "You can't just sweep an ancient curse under the rug because it's bad for business.",
+      "s": "Knowing",
+      "character": "Unknown",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "I didn't bring you here to buy a costume, Carson. I brought you here because the things in this store aren't just plastic and latex.",
+      "s": "Spirit Halloween: The Movie",
+      "character": "Alec Windsor",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "My heart is older than my body, Richard. That's why I can't love you the way you want me to.",
+      "s": "Peggy Sue Got Married",
+      "character": "Peggy Sue Bodell",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    },
+    {
+      "q": "Life, uh, finds a way.",
+      "s": "Jurassic Park",
+      "character": "Dr. Ian Malcolm",
+      "d": "Easy",
+      "aliases": [],
+      "titleAliases": [],
+      "b": "",
+      "a": ""
+    }
+  ]
+}
