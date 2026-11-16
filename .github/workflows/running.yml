@@ -1,7 +1,7 @@
 # Upload to .github/workflows/running.yml on the default branch.
 # Daily at 12:37 UTC (7:37 AM EST / 8:37 AM EDT), plus manual Run workflow.
 # Reports: Actions > qcevent Daily Scanner > latest run.
-# For GitHub email: Settings > Notifications > Actions > Email; allow successful runs too.
+# For GitHub email: Settings > Notifications > Actions > Email; qcchallenger67@users.noreply.github.com
 name: qcevent Daily Scanner
 'on':
   workflow_dispatch: null
