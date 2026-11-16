@@ -1,19 +1,19 @@
-# Upload this file as .github/workflows/running.yml on the default branch.
-# Daily at 12:37 UTC, plus manual Run workflow; no push trigger.
-# Reports: .github/workflows/Qc reports/daily-scanner/README.md
-# Screenshots remain in the downloadable Actions artifact.
-name: Quote Challenge Daily Scanner
+# Upload to .github/workflows/running.yml on the default branch.
+# Daily at 12:37 UTC (7:37 AM EST / 8:37 AM EDT), plus manual Run workflow.
+# Reports: Actions > qcevent Daily Scanner > latest run.
+# For GitHub email: Settings > Notifications > Actions > Email; allow successful runs too.
+name: qcevent Daily Scanner
 'on':
   workflow_dispatch: null
   schedule:
   - cron: 37 12 * * *
 permissions:
-  contents: write
+  contents: read
 concurrency:
   group: qc-daily-scanner-${{ github.ref }}
   cancel-in-progress: false
 env:
-  QC_SITE_URL: ${{ vars.QC_SITE_URL || 'https://jtack6769.github.io/Quote_challenge/' }}
+  qc_SITE_URL: ${{ vars.wc_SITE_URL || 'https://jtack6769.github.io/qcevent/' }}
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -25,7 +25,7 @@ jobs:
     - name: Prepare report folder
       run: |
         mkdir -p "$RUNNER_TEMP/qc-report"
-        echo "QC_REPORT_DIR=$RUNNER_TEMP/qc-report" >> "$GITHUB_ENV"
+        echo ,qc_REPORT_DIR=$RUNNER_TEMP/qc-report" >> "$GITHUB_ENV"
     - name: Checkout website
       uses: actions/checkout@v4
       with:
@@ -37,141 +37,86 @@ jobs:
     - name: Install isolated scanner tools
       id: tools
       run: |
-        mkdir -p "$RUNNER_TEMP/qc-scanner" "$QC_REPORT_DIR"
+        mkdir -p "$RUNNER_TEMP/qc-scanner" "$qc_REPORT_DIR"
         npm install --prefix "$RUNNER_TEMP/qc-scanner" --ignore-scripts --no-audit --no-fund eslint@9.39.1 stylelint@16.25.0 htmlhint@1.6.3 parse5@7.3.0 playwright@1.56.1
     - name: Scan code, JSON and local references
       id: code
       continue-on-error: true
       if: ${{ !cancelled() && steps.tools.outcome == 'success' }}
-      run: |
-        cat > "$RUNNER_TEMP/qc-scanner/scan.cjs" <<'SCANNER'
-        const fs = require('node:fs');
-        const path = require('node:path');
-        const { execFileSync } = require('node:child_process');
-        const { Linter } = require('eslint');
-        const { HTMLHint } = require('htmlhint');
-        const parse5 = require('parse5');
-
-        async function main() {
-          const stylelint = (await import('stylelint')).default;
-          const root = process.env.GITHUB_WORKSPACE;
-          if (!root) throw new Error('GITHUB_WORKSPACE is required');
-          const files = execFileSync('git', ['ls-files', '-z'], { cwd: root, encoding: 'utf8' })
-            .split('\0').filter(Boolean).filter(file =>
-              /\.(?:html?|[cm]?js|css|json)$/i.test(file) &&
-              !/(^|\/)(?:node_modules|vendor|\.git|_site)\//.test(file) &&
-              !/\.min\.(?:js|css)$/i.test(file) &&
-              !file.startsWith('.github/workflows/Qc reports/'));
-          const findings = [];
-          const counts = { html: 0, javascript: 0, css: 0, json: 0, references: 0 };
-          const tracked = new Set(execFileSync('git', ['ls-files', '-z'], { cwd: root, encoding: 'utf8' }).split('\0').filter(Boolean));
-          const linter = new Linter();
-          function add(file, line, column, message) {
-            findings.push({ file, line: Math.max(1, line || 1), column: Math.max(1, column || 1), message });
-          }
-          function js(code, file, sourceType = 'module', offset = 0) {
-            counts.javascript++;
-            for (const item of linter.verify(code, {
-              languageOptions: { ecmaVersion: 'latest', sourceType },
-              linterOptions: { noInlineConfig: true },
-              rules: { 'no-dupe-args': 'error', 'no-dupe-keys': 'error', 'valid-typeof': 'error' }
-            })) add(file, offset + (item.line || 1), item.column, item.message);
-          }
-          async function css(code, file, offset = 0) {
-            counts.css++;
-            const result = await stylelint.lint({
-              code, codeFilename: path.join(root, 'qc-inline.css'),
-              config: { rules: { 'block-no-empty': true, 'color-no-invalid-hex': true } }
-            });
-            for (const item of result.results) {
-              for (const warning of item.warnings || [])
-                add(file, offset + (warning.line || 1), warning.column, warning.text);
-              for (const error of item.parseErrors || [])
-                add(file, offset + (error.line || 1), error.column, error.text);
-            }
-          }
-          async function html(code, file) {
-            counts.html++;
-            for (const item of HTMLHint.verify(code, {
-              'attr-no-duplication': true, 'id-unique': true,
-              'tag-pair': true, 'attr-value-double-quotes': false
-            })) add(file, item.line, item.col, item.message);
-            const document = parse5.parse(code, { sourceCodeLocationInfo: true });
-            const hasBase = /<base\s/i.test(code);
-            async function visit(node) {
-              const location = node.sourceCodeLocation;
-              const attributes = Object.fromEntries((node.attrs || []).map(a => [a.name, a.value]));
-              // Relative links only; root-relative links can point to other GitHub Pages repos.
-              if (!hasBase) for (const key of ['href', 'src', 'poster']) {
-                const value = attributes[key];
-                if (!value || /^(?:[a-z][a-z0-9+.-]*:|[/#?{])/i.test(value) || value.includes('{{')) continue;
-                counts.references++;
-                try {
-                  const pathname = decodeURIComponent(value.split(/[?#]/)[0]);
-                  if (!pathname) continue;
-                  const target = path.posix.normalize(path.posix.join(path.posix.dirname(file), pathname));
-                  if (target.startsWith('../')) continue;
-                  const candidates = [target, path.posix.join(target, 'index.html')];
-                  if (!candidates.some(p => tracked.has(p))) add(file, location?.startLine, 1, `Missing local ${key}: ${value}`);
-                } catch (error) { add(file, location?.startLine, 1, `Invalid local URL: ${value}`); }
-              }
-              if (node.tagName === 'script' && /^(application\/(ld\+)?json|importmap)$/.test(attributes.type || '')) {
-                try { JSON.parse((node.childNodes || []).map(n => n.value || '').join('')); }
-                catch (error) { add(file, location?.startLine, 1, `Invalid inline JSON: ${error.message}`); }
-              }
-              if (location && location.startTag && /^(script|style)$/.test(node.tagName)) {
-                const attrs = Object.fromEntries((node.attrs || []).map(a => [a.name, a.value]));
-                const start = location.startTag.endOffset;
-                const end = location.endTag ? location.endTag.startOffset : location.endOffset;
-                // Preserve columns on the opening-tag line and original file line numbers.
-                const body = ' '.repeat(location.startTag.endCol - 1) + code.slice(start, end);
-                const offset = location.startTag.endLine - 1;
-                const type = (attrs.type || '').trim().toLowerCase().split(';')[0];
-                if (node.tagName === 'style' && (!type || type === 'text/css')) await css(body, file, offset);
-                if (node.tagName === 'script' && !('src' in attrs) &&
-                    ['', 'module', 'text/javascript', 'application/javascript', 'text/ecmascript', 'application/ecmascript'].includes(type))
-                  js(body, file, type === 'module' ? 'module' : 'script', offset);
-              }
-              for (const child of node.childNodes || []) await visit(child);
-              if (node.content) await visit(node.content);
-            }
-            await visit(document);
-          }
-          for (const file of files) {
-            const absolute = path.join(root, file);
-            // Never follow repository symlinks to files outside the checkout.
-            if (!fs.lstatSync(absolute).isFile()) continue;
-            const code = fs.readFileSync(absolute, 'utf8');
-            if (/\.html?$/i.test(file)) await html(code, file);
-            else if (/\.css$/i.test(file)) await css(code, file);
-            else if (/\.json$/i.test(file)) { counts.json++; try { JSON.parse(code); } catch (error) { add(file, 1, 1, `Invalid JSON: ${error.message}`); } }
-            else js(code, file, /\.cjs$/i.test(file) ? 'commonjs' : 'module');
-          }
-          const escapeData = value => String(value).replace(/%/g, '%25').replace(/\r/g, '%0D').replace(/\n/g, '%0A');
-          const escapeProperty = value => escapeData(value).replace(/:/g, '%3A').replace(/,/g, '%2C');
-          findings.forEach((item, index) => {
-            if (index < 50) console.log(`::error file=${escapeProperty(item.file)},line=${item.line},col=${item.column}::${escapeData(item.message)}`);
-            else console.log(JSON.stringify(item));
-          });
-          const summary = [
-            '# Quote Challenge code scan', '',
-            `Checked ${counts.html} HTML files, ${counts.javascript} JavaScript files/blocks, and ${counts.css} CSS files/blocks; ${counts.json} JSON files and ${counts.references} local references.`, '',
-            `Found ${findings.length} issue(s).`, '',
-            'Checks tracked HTML, JavaScript, and CSS, including script/style blocks inside HTML. Skips vendor folders, node_modules, _site, symlinks, and *.min.js/*.min.css.', '',
-            'Static checks do not test button behavior, external links, CSS url() references, srcset, inline event attributes, or server-side templates. Relative references on pages using a base tag are skipped. JSON must be strict JSON. It does not change files or deploy the website.', ''
-          ];
-          for (const item of findings.slice(0, 100)) summary.push(`- ${JSON.stringify(item.file)}:${item.line}:${item.column} — ${item.message.replace(/[\r\n]/g, ' ')}`);
-          if (findings.length > 100) summary.push('', 'Additional issues are listed in the scan log.');
-          console.log(`Checked ${files.length} candidate files; found ${findings.length} issue(s).`);
-          if (!files.length) { summary.push('', 'ERROR: No supported tracked files found.'); process.exitCode = 1; }
-          fs.mkdirSync(process.env.QC_REPORT_DIR, { recursive: true });
-          fs.writeFileSync(path.join(process.env.QC_REPORT_DIR, 'code-report.md'), summary.join('\n') + '\n');
-          fs.writeFileSync(path.join(process.env.QC_REPORT_DIR, 'code-report.json'), JSON.stringify({ counts, findings }, null, 2));
-          if (findings.length) process.exitCode = 1;
-        }
-        main().catch(error => { console.error(error); process.exitCode = 1; });
-        SCANNER
-        node "$RUNNER_TEMP/qc-scanner/scan.cjs"
+      run: "cat > \"$RUNNER_TEMP/qc-scanner/scan.cjs\" <<'SCANNER'\nconst fs = require('node:fs');\nconst path =\
+        \ require('node:path');\nconst { execFileSync } = require('node:child_process');\nconst { Linter } = require('eslint');\n\
+        const { HTMLHint } = require('htmlhint');\nconst parse5 = require('parse5');\n\nasync function main() {\n\
+        \  const stylelint = (await import('stylelint')).default;\n  const root = process.env.GITHUB_WORKSPACE;\n\
+        \  if (!root) throw new Error('GITHUB_WORKSPACE is required');\n  const files = execFileSync('git', ['ls-files',\
+        \ '-z'], { cwd: root, encoding: 'utf8' })\n    .split('\\0').filter(Boolean).filter(file =>\n      /\\.(?:html?|[cm]?js|css|json)$/i.test(file)\
+        \ &&\n      !/(^|\\/)(?:node_modules|vendor|\\.git|_site)\\//.test(file) &&\n      !/\\.min\\.(?:js|css)$/i.test(file));\n\
+        \  const findings = [];\n  const counts = { html: 0, javascript: 0, css: 0, json: 0, references: 0 };\n\
+        \  const tracked = new Set(execFileSync('git', ['ls-files', '-z'], { cwd: root, encoding: 'utf8' }).split('\\\
+        0').filter(Boolean));\n  const linter = new Linter();\n  function add(file, line, column, message) {\n \
+        \   findings.push({ file, line: Math.max(1, line || 1), column: Math.max(1, column || 1), message });\n\
+        \  }\n  function js(code, file, sourceType = 'module', offset = 0) {\n    counts.javascript++;\n    for\
+        \ (const item of linter.verify(code, {\n      languageOptions: { ecmaVersion: 'latest', sourceType },\n\
+        \      linterOptions: { noInlineConfig: true },\n      rules: { 'no-dupe-args': 'error', 'no-dupe-keys':\
+        \ 'error', 'valid-typeof': 'error' }\n    })) add(file, offset + (item.line || 1), item.column, item.message);\n\
+        \  }\n  async function css(code, file, offset = 0) {\n    counts.css++;\n    const result = await stylelint.lint({\n\
+        \      code, codeFilename: path.join(root, 'qc-inline.css'),\n      config: { rules: { 'block-no-empty':\
+        \ true, 'color-no-invalid-hex': true } }\n    });\n    for (const item of result.results) {\n      for (const\
+        \ warning of item.warnings || [])\n        add(file, offset + (warning.line || 1), warning.column, warning.text);\n\
+        \      for (const error of item.parseErrors || [])\n        add(file, offset + (error.line || 1), error.column,\
+        \ error.text);\n    }\n  }\n  async function html(code, file) {\n    counts.html++;\n    for (const item\
+        \ of HTMLHint.verify(code, {\n      'attr-no-duplication': true, 'id-unique': true,\n      'tag-pair': true,\
+        \ 'attr-value-double-quotes': false\n    })) add(file, item.line, item.col, item.message);\n    const document\
+        \ = parse5.parse(code, { sourceCodeLocationInfo: true });\n    const hasBase = /<base\\s/i.test(code);\n\
+        \    async function visit(node) {\n      const location = node.sourceCodeLocation;\n      const attributes\
+        \ = Object.fromEntries((node.attrs || []).map(a => [a.name, a.value]));\n      // Relative links only; root-relative\
+        \ links can point to other GitHub Pages repos.\n      if (!hasBase) for (const key of ['href', 'src', 'poster'])\
+        \ {\n        const value = attributes[key];\n        if (!value || /^(?:[a-z][a-z0-9+.-]*:|[/#?{])/i.test(value)\
+        \ || value.includes('{{')) continue;\n        counts.references++;\n        try {\n          const pathname\
+        \ = decodeURIComponent(value.split(/[?#]/)[0]);\n          if (!pathname) continue;\n          const target\
+        \ = path.posix.normalize(path.posix.join(path.posix.dirname(file), pathname));\n          if (target.startsWith('../'))\
+        \ continue;\n          const candidates = [target, path.posix.join(target, 'index.html')];\n          if\
+        \ (!candidates.some(p => tracked.has(p))) add(file, location?.startLine, 1, `Missing local ${key}: ${value}`);\n\
+        \        } catch (error) { add(file, location?.startLine, 1, `Invalid local URL: ${value}`); }\n      }\n\
+        \      if (node.tagName === 'script' && /^(application\\/(ld\\+)?json|importmap)$/.test(attributes.type\
+        \ || '')) {\n        try { JSON.parse((node.childNodes || []).map(n => n.value || '').join('')); }\n   \
+        \     catch (error) { add(file, location?.startLine, 1, `Invalid inline JSON: ${error.message}`); }\n  \
+        \    }\n      if (location && location.startTag && /^(script|style)$/.test(node.tagName)) {\n        const\
+        \ attrs = Object.fromEntries((node.attrs || []).map(a => [a.name, a.value]));\n        const start = location.startTag.endOffset;\n\
+        \        const end = location.endTag ? location.endTag.startOffset : location.endOffset;\n        // Preserve\
+        \ columns on the opening-tag line and original file line numbers.\n        const body = ' '.repeat(location.startTag.endCol\
+        \ - 1) + code.slice(start, end);\n        const offset = location.startTag.endLine - 1;\n        const type\
+        \ = (attrs.type || '').trim().toLowerCase().split(';')[0];\n        if (node.tagName === 'style' && (!type\
+        \ || type === 'text/css')) await css(body, file, offset);\n        if (node.tagName === 'script' && !('src'\
+        \ in attrs) &&\n            ['', 'module', 'text/javascript', 'application/javascript', 'text/ecmascript',\
+        \ 'application/ecmascript'].includes(type))\n          js(body, file, type === 'module' ? 'module' : 'script',\
+        \ offset);\n      }\n      for (const child of node.childNodes || []) await visit(child);\n      if (node.content)\
+        \ await visit(node.content);\n    }\n    await visit(document);\n  }\n  for (const file of files) {\n  \
+        \  const absolute = path.join(root, file);\n    // Never follow repository symlinks to files outside the\
+        \ checkout.\n    if (!fs.lstatSync(absolute).isFile()) continue;\n    const code = fs.readFileSync(absolute,\
+        \ 'utf8');\n    if (/\\.html?$/i.test(file)) await html(code, file);\n    else if (/\\.css$/i.test(file))\
+        \ await css(code, file);\n    else if (/\\.json$/i.test(file)) { counts.json++; try { JSON.parse(code);\
+        \ } catch (error) { add(file, 1, 1, `Invalid JSON: ${error.message}`); } }\n    else js(code, file, /\\\
+        .cjs$/i.test(file) ? 'commonjs' : 'module');\n  }\n  const escapeData = value => String(value).replace(/%/g,\
+        \ '%25').replace(/\\r/g, '%0D').replace(/\\n/g, '%0A');\n  const escapeProperty = value => escapeData(value).replace(/:/g,\
+        \ '%3A').replace(/,/g, '%2C');\n  findings.forEach((item, index) => {\n    if (index < 50) console.log(`::error\
+        \ file=${escapeProperty(item.file)},line=${item.line},col=${item.column}::${escapeData(item.message)}`);\n\
+        \    else console.log(JSON.stringify(item));\n  });\n  const summary = [\n    '# Quote Challenge code scan',\
+        \ '',\n    `Checked ${counts.html} HTML files, ${counts.javascript} JavaScript files/blocks, and ${counts.css}\
+        \ CSS files/blocks; ${counts.json} JSON files and ${counts.references} local references.`, '',\n    `Found\
+        \ ${findings.length} issue(s).`, '',\n    'Checks tracked HTML, JavaScript, and CSS, including script/style\
+        \ blocks inside HTML. Skips vendor folders, node_modules, _site, symlinks, and *.min.js/*.min.css.', '',\n\
+        \    'Static checks do not test button behavior, external links, CSS url() references, srcset, inline event\
+        \ attributes, or server-side templates. Relative references on pages using a base tag are skipped. JSON\
+        \ must be strict JSON. It does not change files or deploy the website.', ''\n  ];\n  for (const item of\
+        \ findings.slice(0, 100)) summary.push(`- ${JSON.stringify(item.file)}:${item.line}:${item.column} \u2014\
+        \ ${item.message.replace(/[\\r\\n]/g, ' ')}`);\n  if (findings.length > 100) summary.push('', 'Additional\
+        \ issues are listed in the scan log.');\n  console.log(`Checked ${files.length} candidate files; found ${findings.length}\
+        \ issue(s).`);\n  if (!files.length) { summary.push('', 'ERROR: No supported tracked files found.'); process.exitCode\
+        \ = 1; }\n  fs.mkdirSync(process.env.wc_REPORT_DIR, { recursive: true });\n  fs.writeFileSync(path.join(process.env.qc_REPORT_DIR,\
+        \ 'code-report.md'), summary.join('\\n') + '\\n');\n  fs.writeFileSync(path.join(process.env.qc_REPORT_DIR,\
+        \ 'code-report.json'), JSON.stringify({ counts, findings }, null, 2));\n  if (findings.length) process.exitCode\
+        \ = 1;\n}\nmain().catch(error => { console.error(error); process.exitCode = 1; });\nSCANNER\nnode \"$RUNNER_TEMP/qc-scanner/scan.cjs\"\
+        \n"
     - name: Install Chromium
       id: browser_install
       if: ${{ !cancelled() && steps.tools.outcome == 'success' }}
@@ -188,9 +133,9 @@ jobs:
         const path = require('node:path');
         const { chromium } = require('playwright');
         async function main() {
-          const out = process.env.QC_REPORT_DIR;
+          const out = process.env.qc_REPORT_DIR;
           fs.mkdirSync(out, {recursive: true});
-          const base = new URL(process.env.QC_SITE_URL);
+          const base = new URL(process.env.qc_SITE_URL);
           if (!base.pathname.endsWith('/')) base.pathname += '/';
           const pages = ['', 'one-player.html', 'two-player.html', 'next.html', 'bonus.html'];
           const findings = [], checks = [];
@@ -265,7 +210,7 @@ jobs:
         python3 - <<'REPORT'
         import json, os
         from pathlib import Path
-        out = Path(os.environ['QC_REPORT_DIR'])
+        out = Path(os.environ['qc_REPORT_DIR'])
         out.mkdir(parents=True, exist_ok=True)
         statuses = {k: os.environ.get(k, 'unknown') for k in ['TOOLS', 'CODE', 'BROWSER_INSTALL', 'BROWSER']}
         passed = all(s == 'success' for s in statuses.values())
@@ -276,7 +221,7 @@ jobs:
         for name in ['code-report.md', 'browser-report.md']:
             p = out / name
             lines += [p.read_text() if p.exists() else '**Missing ' + name + ': this stage did not finish. See the run log.**', '']
-        lines += ['Reports and screenshots are in the downloadable qc-daily-report artifact. Markdown and JSON reports are also saved under .github/workflows/Qc reports/daily-scanner, with a separate folder for each run attempt. The workflow does not edit website pages or deploy anything.', '']
+        lines += ['Reports and screenshots are in the downloadable qc-daily-report artifact. The workflow does not edit website files or deploy anything.', '']
         text = '\n'.join(lines)
         (out / 'daily-report.md').write_text(text)
         (out / 'run-status.json').write_text(json.dumps({'passed': passed, 'stages': statuses, 'run': run}, indent=2))
@@ -287,62 +232,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: qc-daily-report-${{ github.run_number }}-${{ github.run_attempt }}
-        path: ${{ env.QC_REPORT_DIR }}
+        path: ${{ env.qc_REPORT_DIR }}
         retention-days: 30
         if-no-files-found: error
-    - name: Checkout report destination
-      id: report_checkout
-      if: ${{ always() }}
-      uses: actions/checkout@v4
-      with:
-        ref: ${{ github.event.repository.default_branch }}
-        path: qc-report-store
-        persist-credentials: true
-    - name: Save reports to repository
-      if: ${{ always() && steps.report_checkout.outcome == 'success' }}
-      env:
-        REPORT_BRANCH: ${{ github.event.repository.default_branch }}
-      run: |
-        if [ ! -f "$QC_REPORT_DIR/daily-report.md" ]; then
-          echo "::error::The daily report was not generated; check the report-writing step."
-          exit 1
-        fi
-        cd "$GITHUB_WORKSPACE/qc-report-store"
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        base='.github/workflows/Qc reports/daily-scanner'
-        run_folder="run-${GITHUB_RUN_NUMBER}-${GITHUB_RUN_ID}-attempt-${GITHUB_RUN_ATTEMPT}"
-        for attempt in 1 2 3; do
-          # Refresh this disposable checkout to preserve intervening repository updates.
-          git fetch origin "$REPORT_BRANCH"
-          git reset --hard FETCH_HEAD
-          destination="$base/$run_folder"
-          mkdir -p "$destination"
-          find "$QC_REPORT_DIR" -maxdepth 1 -type f \( -name '*.md' -o -name '*.json' \) -exec cp -- {} "$destination/" \;
-          cat > "$base/README.md" <<REPORT_INDEX
-        # Quote Challenge Daily Scanner reports
-
-        [Open the latest report]($run_folder/daily-report.md)
-
-        Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID
-
-        Scanned commit: $GITHUB_SHA
-
-        Each run and rerun has its own folder. Earlier reports are kept.
-        Full findings are in code-report.json and browser-report.json inside each run folder.
-        Screenshots remain in the downloadable qc-daily-report artifact for 30 days.
-        REPORT_INDEX
-          git add -- "$destination" "$base/README.md"
-          if git diff --cached --quiet; then
-            echo "Reports already saved."
-            exit 0
-          fi
-          git commit -m "Save QC scanner report ${GITHUB_RUN_NUMBER}, attempt ${GITHUB_RUN_ATTEMPT}"
-          if git push origin "HEAD:refs/heads/$REPORT_BRANCH"; then
-            echo "Reports saved to $destination"
-            printf '\nReports saved in `%s`.\n' "$destination" >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-        done
-        echo "::error::Could not save reports to the repository. Check branch protection and Actions write permissions. The uploaded artifact is still available if its upload succeeded."
-        exit 1
