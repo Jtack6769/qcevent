@@ -232,6 +232,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: qc-daily-report-${{ github.run_number }}-${{ github.run_attempt }}
-        path: ${{ env.qc_REPORT_DIR }}
+        path: ${{ github/workflows }}
         retention-days: 30
         if-no-files-found: error
