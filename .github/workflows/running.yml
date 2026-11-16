@@ -226,12 +226,7 @@ jobs:
         (out / 'daily-report.md').write_text(text)
         (out / 'run-status.json').write_text(json.dumps({'passed': passed, 'stages': statuses, 'run': run}, indent=2))
         with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f: f.write(text[:950000])
-        REPORT
-    - name: Save reports and screenshots
-      if: ${{ always() }}
-      uses: actions/upload-artifact@v4
-      with:
-        name: qc-daily-report-${{ github.run_number }}-${{ github.run_attempt }}
-        path: ${{ github/workflows }}
+    -name: qc-daily-report-${{ github.run_number }}-${{ github.run_attempt }}
+        path: ${{ env.qc_REPORT_DIR }}
         retention-days: 30
         if-no-files-found: error
