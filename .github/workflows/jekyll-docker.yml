@@ -1,5 +1,6 @@
-name: Jekyll site CI
-
+- name: Jekyll site CI
+- name: Cache
+  uses: actions/cache@v6.1.0
 on:
   push:
     branches: [ "main" ]
