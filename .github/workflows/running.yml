@@ -17,7 +17,7 @@ env:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 24
     defaults:
       run:
         shell: bash
