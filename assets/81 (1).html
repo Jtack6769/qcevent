@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<link rel="icon" type="image/jpeg" href="assets/img-01-9f11f1f6f812.jpg">
+<link rel="apple-touch-icon" href="assets/img-01-9f11f1f6f812.jpg">
+<title>Quote Challenge | Theater 8.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070a1a; --bg2:#0d1330; --panel:#111838; --panel2:#0b1028;
+  --ink:#fff6dd; --ink-dim:#d8d2bd; --ink-faint:#a9a58f;
+  --gold:#f2c14e; --gold-deep:#d99a1f; --red:#e23b4e; --red-deep:#9e1b30;
+  --teal:#57c7b8; --line:rgba(242,193,78,.28); --line-soft:rgba(255,246,221,.13);
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--gold)}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+
+/* stars */
+.stars{position:fixed;inset:0;pointer-events:none;z-index:0;background:
+  radial-gradient(1.5px 1.5px at 12% 18%, #fff 50%, transparent 51%),
+  radial-gradient(1px 1px at 28% 8%, #ffe9a8 50%, transparent 51%),
+  radial-gradient(1.5px 1.5px at 46% 22%, #fff 50%, transparent 51%),
+  radial-gradient(1px 1px at 63% 10%, #fff 50%, transparent 51%),
+  radial-gradient(1.5px 1.5px at 78% 20%, #ffe9a8 50%, transparent 51%),
+  radial-gradient(1px 1px at 90% 12%, #fff 50%, transparent 51%),
+  radial-gradient(1px 1px at 35% 32%, #fff 50%, transparent 51%),
+  radial-gradient(1px 1px at 70% 34%, #fff 50%, transparent 51%),
+  linear-gradient(180deg,#070a1a 0%, #0a0f2a 55%, #070a1a 100%);}
+.page{position:relative;z-index:1}
+
+/* top bar */
+.topbar{border-bottom:1px solid var(--line-soft);background:rgba(7,10,26,.86);backdrop-filter:blur(6px);position:sticky;top:0;z-index:20}
+.topbar-in{display:flex;align-items:center;gap:12px;justify-content:space-between;padding:10px 0}
+.brand{font-family:"Bebas Neue",sans-serif;letter-spacing:.14em;font-size:1.05rem;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px;min-height:44px}
+.brand .brand-icon{width:36px;height:36px;border-radius:9px;object-fit:cover;border:1px solid var(--line);flex:none}
+.ver{font-family:"Bebas Neue",sans-serif;background:var(--gold);color:#231600;padding:3px 10px 1px;border-radius:999px;letter-spacing:.12em;font-size:.95rem}
+.top-actions{display:flex;gap:8px;align-items:center}
+.btn-exit{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:10px;border:1.5px solid var(--red);color:#fff;background:var(--red-deep);font-weight:800;letter-spacing:.08em;text-decoration:none;font-size:.9rem}
+.btn-exit:hover{background:var(--red)}
+.btn-top{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;border-radius:10px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;font-size:.9rem}
+@media(max-width:560px){ .btn-top{display:none} }
+
+/* marquee */
+.marquee{overflow:hidden;border-bottom:1px solid var(--line);background:#0a0e24;padding:9px 0;white-space:nowrap}
+.marquee-track{display:inline-block;font-family:"Bebas Neue",sans-serif;letter-spacing:.18em;font-size:1rem;color:var(--gold);animation:scroll 28s linear infinite;padding-left:0}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){ .marquee-track{animation:none} }
+
+/* hero */
+.hero{padding:44px 0 10px;text-align:center}
+.bulbs{display:flex;justify-content:center;gap:9px;margin-bottom:18px;flex-wrap:wrap}
+.bulbs span{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+.bulbs span:nth-child(even){background:#fff3c4}
+.eyebrow{letter-spacing:.28em;font-size:.78rem;font-weight:800;color:var(--teal);text-transform:uppercase}
+h1{font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:clamp(2.6rem,7.5vw,5.2rem);line-height:.98;letter-spacing:.04em;margin:10px 0 6px}
+h1 .gold{color:var(--gold)}
+.lede{font-size:clamp(1.05rem,2.4vw,1.3rem);color:var(--ink-dim);max-width:640px;margin:8px auto 0}
+.grand{display:inline-block;margin-top:18px;border:1.5px solid var(--gold);color:var(--gold);border-radius:999px;padding:7px 16px;font-weight:800;letter-spacing:.14em;font-size:.82rem;text-transform:uppercase;background:rgba(242,193,78,.08)}
+
+/* hero poster — the QC Challenger plaque */
+.hero-poster{margin:30px auto 6px;max-width:400px}
+.hero-poster img{width:100%;height:auto;border-radius:20px;border:2px solid var(--gold);box-shadow:0 22px 55px rgba(0,0,0,.55),0 0 34px rgba(242,150,30,.30);background:#000}
+.hero-poster figcaption{margin-top:12px;color:var(--ink-faint);font-size:.92rem}
+.hero-poster figcaption strong{color:var(--gold)}
+
+/* three theaters */
+.theaters-head{font-family:"Bebas Neue",sans-serif;font-weight:400;letter-spacing:.08em;font-size:clamp(1.6rem,4vw,2.2rem);margin:30px 0 4px}
+.theaters-head .gold{color:var(--gold)}
+.theaters-sub{color:var(--ink-dim);margin:0 auto 16px;max-width:600px}
+.theaters{display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:16px;max-width:980px;margin:0 auto;text-align:left;align-items:stretch}
+@media(max-width:760px){ .theaters{grid-template-columns:1fr} }
+.theater-card{display:flex;flex-direction:column;text-decoration:none;border-radius:var(--radius);padding:20px;background:var(--panel);border:1.5px solid var(--line-soft);color:var(--ink);overflow:hidden}
+.theater-card:hover{border-color:var(--gold)}
+.theater-card .th-k{display:block;font-size:.76rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--teal)}
+.theater-card .th-t{display:block;font-family:"Bebas Neue",sans-serif;font-size:1.75rem;letter-spacing:.05em;line-height:1.05;margin-top:5px}
+.theater-card .th-d{display:block;font-size:.93rem;color:var(--ink-dim);margin-top:7px}
+.theater-card .th-go{display:block;margin-top:auto;padding-top:13px;font-weight:800;color:var(--gold);font-size:.9rem}
+.theater-card.featured{background:var(--panel2);border:2px solid var(--gold);box-shadow:0 18px 44px rgba(217,154,31,.22);padding:0 0 20px}
+.theater-card.featured .th-body{padding:16px 20px 0;display:flex;flex-direction:column;flex:1}
+.theater-card.featured img{width:100%;aspect-ratio:16/8;object-fit:cover}
+.theater-card.featured .th-t{font-size:2.05rem;color:var(--gold)}
+.th-badge{align-self:flex-start;background:var(--red);color:#fff;font-weight:900;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;padding:4px 11px;margin-bottom:10px}
+
+.park{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:820px;margin:30px auto 8px}
+@media(max-width:640px){ .park{grid-template-columns:1fr} }
+.park a{display:block;text-decoration:none;border-radius:var(--radius);padding:22px 20px 18px;text-align:left;min-height:118px;position:relative;overflow:hidden}
+.park-one{background:linear-gradient(135deg,#f2c14e,#d99a1f);color:#241a00;box-shadow:0 14px 34px rgba(217,154,31,.28)}
+.park-two{background:linear-gradient(135deg,#e23b4e,#9e1b30);color:#fff;box-shadow:0 14px 34px rgba(158,27,48,.32)}
+.park .k{display:block;font-size:.78rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;opacity:.85}
+.park .t{display:block;font-family:"Bebas Neue",sans-serif;font-size:2rem;letter-spacing:.05em;line-height:1;margin-top:4px}
+.park .d{font-size:.95rem;margin-top:6px;opacity:.92}
+.egg{position:absolute;right:12px;bottom:12px;width:32px;height:32px;opacity:0;z-index:6;display:block;border-radius:50%}
+.egg:focus-visible{opacity:.35;outline:3px solid var(--teal);outline-offset:2px}
+.bug-badge{display:flex;gap:16px;align-items:center;max-width:820px;margin:26px auto 0;text-align:left;background:var(--panel2);border:1.5px solid var(--gold);border-radius:var(--radius);padding:14px 18px;box-shadow:0 12px 30px rgba(217,154,31,.16)}
+.bug-badge img{width:84px;height:84px;border-radius:16px;object-fit:cover;border:2px solid var(--gold);flex:none}
+.bug-badge .bb-t{display:block;font-family:"Bebas Neue",sans-serif;font-size:1.4rem;letter-spacing:.06em;color:var(--gold);line-height:1.1}
+.bug-badge .bb-d{display:block;color:var(--ink-dim);font-size:.93rem;margin-top:3px}
+@media(max-width:560px){ .bug-badge{flex-direction:column;text-align:center} }
+.foot-bug{display:flex;gap:13px;align-items:center;margin-top:16px}
+.foot-bug img{width:72px;height:72px;border-radius:14px;object-fit:cover;border:2px solid var(--gold);flex:none}
+.foot-bug p{margin:0}
+
+/* layout */
+.layout{display:grid;grid-template-columns:290px 1fr;gap:22px;padding:34px 0 10px;align-items:start}
+@media(max-width:900px){ .layout{grid-template-columns:1fr} }
+
+/* sidebar */
+.side{background:var(--panel2);border:1px solid var(--line-soft);border-radius:var(--radius);padding:18px;position:sticky;top:78px}
+@media(max-width:900px){ .side{position:static} }
+.side h2{font-family:"Bebas Neue",sans-serif;font-weight:400;letter-spacing:.1em;font-size:1.45rem;margin:2px 0 4px;color:var(--gold)}
+.side p{color:var(--ink-faint);font-size:.9rem;margin:0 0 14px}
+.feat{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.feat a{display:flex;gap:12px;align-items:flex-start;text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;padding:12px 13px;min-height:52px}
+.feat a:hover{border-color:var(--gold)}
+.feat .n{font-family:"Bebas Neue",sans-serif;color:var(--gold);font-size:1.05rem;line-height:1.2;min-width:26px}
+.feat .tt{font-weight:800;font-size:.97rem;line-height:1.25}
+.feat .dd{color:var(--ink-faint);font-size:.84rem;line-height:1.35}
+.side-note{margin-top:14px;font-size:.84rem;color:var(--ink-faint);border-top:1px dashed var(--line-soft);padding-top:12px}
+
+/* screen */
+.screen-card{position:relative;background:#05060f;border:1px solid var(--line);border-radius:22px;padding:14px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.screen-top{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:2px 4px 12px;flex-wrap:wrap}
+.screen-top .label{font-family:"Bebas Neue",sans-serif;letter-spacing:.16em;color:var(--gold);font-size:1.1rem}
+.screen-top .now{font-size:.85rem;color:var(--ink-faint)}
+.screen{border-radius:14px;overflow:hidden;background:#000;aspect-ratio:16/10;position:relative}
+.screen img{width:100%;height:100%;object-fit:cover}
+.screen figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.88));padding:34px 16px 13px;color:#fff}
+.screen figcaption strong{display:block;font-family:"Bebas Neue",sans-serif;font-weight:400;letter-spacing:.06em;font-size:1.35rem}
+.screen figcaption span{font-size:.9rem;color:#e8e2cf}
+.projector{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.projector button{flex:1 1 170px;min-height:52px;border-radius:12px;border:1.5px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-weight:800;padding:10px 12px;cursor:pointer;text-align:left}
+.projector button small{display:block;font-weight:400;color:var(--ink-faint);font-size:.8rem}
+.projector button[aria-pressed="true"]{background:var(--gold);color:#241a00;border-color:var(--gold)}
+.projector button[aria-pressed="true"] small{color:#5c4700}
+
+/* sections */
+section.block{margin-top:26px;background:var(--panel2);border:1px solid var(--line-soft);border-radius:var(--radius);padding:24px}
+section.block h2{font-family:"Bebas Neue",sans-serif;font-weight:400;letter-spacing:.07em;font-size:clamp(1.7rem,4vw,2.3rem);margin:0 0 6px;line-height:1.05}
+section.block h2 .gold{color:var(--gold)}
+section.block .sub{color:var(--ink-dim);margin:0 0 16px;max-width:65ch}
+.poster-line{text-align:center;font-family:"Bebas Neue",sans-serif;letter-spacing:.12em;font-size:clamp(1.05rem,3vw,1.5rem);color:var(--ink);border:1px dashed var(--line);border-radius:12px;padding:14px 12px;background:rgba(242,193,78,.06)}
+.poster-line em{color:var(--gold);font-style:normal}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:760px){ .cols{grid-template-columns:1fr} }
+.cols h3{margin:0 0 8px;font-size:1.02rem;color:var(--teal);letter-spacing:.04em}
+.cols p,.cols li{color:var(--ink-dim);font-size:.96rem}
+.cols ul{margin:6px 0 0;padding-left:19px}
+.cols li{margin:5px 0}
+.quotes{display:grid;gap:10px;margin-top:6px}
+.quote{border-left:3px solid var(--gold);padding:8px 12px;background:var(--panel);border-radius:0 10px 10px 0}
+.quote p{margin:0;color:var(--ink);font-size:1rem}
+.quote footer{color:var(--ink-faint);font-size:.85rem;margin-top:3px}
+.diff{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--gold);margin-left:6px;vertical-align:middle}
+
+/* creators */
+.creators{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+@media(max-width:560px){ .creators{grid-template-columns:1fr} }
+.avatar-logo{width:168px;height:168px;object-fit:cover;border-radius:50%;border:3px solid var(--gold);background:#000;box-shadow:0 10px 28px rgba(0,0,0,.45)}
+@media(max-width:560px){ .avatar-logo{margin:0 auto} }
+.creators p{color:var(--ink-dim);margin:6px 0}
+.mail{display:inline-flex;align-items:center;min-height:44px;padding:9px 15px;border-radius:10px;border:1px solid var(--line);color:var(--gold);text-decoration:none;font-weight:700;margin-top:6px}
+
+
+/* showing strip */
+.showing{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;text-align:left}
+@media(max-width:640px){.showing{grid-template-columns:1fr}}
+.show-box{border-radius:14px;padding:15px 17px;border:1px solid var(--line-soft);background:var(--panel2)}
+.show-box .k{font-size:.74rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+.show-box.now .k{color:var(--red)} .show-box.soon .k{color:var(--teal)}
+.show-box .v{font-family:"Bebas Neue",sans-serif;font-size:1.45rem;letter-spacing:.05em;margin-top:2px}
+.show-box p{margin:2px 0 0;color:var(--ink-faint);font-size:.9rem}
+.construction{margin-top:14px;border-radius:12px;padding:11px 14px;text-align:center;font-weight:800;letter-spacing:.14em;font-size:.85rem;color:#231600;background:repeating-linear-gradient(45deg,var(--gold) 0 18px,#151310 18px 36px)}
+.construction span{background:var(--gold);padding:4px 12px;border-radius:6px;display:inline-block}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:760px){.gal{grid-template-columns:1fr}}
+.gal figure{margin:0;background:var(--panel);border:1px solid var(--line-soft);border-radius:14px;overflow:hidden}
+.gal img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.gal figcaption{padding:11px 13px}
+.gal figcaption strong{display:block;font-size:.96rem}
+.gal figcaption span{color:var(--ink-faint);font-size:.84rem}
+.btn-enlarge{margin-top:9px;display:inline-flex;align-items:center;min-height:44px;padding:9px 15px;border-radius:10px;border:1.5px solid var(--gold);background:transparent;color:var(--gold);font:inherit;font-weight:800;cursor:pointer}
+.btn-enlarge:hover{background:var(--gold);color:#241a00}
+/* lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(2,3,10,.93);display:none;place-items:center;z-index:60;padding:18px}
+.lightbox.open{display:grid}
+.lightbox figure{margin:0;max-width:920px;width:100%}
+.lightbox img{width:100%;max-height:76vh;object-fit:contain;border-radius:12px;background:#000}
+.lightbox figcaption{color:var(--ink);text-align:center;padding:12px;font-weight:700}
+.btn-close{display:block;margin:4px auto 0;min-height:48px;padding:11px 26px;border-radius:11px;border:none;background:var(--red);color:#fff;font:inherit;font-weight:900;letter-spacing:.08em;cursor:pointer}
+/* board + daily */
+.board-table{width:100%;border-collapse:collapse;font-size:.95rem}
+.board-table th{text-align:left;color:var(--teal);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;padding:7px 8px;border-bottom:1px solid var(--line)}
+.board-table td{padding:7px 8px;border-bottom:1px solid var(--line-soft);color:var(--ink-dim)}
+.board-table td.rank{font-family:"Bebas Neue",sans-serif;color:var(--gold);font-size:1.05rem;width:44px}
+.daily{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+.daily .q{font-size:1.25rem;line-height:1.45;color:var(--ink);margin:8px 0}
+.daily .who{color:var(--ink-faint);font-size:.9rem}
+/* library */
+.lib-search{width:100%;min-height:52px;border-radius:12px;border:1.5px solid var(--line);background:var(--panel);color:var(--ink);font:inherit;font-size:1rem;padding:12px 15px;margin-bottom:14px}
+.lib-list{display:grid;gap:10px}
+.lib-item{background:var(--panel);border:1px solid var(--line-soft);border-radius:12px;padding:13px 15px}
+.lib-item .ttl{font-weight:800;color:var(--gold)}
+.lib-item p{margin:4px 0 0;color:var(--ink)}
+.lib-item footer{color:var(--ink-faint);font-size:.85rem;margin-top:3px}
+.lib-none{color:var(--ink-faint);padding:10px 2px}
+/* freddy */
+.freddy{display:flex;gap:16px;align-items:center;margin-top:20px;border-top:1px dashed var(--line-soft);padding-top:18px}
+@media(max-width:560px){.freddy{flex-direction:column;text-align:center}}
+.freddy img{width:128px;height:128px;object-fit:cover;object-position:top;border-radius:50%;border:3px solid var(--gold);background:#fff;flex:none}
+.freddy p{color:var(--ink-dim);margin:5px 0}
+
+/* footer */
+footer.site{margin-top:38px;border-top:1px solid var(--line);background:#05060f}
+.foot-in{padding:28px 0 34px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:24px}
+@media(max-width:760px){ .foot-in{grid-template-columns:1fr} }
+footer.site h3{font-family:"Bebas Neue",sans-serif;font-weight:400;letter-spacing:.1em;color:var(--gold);margin:0 0 8px;font-size:1.2rem}
+footer.site p,footer.site li{color:var(--ink-faint);font-size:.92rem}
+footer.site ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+footer.site ul a{color:var(--ink-dim);text-decoration:none;display:inline-flex;align-items:center;min-height:36px}
+footer.site ul a:hover{color:var(--gold)}
+.foot-bottom{border-top:1px solid var(--line-soft);padding:14px 0 20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--ink-faint);font-size:.86rem}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+</style>
+</head>
+
+<body>
+<div class="stars" aria-hidden="true"></div>
+<div class="page">
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="https://jtack6769.github.io/qcevent/"><img class="brand-icon" src="assets/img-01-9f11f1f6f812.jpg" alt="" width="192" height="192"> QUOTE CHALLENGE THEATER <span class="ver">8.0</span></a>
+    <div class="top-actions">
+      <a class="btn-top" href="#creators">Meet Creatos</a>
+      <a class="btn-exit" href="https://jtack6769.github.io/Quote_challenge/">EXIT &#8594;</a>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+<section class="block" aria-labelledby="logan-h">
+        <h2 id="logan-h">Tonight&rsquo;s Feature: <span class="gold">Logan&rsquo;s Run</span></h2>
+        <p class="sub">Our grand 8.0 headliner &mdash; the adventure that started with the 1976 film and ran right into the 1978 TV series.</p>
+        <p class="poster-line">EXPERIENCE THE ADVENTURE! <em>* THE TALES OF LOGAN&rsquo;S RUN (1976) *</em></p>
+
+        <div class="cols" style="margin-top:20px">
+          <div>
+            <h3>The Story</h3>
+            <p>In the 23rd century, everyone lives inside the City of Domes &mdash; and nobody lives past 30. At Carousel, your time is up. Logan 5 is a Sandman, a hunter of Runners who try to escape. Then he starts asking questions, and with Jessica 6 he runs for the one place that might not exist at all: Sanctuary.</p>
+            <h3 style="margin-top:18px">The 1978 TV Series</h3>
+            <p>The CBS series ran 1977&ndash;78 for one season of 14 episodes. Gregory Harrison played Logan 5, Heather Menzies played Jessica 6, and Donald Moffat joined as Rem, an android created just for television. The last episodes aired in early 1978 &mdash; &ldquo;Futurepast,&rdquo; &ldquo;Carousel,&rdquo; &ldquo;Night Visitors,&rdquo; &ldquo;Turnabout,&rdquo; and the finale, &ldquo;Stargate,&rdquo; on February 6, 1978.</p>
+          </div>
+          <div>
+            <h3>A Star Trek Connection</h3>
+            <p>Captain, this one&rsquo;s for you: D.&thinsp;C. Fontana was story editor on the series, working alongside other <em>Star Trek</em> writers. David Gerrold wrote &ldquo;Man Out of Time,&rdquo; and Harlan Ellison wrote a treatment for &ldquo;Crypt.&rdquo;</p>
+            <h3 style="margin-top:18px">Quotes From the Show</h3>
+            <div class="quotes">
+              <div class="quote"><p>&ldquo;There&hellip; is&hellip; no&hellip; sanctuary.&rdquo;<span class="diff">HARD</span></p><footer>Logan&rsquo;s Run &mdash; Logan 5</footer></div>
+              <div class="quote"><p>&ldquo;I am more than machine. More than man. More than a fusion of the two.&rdquo;<span class="diff">MEDIUM</span></p><footer>Logan&rsquo;s Run &mdash; Box</footer></div>
+              <div class="quote"><p>&ldquo;It&rsquo;s my job. To freeze you.&rdquo;<span class="diff">EASY</span></p><footer>Logan&rsquo;s Run &mdash; Box</footer></div>
+            </div>
+          </div>
+        </div>
+        <p style="color:var(--ink-faint);font-size:.85rem;margin:18px 0 0">The Logan&rsquo;s Run artwork on the big screen is an original illustration made for this theater &mdash; a runner and his companion escaping the Domes at sunset. The flaming gold plaque at the top of the page is William&rsquo;s own Quote Challenge poster, by QC Challenger.</p>
+      </section>
+
+
+      <!-- LUNATIC FRINGE GALLERY -->
+      <section class="block" aria-labelledby="fringe-h">
+        <h2 id="fringe-h">The Lunatic Fringe <span class="gold">Gallery</span></h2>
+        <p class="sub">Pictures from the wild corner of the theater &mdash; tap Enlarge under any picture for a closer look. For the full Fringe, visit <a href="https://jtack6769.github.io/qcevent/lunatic_fringe.html">Going Crazy &mdash; Lunatic Fringe</a>.</p>
+        <div class="gal">
+          <figure>
+            <img src="assets/img-04-044dc91ea709.webp" alt="Original poster-style illustration inspired by Logan's Run: two runners escaping a shattered domed city at sunset">
+            <figcaption><strong>Escape from the Domes</strong><span>Poster-style art for tonight&rsquo;s feature.</span><br><button type="button" class="btn-enlarge" data-full="assets/img-04-044dc91ea709.webp" data-cap="Escape from the Domes — poster-style art for Logan's Run">&#128269; Enlarge</button></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img-03-82d256866951.webp" alt="Painted view from inside a 1970s car at a drive-in at night, dashboard in the foreground and the big screen glowing ahead">
+            <figcaption><strong>Your Car at Night</strong><span>The 1978 drive-in, from the driver&rsquo;s seat.</span><br><button type="button" class="btn-enlarge" data-full="assets/img-03-82d256866951.webp" data-cap="Your Car at Night — the 1978 drive-in from the driver's seat">&#128269; Enlarge</button></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img-06-674f8b5f4f16.webp" alt="Painted illustration of a drive-in theater in daytime with a big white screen and rows of colorful 1970s cars">
+            <figcaption><strong>The Lot by Day</strong><span>The theater in the sunshine, before showtime.</span><br><button type="button" class="btn-enlarge" data-full="assets/img-06-674f8b5f4f16.webp" data-cap="The Lot by Day — the theater before showtime">&#128269; Enlarge</button></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- LEADERBOARD + DAILY QUOTE -->
+      <section class="block" aria-labelledby="board-h">
+        <h2 id="board-h">Arcade <span class="gold">Leaderboard</span> &amp; Daily Quote</h2>
+        <p class="sub">The Top 10 board for the theater&rsquo;s games, and a fresh quote every day to come back for.</p>
+        <div class="cols">
+          <div>
+            <h3>Top 10 &mdash; Arcade Board</h3>
+            <table class="board-table">
+              <thead><tr><th scope="col">#</th><th scope="col">Spot</th><th scope="col">How to claim it</th></tr></thead>
+              <tbody>
+                <tr><td class="rank">1</td><td>Open spot</td><td>Play One Player</td></tr>
+                <tr><td class="rank">2</td><td>Open spot</td><td>Play Two Player</td></tr>
+                <tr><td class="rank">3</td><td>Open spot</td><td>Play One Player</td></tr>
+                <tr><td class="rank">4</td><td>Open spot</td><td>Play One Player</td></tr>
+                <tr><td class="rank">5</td><td>Open spot</td><td>Play Two Player</td></tr>
+                <tr><td class="rank">6</td><td>Open spot</td><td>Play Two Player</td></tr>
+                <tr><td class="rank">7</td><td>Open spot</td><td>Play One Player</td></tr>
+                <tr><td class="rank">8</td><td>Open spot</td><td>Play Two Player</td></tr>
+                <tr><td class="rank">9</td><td>Open spot</td><td>Play One Player</td></tr>
+                <tr><td class="rank">10</td><td>Open spot</td><td>Play One Player</td></tr>
+              </tbody>
+            </table>
+            <p style="color:var(--ink-faint);font-size:.88rem">The 8.0 board opens empty tonight &mdash; the first scores posted from the games take these spots. Your move, Captain.</p>
+          </div>
+          <div>
+            <h3>Daily Quote &mdash; Wednesday, November 18, 2026</h3>
+            <div class="daily">
+              <p class="q">&ldquo;There&hellip; is&hellip; no&hellip; sanctuary.&rdquo;<span class="diff">HARD</span></p>
+              <p class="who">Logan&rsquo;s Run &mdash; said by Logan 5</p>
+              <p style="color:var(--ink-dim);margin:10px 0 0">From tonight&rsquo;s featured show. Come back tomorrow for a new Daily Quote &mdash; and try today&rsquo;s in <a href="https://jtack6769.github.io/qcevent/one-player.html">PARKING FOR ONE</a>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUOTES LIBRARY -->
+      <section class="block" aria-labelledby="lib-h">
+        <h2 id="lib-h">Quotes <span class="gold">Library</span></h2>
+        <p class="sub">The movies, shows, and quotes on tonight&rsquo;s shelf &mdash; the featured Logan&rsquo;s Run collection from the film and the series. Search by title to filter the shelf.</p>
+        <label for="libSearch" style="font-weight:700;display:block;margin-bottom:7px">Search by title</label>
+        <input class="lib-search" id="libSearch" type="search" placeholder="Try &ldquo;Logan&rdquo;&hellip;" autocomplete="off">
+        <div class="lib-list" id="libList">
+          <article class="lib-item" data-title="logan's run 1976 film movie"><span class="ttl">Logan&rsquo;s Run (1976) &mdash; Film</span><p>&ldquo;There&hellip; is&hellip; no&hellip; sanctuary.&rdquo;</p><footer>Said by Logan 5 &bull; Hard</footer></article>
+          <article class="lib-item" data-title="logan's run 1976 film movie box"><span class="ttl">Logan&rsquo;s Run (1976) &mdash; Film</span><p>&ldquo;I am more than machine. More than man. More than a fusion of the two.&rdquo;</p><footer>Said by Box &bull; Medium</footer></article>
+          <article class="lib-item" data-title="logan's run 1976 film movie box"><span class="ttl">Logan&rsquo;s Run (1976) &mdash; Film</span><p>&ldquo;It&rsquo;s my job. To freeze you.&rdquo;</p><footer>Said by Box &bull; Easy</footer></article>
+          <article class="lib-item" data-title="logan's run 1978 tv series show jessica"><span class="ttl">Logan&rsquo;s Run (1978) &mdash; TV Series</span><p>&ldquo;Those cracks in your face, do they hurt?&rdquo;</p><footer>Said by Jessica 6 &bull; Easy</footer></article>
+        </div>
+        <p class="lib-none" id="libNone" hidden>No matches on this shelf for that title &mdash; try &ldquo;Logan.&rdquo;</p>
+        <p style="color:var(--ink-faint);font-size:.88rem;margin:12px 0 0">The full collection lives in the games themselves &mdash; hundreds of quotes ride along in One Player and Two Player.</p>
+      </section>
+
+      <!-- CREATORS -->
+      <section class="block" id="creators" aria-labelledby="creators-h">
+        <h2 id="creators-h">Meet <span class="gold">Creatos</span> &mdash; The Creator&rsquo;s Corner</h2>
+        <p class="sub">The people who built the theater, and where to reach them.</p>
+        <div class="creators">
+          <img class="avatar-logo" src="assets/img-07-ecbc9be7a839.jpg" alt="Quote Challenge logo &mdash; a round red marquee with lightbulb letters reading Quote Challenge, By: QC Challenger" width="524" height="502">
+          <div>
+            <p><strong style="color:var(--ink)">Quote Challenge</strong> is William&rsquo;s theater &mdash; built quote by quote, game by game, from version 6.0 through 7.5 and now to the grand 8.0. One Player and Two Player both live here, along with Box, the Lunatic Fringe, and a lot of movie nights.</p>
+            <p>Questions, quote ideas, or a bug to report from your parking spot?</p>
+            <a class="mail" href="mailto:recrepgh01@gmail.com">&#9993; recrepgh01@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="freddy">
+          <img src="assets/img-08-a87edd768917.webp" alt="Freddy, a small brown-and-white dog with big ears, William's dog and the theater's mascot">
+          <div>
+            <h3 style="margin:0;color:var(--gold);font-size:1.05rem">Freddy the Dog &mdash; Theater Mascot</h3>
+            <p>Every grand theater needs a mascot. Freddy is William&rsquo;s real dog &mdash; a small brown-and-white fellow with a pink collar, famous for scratching his left side. He&rsquo;s also the namesake and face of Frederick, William&rsquo;s assistant, so if you see this dog around the theater, you&rsquo;re in friendly territory.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXIT -->
+      <section class="block" style="text-align:center" aria-labelledby="exit-h">
+        <h2 id="exit-h">Leaving the <span class="gold">Theater?</span></h2>
+        <p class="sub" style="margin-left:auto;margin-right:auto">Thanks for coming to the grand 8.0 show. The exit takes you back to the main Quote Challenge site.</p>
+        <a class="btn-exit" href="https://jtack6769.github.io/Quote_challenge/" style="font-size:1rem;padding:13px 26px">EXIT TO QUOTE CHALLENGE &#8594;</a>
+      </section>
+    </div>
+  </div>
+
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <h3>Quote Challenge Theater</h3>
+        <p>Grab your popcorn, pick a parking spot, and enjoy the show. The home of One Player and Two Player &mdash; now showing in grand 8.0.</p>
+        <p>Indoor Theater &bull; Drive-In Theater &bull; Out of This World Theater &mdash; by QC Challenger.</p>
+        <p><span class="ver">VERSION 8.0</span></p>
+        <div class="foot-bug">
+          <img src="assets/img-01-9f11f1f6f812.jpg" alt="The original QC bug logo &mdash; a smiling cartoon bug perched on big red QC letters on a yellow square" width="192" height="192">
+          <p><strong style="color:var(--gold)">The original QC bug.</strong> The first logo of Quote Challenge &mdash; it carried the theater a long, long way, and it keeps its place of honor here in 8.0.</p>
+        </div>
+      </div>
+      <nav aria-label="Footer features">
+        <h3>Features</h3>
+        <ul>
+          <li><a href="https://jtack6769.github.io/qcevent/home-panel.html">Home</a></li>
+          <li><a href="https://jtack6769.github.io/qcevent/box_robot.html">Box &mdash; Come on in!</a></li>
+          <li><a href="https://jtack6769.github.io/qcevent/lunatic_fringe.html">Going Crazy &mdash; Lunatic Fringe</a></li>
+          <li><a href="https://jtack6769.github.io/qcevent/qc-marquee.html">The Old Banner</a></li>
+          <li><a href="#creators">Meet Creatos</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Footer games">
+        <h3>Play</h3>
+        <ul>
+          <li><a href="https://jtack6769.github.io/qcevent/one-player.html">Parking for One</a></li>
+          <li><a href="https://jtack6769.github.io/qcevent/two-player.html">Parking for Two</a></li>
+          <li><a href="https://jtack6769.github.io/qcevent/next.html">Coming Next</a></li>
+          <li><a href="mailto:recrepgh01@gmail.com">recrepgh01@gmail.com</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Quote Challenge &bull; Theater 8.0 &bull; Enjoy the show.</span>
+      <span><a href="https://jtack6769.github.io/Quote_challenge/">Exit</a> &nbsp;&bull;&nbsp; <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to the top</a></span>
+    </div>
+  </div>
+</footer>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged picture" hidden>
+  <figure>
+    <img id="lightboxImg" alt="">
+    <figcaption id="lightboxCap"></figcaption>
+    <button type="button" class="btn-close" id="lightboxClose">CLOSE &#10005;</button>
+  </figure>
+</div>
+<script>
+(function(){
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightboxImg');
+  var lbCap = document.getElementById('lightboxCap');
+  var lastFocus = null;
+  function openLb(src, cap, alt){
+    lastFocus = document.activeElement;
+    lbImg.src = src; lbImg.alt = alt || cap || '';
+    lbCap.textContent = cap || '';
+    lb.hidden = false; lb.classList.add('open');
+    document.getElementById('lightboxClose').focus();
+  }
+  function closeLb(){
+    lb.classList.remove('open'); lb.hidden = true; lbImg.removeAttribute('src');
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.btn-enlarge'), function(btn){
+    btn.addEventListener('click', function(){
+      var fig = btn.closest('figure');
+      var img = fig ? fig.querySelector('img') : null;
+      openLb(btn.getAttribute('data-full'), btn.getAttribute('data-cap'), img ? img.alt : '');
+    });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', closeLb);
+  lb.addEventListener('click', function(e){ if(e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !lb.hidden) closeLb(); });
+
+  var search = document.getElementById('libSearch');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.lib-item'));
+  var none = document.getElementById('libNone');
+  if(search){
+    search.addEventListener('input', function(){
+      var q = search.value.trim().toLowerCase();
+      var shown = 0;
+      items.forEach(function(it){
+        var hit = !q || it.getAttribute('data-title').indexOf(q) !== -1 || it.textContent.toLowerCase().indexOf(q) !== -1;
+        it.style.display = hit ? '' : 'none';
+        if(hit) shown++;
+      });
+      none.hidden = shown !== 0;
+    });
+  }
+})();
+</script>
+</body>
+</html>
