@@ -1,5 +1,5 @@
-storage and uploads for quick challeng
-9<!doctype html>
+storage and uploads for qupte challenge
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
